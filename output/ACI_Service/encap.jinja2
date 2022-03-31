@@ -1,0 +1,17 @@
+{%- set record_info = [] %}
+{%- for attr in aci_attr %} {% if attr["Encap_json"] == "yes" %}
+    {{- record_info.append({
+            "pool": attr["Vlan_Pool"],
+            "block_start": attr["Encap"],
+            "block_end": attr["Encap"],
+            "allocation_mode": "static",
+            "description": attr["Description"],
+            "block_name": attr["Encap"],
+            "pool_allocation_mode": "static",
+            "state": attr["State_Sel"]
+        })
+    }}
+{%- endif %} {% endfor %}
+{"resource":
+    {{- record_info| safe }}
+}

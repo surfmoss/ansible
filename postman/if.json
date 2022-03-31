@@ -1,0 +1,13 @@
+[
+  {
+    "l1PhysIf": {
+      "attributes": {
+        "childAction": "",
+        "descr": "testing,
+        "dn": "topology/pod-1/node-336/sys/phys-[eth1/1]",
+        "pathSDescr": "test",
+        "status": "modified"
+      }
+    }
+  }
+]

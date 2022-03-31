@@ -1,0 +1,2 @@
+{"resource":[{"access_port_selector": "switch01", "policy_group": "auto_neg_ipg", "interface_type": "switch_port", "leaf_interface_profile": "L101", "leaf_port_blk": 101, "from_port": "12", "to_port": "12", "state": "present"}, {"access_port_selector": "switch01", "policy_group": "auto_neg_ipg", "interface_type": "switch_port", "leaf_interface_profile": "L102", "leaf_port_blk": 102, "from_port": "12", "to_port": "12", "state": "present"}]
+}

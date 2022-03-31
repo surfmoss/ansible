@@ -1,0 +1,144 @@
+---
+- name: Create BD, EPG, Bind existing interfaces
+  hosts: 172.26.13.211
+  connection: network_cli
+  gather_facts: false
+  
+  tasks:
+
+  - name: Add Bridge Domains 
+    aci_bd:
+      host: 172.26.13.211
+      username: 3619264
+      password: '{{ ansible_password }}'
+      tenant: lowes
+      bd: "{{ item.bd }}"
+      description: "{{ item.description }}"
+      vrf: Global
+      l2_unknown_unicast: flood
+      l3_unknown_multicast: flood
+      arp_flooding: True
+      ip_learning: yes
+      limit_ip_learn: True
+      validate_certs: no
+      enable_routing: False
+    delegate_to: localhost
+    loop:
+      - { bd: '154', description: 'WSDC_PROD_BVL154-L2' }
+      - { bd: '1211', description: 'WSDC_PROD_BVL1211-L2' }  
+ 
+  - name: Add a new EPG 
+    aci_epg:
+      host: 172.26.13.211
+      username: 3619264
+      password: '{{ ansible_password }}'
+      tenant: lowes
+      ap: Prod-AP
+      epg: "{{ item.epg }}"
+      description: "{{ item.description }}"
+      bd: "{{ item.bd }}"
+      preferred_group: no
+      validate_certs: no
+    delegate_to: localhost
+    loop:
+      - { epg: '154', bd: '154', description: 'WSDC_PROD_BVL154-L2' }
+      - { epg: '1211', bd: '1211', description: 'WSDC_PROD_BVL1211-L2' }
+
+  - name: Add a new VLAN encap block
+    aci_vlan_pool_encap_block:
+      host: 172.26.13.211
+      username: 3619264
+      password: '{{ ansible_password }}'
+      pool: prod-vlan-pool
+      block_start: "{{ item.block_start }}"
+      block_end: "{{ item.block_end }}"
+      allocation_mode: static
+      description: "{{ item.description }}"
+      block_name: "{{ item.block_name }}"
+      pool_allocation_mode: static
+      validate_certs: no
+      state: present
+    delegate_to: localhost
+    loop:
+      - { block_start: '154', block_end: '154', description: 'WSDC_PROD_BVL154-L2', block_name: '154' }
+      - { block_start: '1211', block_end: '1211', description: 'WSDC_PROD_BVL1211-L2', block_name: '1211' }
+
+  - name: EPG Static Binding        
+    aci_static_binding_to_epg:
+      host: 172.26.13.211
+      username: 3619264
+      password: '{{ ansible_password }}'
+      tenant: lowes
+      ap: Prod-AP
+      epg: "{{ item.epg }}"
+      encap_id: "{{ item.encap_id }}"
+      deploy_immediacy: immediate
+      interface_mode: "{{ item.interface_mode }}"
+      interface_type: "{{ item.interface_type }}"
+      pod: 1
+      leafs: "{{ item.leafs }}" 
+      interface: "{{ item.interface }}"
+      state: present
+      validate_certs: no
+    delegate_to: localhost
+    loop:
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/5' }      
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/7' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/9' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/11' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/13' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/15' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/17' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/19' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/21' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/23' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/5' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/7' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/9' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/11' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/13' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/15' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/17' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/19' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/21' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/23' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/5' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/7' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/9' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/11' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/13' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/15' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/17' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/19' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/21' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '302', interface: '1/23' }  
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/5' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/7' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/9' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/11' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/13' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/15' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/17' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/19' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/21' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '303', interface: '1/23' }
+      - { epg: '154', encap_id: '154', interface_mode: 'trunk', interface_type: 'vpc', leafs: '400-401', interface: 'L2_to_203_204' }
+      - { epg: '1211', encap_id: '1211', interface_mode: 'trunk', interface_type: 'vpc', leafs: '400-401', interface: 'L2_to_203_204' }
+
+  - name: EPG Binding to Domain
+    aci_epg_to_domain:
+      host: 172.26.13.211
+      username: 3619264    
+      password: '{{ ansible_password }}'
+      tenant: lowes
+      ap: Prod-AP
+      epg: "{{ item.epg }}"
+      domain: "{{ item.domain }}"
+      domain_type: "{{ item.domain_type }}"
+      state: present
+      validate_certs: no
+    delegate_to: localhost
+    loop:
+      - { epg: '154', domain: 'prod_physdom', domain_type: 'phys' }
+      - { epg: '1211', domain: 'prod_physdom', domain_type: 'phys' }        
+

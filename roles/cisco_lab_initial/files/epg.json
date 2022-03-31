@@ -1,0 +1,3 @@
+{"resource":[{"tenant": "Prod_Tnt", "ap": "mgmt_anp", "description": "switches", "bd": 29, "preferred_group": "no", "vrf": "mgmt_vrf", "epg": 29, "state": "present"}, {"tenant": "Prod_Tnt", "ap": "mgmt_anp", "description": "routers", "bd": 30, "preferred_group": "no", "vrf": "mgmt_vrf", "epg": 30, "state": "present"}, {"tenant": "Prod_Tnt", "ap": "mgmt_anp", "description": "load_balancers", "bd": 31, "preferred_group": "no", "vrf": "mgmt_vrf", "epg": 31, "state": "present"}]
+}
+

@@ -1,0 +1,25 @@
+---
+- name: create access_port_selector and bind to ipg
+  hosts: 131.226.217.153
+  connection: network_cli
+  gather_facts: false
+  vars:
+    version_file: "{{lookup('file','/home/buenrosm/ansible/roles/cisco_lab_initial/files/vpc_sel.json') | from_json }}"
+  
+  tasks:
+  - name: create access_port_selector and bind to ipg       
+    aci_access_port_to_interface_policy_leaf_profile:
+      host: 131.226.217.153
+      username: admin
+      password: '{{ ansible_password }}'
+      leaf_interface_profile: "{{ item.leaf_interface_profile }}"
+      access_port_selector: "{{ item.access_port_selector }}"
+      interface_type: "{{ item.interface_type }}" 
+      leaf_port_blk: "{{ item.leaf_port_blk }}"  
+      from_port: '{{ item.from_port }}'
+      to_port: '{{ item.to_port }}'
+      state: '{{ item.state }}'
+      policy_group: '{{ item.policy_group }}'
+      validate_certs: no
+    delegate_to: localhost
+    loop: "{{ version_file.resource }}"

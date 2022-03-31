@@ -1,0 +1,16 @@
+{
+    "totalCount": "1",
+    "imdata": [
+    {
+      "infraHPathS": {
+        "attributes": {
+          "descr": "sed",
+          "dn": "uni/infra/hpaths-324_eth1_48"
+                }
+            }
+        }
+    ]
+}
+url: https: //172.26.13.211/api/node/mo/uni/infra/hpaths-324_eth1_48.json
+
+

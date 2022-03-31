@@ -1,0 +1,20 @@
+{%- set record_info = [] %}
+{%- for attr in aci_attr %} {% if attr["vpc_bind_json"] == "yes" %}
+    {{- record_info.append({
+            "tenant": attr['Tenant'],
+            "ap": attr['AP'],
+            "epg": attr['Encap'],
+            "encap_id": attr['Encap'],
+            "deploy_immediacy": "immediate",
+            "interface_mode": attr['Interface_Mode'],
+            "interface_type": attr['Interface_Type'],
+            "pod": attr['Pod'],
+            "leafs": attr['Leaf_Pair'],
+            "interface": attr['Policy_Group'],
+            "state": attr["State_Sel"]
+        })
+    }}
+{%- endif %} {% endfor %}
+{"resource":
+    {{- record_info| safe }}
+}

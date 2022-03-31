@@ -1,0 +1,16 @@
+---
+- name: RUN SHOW COMMAND AND PRINT TO TERMINAL WINDOW
+  hosts: sadc_nexus
+  connection: nxos
+  gather_facts: false
+  
+  tasks:
+
+  - name: Show command
+    nxos_command:
+      commands: 
+        - sh int counters errors | ex '0 \+0 \+0 \+0 \+0 \+0" |  ex "0 \+-- \+0 \+0 \+0 \+0' 
+    register: output
+
+  - debug:
+      var: output.stdout

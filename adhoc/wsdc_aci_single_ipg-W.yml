@@ -1,0 +1,27 @@
+---
+- name: create an on demand ACI IPG 
+  hosts: 172.26.13.211
+  connection: network_cli
+  gather_facts: false
+  
+  tasks:
+
+  - name: Create a Leaf Access Port Policy Group 
+    aci_interface_policy_leaf_policy_group:
+      host: 172.26.13.211
+      username: 3619264
+      password: '{{ ansible_password }}'
+      validate_certs: no
+      lag_type: node
+      link_level_policy: 10GB-policy
+      cdp_policy: cdp-disable
+      mcp_policy: MCP-enable
+      port_channel_policy: LACP-active
+      lldp_policy: LLDP-enable
+      l2_interface_policy: L2_int_pol
+      aep: L3-prod-hadoop-aep
+      policy_group: '{{ item.policy_group }}'
+      state: present
+    loop:
+      - { policy_group: 'L2_LXHDPWRKPRD078_ipg' }
+    

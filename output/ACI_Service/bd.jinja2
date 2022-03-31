@@ -1,0 +1,20 @@
+{%- set record_info = [] %}
+{%- for attr in aci_attr %} {% if attr["BD_json"] == "yes" %}
+    {{- record_info.append({
+            "tenant": attr["Tenant"],
+            "bd": attr["BD"],
+            "description": attr["Description"],
+            "vrf": attr['VRF'],
+            "l2_unknown_unicast": "flood",
+            "l3_unknown_multicast": "flood",
+            "arp_flooding": "True",
+            "ip_learning": "yes",
+            "limit_ip_learn": "True",
+            "enable_routing": "False",
+            "state": attr["State_Sel"]
+        })
+    }}
+{%- endif %} {% endfor %}
+{"resource":
+    {{- record_info| safe }}
+}

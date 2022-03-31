@@ -1,0 +1,15 @@
+{%- set record_info = [] %}
+{%- for attr in aci_attr %} {% if attr["Domain_bind_json"] == "yes" %}
+    {{- record_info.append({
+            "tenant": attr['Tenant'],
+            "ap": attr['AP'],
+            "epg": attr['Encap'],
+            "domain": attr['Domain_Name'],
+            "domain_type": attr['Domain_Type'],
+            "state": attr["State_Sel"]
+        })
+    }}
+{%- endif %} {% endfor %}
+{"resource":
+    {{- record_info| safe }}
+}

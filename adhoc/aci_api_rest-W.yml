@@ -1,0 +1,22 @@
+---
+- name: Query playbook
+  hosts: 172.29.13.5
+  #connection: network_cli
+  gather_facts: no
+  
+  tasks:
+
+  - name: Query all tenants
+    aci_rest:
+      host: 172.29.13.5
+      username: aci-svc-RO
+      password: '{{ api_password }}'
+      method: get
+      path: /api/node/class/fvTenant.json
+      validate_certs: no
+    delegate_to: localhost
+
+    register: all_tenants
+
+  - debug:
+      var: all_tenants

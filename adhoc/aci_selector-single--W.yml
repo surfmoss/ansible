@@ -1,0 +1,35 @@
+---
+- name: create an interface selector
+  hosts: 172.29.13.5
+  connection: network_cli
+  gather_facts: false
+  
+  tasks:
+  - name: Associate an Interface Access Port Selector to an Interface Policy        
+    aci_access_port_to_interface_policy_leaf_profile:
+      host: 172.29.13.5
+      username: 3619264
+      password: '{{ ansible_password }}'
+      leaf_interface_profile: LF314-IntProfile
+      access_port_selector: L2_LXHDPMASPRDS001
+      leaf_port_blk: 314
+      interface_type: vpc
+      from_port: 1
+      to_port: 1
+      state: present
+      validate_certs: no
+    delegate_to: localhost
+
+  - name: Associate an Interface Access Port Selector to an Interface Policy        
+    aci_access_port_to_interface_policy_leaf_profile:
+      host: 172.29.13.5
+      username: 3619264
+      password: '{{ ansible_password }}'
+      leaf_interface_profile: LF314-IntProfile
+      access_port_selector: L2_LXHDPMASPRDS001_ipg
+      leaf_port_blk: 314
+      interface_type: vpc
+      policy_group: L2_LXHDPMASPRDS001_ipg
+      state: present
+      validate_certs: no
+    delegate_to: localhost

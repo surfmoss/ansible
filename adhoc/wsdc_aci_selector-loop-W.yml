@@ -1,0 +1,41 @@
+---
+- name: create access_port_selector, associate to IFP, associate to eth interface, bind to IPG
+  hosts: 172.29.13.5
+  connection: network_cli
+  gather_facts: false
+  
+  tasks:
+  - name: create access_port_selector, associate to IFP, associate to eth interface        
+    aci_access_port_to_interface_policy_leaf_profile:
+      host: 172.29.13.5
+      username: 3619264
+      password: '{{ ansible_password }}'
+      leaf_interface_profile: "{{ item.leaf_interface_profile }}"
+      access_port_selector: "{{ item.access_port_selector }}"
+      leaf_port_blk: "{{ item.leaf_port_blk }}"
+      interface_type: vpc
+      from_port: '{{ item.from_port }}'
+      to_port: '{{ item.to_port }}'
+      state: present
+      validate_certs: no
+    delegate_to: localhost
+    loop:
+      - { leaf_interface_profile: 'LF322-IntProfile', access_port_selector: 'vpc-lxhdpwrkprds036', leaf_port_blk: '322', from_port: '11', to_port: '11' }
+      - { leaf_interface_profile: 'LF322-IntProfile', access_port_selector: 'vpc-lxhdpwrkprds036', leaf_port_blk: '323', from_port: '11', to_port: '11' }
+  
+  - name: Bind Access Port Selector to an IPG
+    aci_access_port_to_interface_policy_leaf_profile:
+      host: 172.29.13.5
+      username: 3619264
+      password: '{{ ansible_password }}'
+      leaf_interface_profile: "{{ item.leaf_interface_profile }}"
+      access_port_selector: "{{ item.access_port_selector }}"
+      leaf_port_blk: "{{ item.leaf_port_blk }}"
+      interface_type: vpc
+      policy_group: "{{ item.policy_group }}"
+      state: present
+      validate_certs: no
+    delegate_to: localhost   
+    loop:
+      - { leaf_interface_profile: 'LF322-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw036', leaf_port_blk: '322', policy_group: 'L2_LXHDPWRKPRDS036_ipg' }
+      - { leaf_interface_profile: 'LF323-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw036', leaf_port_blk: '323', policy_group: 'L2_LXHDPWRKPRDS036_ipg' }

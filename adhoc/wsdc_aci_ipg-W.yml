@@ -1,0 +1,60 @@
+---
+- name: create an Interface Policy Group IPG
+  hosts: 172.26.13.211
+  connection: network_cli
+  gather_facts: false
+  
+  tasks:
+
+  - name: Create Hadoop 10Gb IPG
+    aci_interface_policy_leaf_policy_group:
+      host: 172.26.13.211
+      username: 3619264
+      password: '{{ ansible_password }}'
+      validate_certs: no
+      lag_type: node
+      link_level_policy: 10Gb-policy
+      cdp_policy: cdp-disable
+      mcp_policy: MCP-enable
+      port_channel_policy: LACP-active
+      lldp_policy: LLDP-enable
+      l2_interface_policy: L2_int_pol
+      aep: L3-prod-hadoop-aep
+      policy_group: '{{ item.policy_group }}'
+      state: present
+    loop:
+      - { policy_group: 'L2_LXHDPWRKPRD045_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD046_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD047_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD048_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD049_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD050_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD051_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD052_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD053_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD054_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD055_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD056_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD057_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD058_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD059_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD060_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD061_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD063_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD064_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD065_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD066_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD067_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD068_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD069_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD070_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD071_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD072_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD073_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD074_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD075_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD076_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD077_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD078_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRD079_ipg' }
+    

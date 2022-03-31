@@ -1,0 +1,6 @@
+ansible_connection: network_cli
+domain_name: cisco.com
+nameservers:
+        # - 172.20.62.1
+ansible_password: '!v3G@!4@Y'
+ansible_user: admin

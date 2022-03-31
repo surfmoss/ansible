@@ -1,0 +1,29 @@
+---
+- name: Add BD
+  hosts: 131.226.217.153
+  connection: network_cli
+  gather_facts: false
+  vars:
+    version_file: "{{lookup('file','/home/buenrosm/ansible/roles/cisco_lab_initial/files/bd.json') | from_json }}"
+
+  tasks:
+
+  - name: Add Bridge Domains 
+    aci_bd:
+      host: 131.226.217.153
+      username: admin
+      password: '{{ ansible_password }}'
+      tenant: "{{ item.tenant }}" 
+      bd: "{{ item.bd }}"
+      description: "{{ item.description }}"
+      vrf: "{{ item.vrf }}"
+      l2_unknown_unicast: "{{ item.l2_unknown_unicast }}"
+      l3_unknown_multicast: "{{ item.l3_unknown_multicast }}"
+      arp_flooding: "{{ item.arp_flooding }}"
+      ip_learning: "{{ item.ip_learning }}"
+      limit_ip_learn: "{{ item.limit_ip_learn }}"
+      validate_certs: no
+      enable_routing: "{{ item.enable_routing }}"
+      state: "{{ item.state }}"
+    delegate_to: localhost
+    loop: "{{ version_file.resource }}"   

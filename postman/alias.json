@@ -1,0 +1,22 @@
+{
+  "subscriptionId": [
+    "72263219924435688",
+    "72263219924435705",
+    "72263219924435713"
+  ],
+  "imdata": [
+    {
+      "fvAEPg": {
+        "attributes": {
+          "childAction": "",
+          "dn": "uni/tn-Tier4/ap-Tier4_SysControl/epg-2100",
+          "modTs": "2021-08-12T10:03:55.927-04:00",
+          "nameAlias": "2100_WSDC_Tier4_MC_Phoenix",
+          "rn": "",
+          "status": "modified"
+        }
+      }
+    }
+  ]
+}
+

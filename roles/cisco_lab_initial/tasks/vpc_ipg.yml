@@ -1,0 +1,28 @@
+---
+- name: create an Interface Policy Group IPG
+  hosts: 131.226.217.153
+  connection: network_cli
+  gather_facts: false
+  vars:
+    version_file: "{{lookup('file','/home/buenrosm/ansible/roles/cisco_lab_initial/files/vpc_ipg.json') | from_json }}"
+
+  tasks:
+
+  - name: Create VPC IPG
+    aci_interface_policy_leaf_policy_group:
+      host: 131.226.217.153
+      username: admin
+      password: '{{ ansible_password }}'
+      validate_certs: no
+      lag_type: '{{ item.lag_type }}'
+      link_level_policy: '{{ item.link_level_policy }}'
+      cdp_policy: '{{ item.cdp_policy }}'
+      mcp_policy: '{{ item.mcp_policy }}'
+      lldp_policy: '{{ item.lldp_policy }}'
+      port_channel_policy: '{{ item.port_channel_policy }}' 
+      l2_interface_policy: '{{ item.l2_interface_policy }}' 
+      aep: '{{ item.aep }}'
+      policy_group: '{{ item.policy_group }}'
+      state: '{{ item.state }}'
+    delegate_to: localhost
+    loop: "{{ version_file.resource }}"

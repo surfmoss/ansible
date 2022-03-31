@@ -1,0 +1,294 @@
+2021-09-21 17:54:40,742 p=7106 u=buenrosm n=ansible | PLAY [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 17:54:41,256 p=7106 u=buenrosm n=ansible | TASK [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 17:54:44,735 p=7106 u=buenrosm n=ansible | failed: [131.226.217.153 -> localhost] (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'LF101-IntProfile', 'leaf_port_blk': 101, 'from_port': '12', 'to_port': '12', 'state': 'present'}) => changed=false 
+  ansible_loop_var: item
+  error:
+    code: '102'
+    text: 'configured object ((Dn0)) not found Dn0=uni/infra/accportprof-LF101-IntProfile/hports-switch01-typ-range, '
+  item:
+    access_port_selector: switch01
+    from_port: '12'
+    interface_type: switch_port
+    leaf_interface_profile: LF101-IntProfile
+    leaf_port_blk: 101
+    policy_group: auto_neg_ipg
+    state: present
+    to_port: '12'
+  msg: 'APIC Error 102: configured object ((Dn0)) not found Dn0=uni/infra/accportprof-LF101-IntProfile/hports-switch01-typ-range, '
+2021-09-21 17:54:47,748 p=7106 u=buenrosm n=ansible | failed: [131.226.217.153 -> localhost] (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'LF102-IntProfile', 'leaf_port_blk': 102, 'from_port': '12', 'to_port': '12', 'state': 'present'}) => changed=false 
+  ansible_loop_var: item
+  error:
+    code: '102'
+    text: 'configured object ((Dn0)) not found Dn0=uni/infra/accportprof-LF102-IntProfile/hports-switch01-typ-range, '
+  item:
+    access_port_selector: switch01
+    from_port: '12'
+    interface_type: switch_port
+    leaf_interface_profile: LF102-IntProfile
+    leaf_port_blk: 102
+    policy_group: auto_neg_ipg
+    state: present
+    to_port: '12'
+  msg: 'APIC Error 102: configured object ((Dn0)) not found Dn0=uni/infra/accportprof-LF102-IntProfile/hports-switch01-typ-range, '
+2021-09-21 17:54:47,787 p=7106 u=buenrosm n=ansible | PLAY RECAP ****************************************************************************************************************************
+2021-09-21 17:54:47,789 p=7106 u=buenrosm n=ansible | 131.226.217.153            : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-09-21 17:59:33,516 p=7261 u=buenrosm n=ansible | PLAY [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 17:59:33,652 p=7261 u=buenrosm n=ansible | TASK [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 17:59:37,467 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '12', 'to_port': '12', 'state': 'present'})
+2021-09-21 17:59:40,945 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '12', 'to_port': '12', 'state': 'present'})
+2021-09-21 17:59:40,965 p=7261 u=buenrosm n=ansible | PLAY [create an Interface Policy Group IPG] *******************************************************************************************
+2021-09-21 17:59:41,036 p=7261 u=buenrosm n=ansible | TASK [Create VPC IPG] *****************************************************************************************************************
+2021-09-21 17:59:44,875 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'lag_type': 'node', 'link_level_policy': 'default', 'cdp_policy': 'cdp-disable', 'mcp_policy': 'MCP-enable', 'lldp_policy': 'LLDP-enable', 'port_channel_policy': 'LACP_Active_Dest_IP', 'l2_interface_policy': 'L2_int_pol', 'aep': 'cisco_lab_aep', 'policy_group': 'HCI_Server_1_ipg', 'state': 'present'})
+2021-09-21 17:59:48,297 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'lag_type': 'node', 'link_level_policy': 'default', 'cdp_policy': 'cdp-disable', 'mcp_policy': 'MCP-enable', 'lldp_policy': 'LLDP-enable', 'port_channel_policy': 'LACP_Active', 'l2_interface_policy': 'L2_int_pol', 'aep': 'cisco_lab_aep', 'policy_group': 'HadoopServer01_ipg', 'state': 'present'})
+2021-09-21 17:59:48,305 p=7261 u=buenrosm n=ansible | PLAY [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 17:59:48,344 p=7261 u=buenrosm n=ansible | TASK [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 17:59:52,018 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Router_vpc', 'policy_group': 'HCI_Server_1_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '13', 'to_port': '13', 'state': 'present'})
+2021-09-21 17:59:55,382 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Router_vpc', 'policy_group': 'HCI_Server_1_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '13', 'to_port': '13', 'state': 'present'})
+2021-09-21 17:59:58,869 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Load_Balancer_vpc', 'policy_group': 'HadoopServer01_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '14', 'to_port': '14', 'state': 'present'})
+2021-09-21 18:00:02,606 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Load_Balancer_vpc', 'policy_group': 'HadoopServer01_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '14', 'to_port': '14', 'state': 'present'})
+2021-09-21 18:00:02,615 p=7261 u=buenrosm n=ansible | PLAY [Add Vlan to vlan pool] **********************************************************************************************************
+2021-09-21 18:00:02,694 p=7261 u=buenrosm n=ansible | TASK [Add a new VLAN encap block] *****************************************************************************************************
+2021-09-21 18:00:06,568 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'pool': 'cisco_vlan_pool', 'block_start': 29, 'block_end': 29, 'allocation_mode': 'static', 'description': 'switches', 'block_name': 29, 'pool_allocation_mode': 'static', 'state': 'present'})
+2021-09-21 18:00:10,067 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'pool': 'cisco_vlan_pool', 'block_start': 30, 'block_end': 30, 'allocation_mode': 'static', 'description': 'routers', 'block_name': 30, 'pool_allocation_mode': 'static', 'state': 'present'})
+2021-09-21 18:00:13,503 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'pool': 'cisco_vlan_pool', 'block_start': 31, 'block_end': 31, 'allocation_mode': 'static', 'description': 'load_balancers', 'block_name': 31, 'pool_allocation_mode': 'static', 'state': 'present'})
+2021-09-21 18:00:13,514 p=7261 u=buenrosm n=ansible | PLAY [Add BD] *************************************************************************************************************************
+2021-09-21 18:00:13,567 p=7261 u=buenrosm n=ansible | TASK [Add Bridge Domains] *************************************************************************************************************
+2021-09-21 18:00:17,393 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'bd': 29, 'description': 'switches', 'vrf': 'mgmt_vrf', 'l2_unknown_unicast': 'flood', 'l3_unknown_multicast': 'flood', 'arp_flooding': 'True', 'ip_learning': 'yes', 'limit_ip_learn': 'True', 'enable_routing': 'False', 'state': 'present'})
+2021-09-21 18:00:20,802 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'bd': 30, 'description': 'routers', 'vrf': 'mgmt_vrf', 'l2_unknown_unicast': 'flood', 'l3_unknown_multicast': 'flood', 'arp_flooding': 'True', 'ip_learning': 'yes', 'limit_ip_learn': 'True', 'enable_routing': 'False', 'state': 'present'})
+2021-09-21 18:00:24,232 p=7261 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'bd': 31, 'description': 'load_balancers', 'vrf': 'mgmt_vrf', 'l2_unknown_unicast': 'flood', 'l3_unknown_multicast': 'flood', 'arp_flooding': 'True', 'ip_learning': 'yes', 'limit_ip_learn': 'True', 'enable_routing': 'False', 'state': 'present'})
+2021-09-21 18:00:24,262 p=7261 u=buenrosm n=ansible | PLAY [Add EPG] ************************************************************************************************************************
+2021-09-21 18:00:24,329 p=7261 u=buenrosm n=ansible | TASK [Add a new EPG] ******************************************************************************************************************
+2021-09-21 18:00:27,758 p=7261 u=buenrosm n=ansible | failed: [131.226.217.153 -> localhost] (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_ap', 'description': 'switches', 'bd': 29, 'preferred_group': 'no', 'vrf': 'mgmt_vrf', 'epg': 29, 'state': 'present'}) => changed=false 
+  ansible_loop_var: item
+  error:
+    code: '102'
+    text: 'configured object ((Dn0)) not found Dn0=uni/tn-Prod_Tnt/ap-mgmt_ap/epg-29, '
+  item:
+    ap: mgmt_ap
+    bd: 29
+    description: switches
+    epg: 29
+    preferred_group: 'no'
+    state: present
+    tenant: Prod_Tnt
+    vrf: mgmt_vrf
+  msg: 'APIC Error 102: configured object ((Dn0)) not found Dn0=uni/tn-Prod_Tnt/ap-mgmt_ap/epg-29, '
+2021-09-21 18:00:30,792 p=7261 u=buenrosm n=ansible | failed: [131.226.217.153 -> localhost] (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_ap', 'description': 'routers', 'bd': 30, 'preferred_group': 'no', 'vrf': 'mgmt_vrf', 'epg': 30, 'state': 'present'}) => changed=false 
+  ansible_loop_var: item
+  error:
+    code: '102'
+    text: 'configured object ((Dn0)) not found Dn0=uni/tn-Prod_Tnt/ap-mgmt_ap/epg-30, '
+  item:
+    ap: mgmt_ap
+    bd: 30
+    description: routers
+    epg: 30
+    preferred_group: 'no'
+    state: present
+    tenant: Prod_Tnt
+    vrf: mgmt_vrf
+  msg: 'APIC Error 102: configured object ((Dn0)) not found Dn0=uni/tn-Prod_Tnt/ap-mgmt_ap/epg-30, '
+2021-09-21 18:00:33,804 p=7261 u=buenrosm n=ansible | failed: [131.226.217.153 -> localhost] (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_ap', 'description': 'load_balancers', 'bd': 31, 'preferred_group': 'no', 'vrf': 'mgmt_vrf', 'epg': 31, 'state': 'present'}) => changed=false 
+  ansible_loop_var: item
+  error:
+    code: '102'
+    text: 'configured object ((Dn0)) not found Dn0=uni/tn-Prod_Tnt/ap-mgmt_ap/epg-31, '
+  item:
+    ap: mgmt_ap
+    bd: 31
+    description: load_balancers
+    epg: 31
+    preferred_group: 'no'
+    state: present
+    tenant: Prod_Tnt
+    vrf: mgmt_vrf
+  msg: 'APIC Error 102: configured object ((Dn0)) not found Dn0=uni/tn-Prod_Tnt/ap-mgmt_ap/epg-31, '
+2021-09-21 18:00:33,807 p=7261 u=buenrosm n=ansible | PLAY RECAP ****************************************************************************************************************************
+2021-09-21 18:00:33,808 p=7261 u=buenrosm n=ansible | 131.226.217.153            : ok=5    changed=5    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-09-21 18:01:26,963 p=7671 u=buenrosm n=ansible | PLAY [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 18:01:27,054 p=7671 u=buenrosm n=ansible | TASK [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 18:01:30,380 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '12', 'to_port': '12', 'state': 'present'})
+2021-09-21 18:01:33,383 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '12', 'to_port': '12', 'state': 'present'})
+2021-09-21 18:01:33,388 p=7671 u=buenrosm n=ansible | PLAY [create an Interface Policy Group IPG] *******************************************************************************************
+2021-09-21 18:01:33,425 p=7671 u=buenrosm n=ansible | TASK [Create VPC IPG] *****************************************************************************************************************
+2021-09-21 18:01:36,824 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'lag_type': 'node', 'link_level_policy': 'default', 'cdp_policy': 'cdp-disable', 'mcp_policy': 'MCP-enable', 'lldp_policy': 'LLDP-enable', 'port_channel_policy': 'LACP_Active_Dest_IP', 'l2_interface_policy': 'L2_int_pol', 'aep': 'cisco_lab_aep', 'policy_group': 'HCI_Server_1_ipg', 'state': 'present'})
+2021-09-21 18:01:39,872 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'lag_type': 'node', 'link_level_policy': 'default', 'cdp_policy': 'cdp-disable', 'mcp_policy': 'MCP-enable', 'lldp_policy': 'LLDP-enable', 'port_channel_policy': 'LACP_Active', 'l2_interface_policy': 'L2_int_pol', 'aep': 'cisco_lab_aep', 'policy_group': 'HadoopServer01_ipg', 'state': 'present'})
+2021-09-21 18:01:39,880 p=7671 u=buenrosm n=ansible | PLAY [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 18:01:39,953 p=7671 u=buenrosm n=ansible | TASK [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 18:01:43,167 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Router_vpc', 'policy_group': 'HCI_Server_1_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '13', 'to_port': '13', 'state': 'present'})
+2021-09-21 18:01:46,276 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Router_vpc', 'policy_group': 'HCI_Server_1_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '13', 'to_port': '13', 'state': 'present'})
+2021-09-21 18:01:49,429 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Load_Balancer_vpc', 'policy_group': 'HadoopServer01_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '14', 'to_port': '14', 'state': 'present'})
+2021-09-21 18:01:53,482 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Load_Balancer_vpc', 'policy_group': 'HadoopServer01_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '14', 'to_port': '14', 'state': 'present'})
+2021-09-21 18:01:53,504 p=7671 u=buenrosm n=ansible | PLAY [Add Vlan to vlan pool] **********************************************************************************************************
+2021-09-21 18:01:53,545 p=7671 u=buenrosm n=ansible | TASK [Add a new VLAN encap block] *****************************************************************************************************
+2021-09-21 18:01:57,317 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'pool': 'cisco_vlan_pool', 'block_start': 29, 'block_end': 29, 'allocation_mode': 'static', 'description': 'switches', 'block_name': 29, 'pool_allocation_mode': 'static', 'state': 'present'})
+2021-09-21 18:02:00,763 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'pool': 'cisco_vlan_pool', 'block_start': 30, 'block_end': 30, 'allocation_mode': 'static', 'description': 'routers', 'block_name': 30, 'pool_allocation_mode': 'static', 'state': 'present'})
+2021-09-21 18:02:03,759 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'pool': 'cisco_vlan_pool', 'block_start': 31, 'block_end': 31, 'allocation_mode': 'static', 'description': 'load_balancers', 'block_name': 31, 'pool_allocation_mode': 'static', 'state': 'present'})
+2021-09-21 18:02:03,781 p=7671 u=buenrosm n=ansible | PLAY [Add BD] *************************************************************************************************************************
+2021-09-21 18:02:03,824 p=7671 u=buenrosm n=ansible | TASK [Add Bridge Domains] *************************************************************************************************************
+2021-09-21 18:02:07,319 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'bd': 29, 'description': 'switches', 'vrf': 'mgmt_vrf', 'l2_unknown_unicast': 'flood', 'l3_unknown_multicast': 'flood', 'arp_flooding': 'True', 'ip_learning': 'yes', 'limit_ip_learn': 'True', 'enable_routing': 'False', 'state': 'present'})
+2021-09-21 18:02:10,955 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'bd': 30, 'description': 'routers', 'vrf': 'mgmt_vrf', 'l2_unknown_unicast': 'flood', 'l3_unknown_multicast': 'flood', 'arp_flooding': 'True', 'ip_learning': 'yes', 'limit_ip_learn': 'True', 'enable_routing': 'False', 'state': 'present'})
+2021-09-21 18:02:14,162 p=7671 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'bd': 31, 'description': 'load_balancers', 'vrf': 'mgmt_vrf', 'l2_unknown_unicast': 'flood', 'l3_unknown_multicast': 'flood', 'arp_flooding': 'True', 'ip_learning': 'yes', 'limit_ip_learn': 'True', 'enable_routing': 'False', 'state': 'present'})
+2021-09-21 18:02:14,166 p=7671 u=buenrosm n=ansible | PLAY [Add EPG] ************************************************************************************************************************
+2021-09-21 18:02:14,217 p=7671 u=buenrosm n=ansible | TASK [Add a new EPG] ******************************************************************************************************************
+2021-09-21 18:02:16,979 p=7671 u=buenrosm n=ansible | failed: [131.226.217.153 -> localhost] (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_ap', 'description': 'switches', 'bd': 29, 'preferred_group': 'no', 'vrf': 'mgmt_vrf', 'epg': 29, 'state': 'present'}) => changed=false 
+  ansible_loop_var: item
+  error:
+    code: '102'
+    text: 'configured object ((Dn0)) not found Dn0=uni/tn-Prod_Tnt/ap-mgmt_ap/epg-29, '
+  item:
+    ap: mgmt_ap
+    bd: 29
+    description: switches
+    epg: 29
+    preferred_group: 'no'
+    state: present
+    tenant: Prod_Tnt
+    vrf: mgmt_vrf
+  msg: 'APIC Error 102: configured object ((Dn0)) not found Dn0=uni/tn-Prod_Tnt/ap-mgmt_ap/epg-29, '
+2021-09-21 18:02:19,126 p=7671 u=buenrosm n=ansible |  [ERROR]: User interrupted execution
+
+2021-09-21 18:03:25,266 p=8161 u=buenrosm n=ansible | PLAY [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 18:03:25,402 p=8161 u=buenrosm n=ansible | TASK [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 18:03:28,833 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '12', 'to_port': '12', 'state': 'present'})
+2021-09-21 18:03:31,821 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '12', 'to_port': '12', 'state': 'present'})
+2021-09-21 18:03:31,829 p=8161 u=buenrosm n=ansible | PLAY [create an Interface Policy Group IPG] *******************************************************************************************
+2021-09-21 18:03:31,868 p=8161 u=buenrosm n=ansible | TASK [Create VPC IPG] *****************************************************************************************************************
+2021-09-21 18:03:35,305 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'lag_type': 'node', 'link_level_policy': 'default', 'cdp_policy': 'cdp-disable', 'mcp_policy': 'MCP-enable', 'lldp_policy': 'LLDP-enable', 'port_channel_policy': 'LACP_Active_Dest_IP', 'l2_interface_policy': 'L2_int_pol', 'aep': 'cisco_lab_aep', 'policy_group': 'HCI_Server_1_ipg', 'state': 'present'})
+2021-09-21 18:03:38,337 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'lag_type': 'node', 'link_level_policy': 'default', 'cdp_policy': 'cdp-disable', 'mcp_policy': 'MCP-enable', 'lldp_policy': 'LLDP-enable', 'port_channel_policy': 'LACP_Active', 'l2_interface_policy': 'L2_int_pol', 'aep': 'cisco_lab_aep', 'policy_group': 'HadoopServer01_ipg', 'state': 'present'})
+2021-09-21 18:03:38,369 p=8161 u=buenrosm n=ansible | PLAY [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 18:03:38,468 p=8161 u=buenrosm n=ansible | TASK [create access_port_selector and bind to ipg] ************************************************************************************
+2021-09-21 18:03:41,681 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Router_vpc', 'policy_group': 'HCI_Server_1_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '13', 'to_port': '13', 'state': 'present'})
+2021-09-21 18:03:44,698 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Router_vpc', 'policy_group': 'HCI_Server_1_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '13', 'to_port': '13', 'state': 'present'})
+2021-09-21 18:03:47,683 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Load_Balancer_vpc', 'policy_group': 'HadoopServer01_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '14', 'to_port': '14', 'state': 'present'})
+2021-09-21 18:03:50,708 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'access_port_selector': 'Load_Balancer_vpc', 'policy_group': 'HadoopServer01_ipg', 'interface_type': 'vpc', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '14', 'to_port': '14', 'state': 'present'})
+2021-09-21 18:03:50,746 p=8161 u=buenrosm n=ansible | PLAY [Add Vlan to vlan pool] **********************************************************************************************************
+2021-09-21 18:03:50,806 p=8161 u=buenrosm n=ansible | TASK [Add a new VLAN encap block] *****************************************************************************************************
+2021-09-21 18:03:54,215 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'pool': 'cisco_vlan_pool', 'block_start': 29, 'block_end': 29, 'allocation_mode': 'static', 'description': 'switches', 'block_name': 29, 'pool_allocation_mode': 'static', 'state': 'present'})
+2021-09-21 18:03:57,143 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'pool': 'cisco_vlan_pool', 'block_start': 30, 'block_end': 30, 'allocation_mode': 'static', 'description': 'routers', 'block_name': 30, 'pool_allocation_mode': 'static', 'state': 'present'})
+2021-09-21 18:04:00,161 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'pool': 'cisco_vlan_pool', 'block_start': 31, 'block_end': 31, 'allocation_mode': 'static', 'description': 'load_balancers', 'block_name': 31, 'pool_allocation_mode': 'static', 'state': 'present'})
+2021-09-21 18:04:00,172 p=8161 u=buenrosm n=ansible | PLAY [Add BD] *************************************************************************************************************************
+2021-09-21 18:04:00,223 p=8161 u=buenrosm n=ansible | TASK [Add Bridge Domains] *************************************************************************************************************
+2021-09-21 18:04:03,511 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'bd': 29, 'description': 'switches', 'vrf': 'mgmt_vrf', 'l2_unknown_unicast': 'flood', 'l3_unknown_multicast': 'flood', 'arp_flooding': 'True', 'ip_learning': 'yes', 'limit_ip_learn': 'True', 'enable_routing': 'False', 'state': 'present'})
+2021-09-21 18:04:06,512 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'bd': 30, 'description': 'routers', 'vrf': 'mgmt_vrf', 'l2_unknown_unicast': 'flood', 'l3_unknown_multicast': 'flood', 'arp_flooding': 'True', 'ip_learning': 'yes', 'limit_ip_learn': 'True', 'enable_routing': 'False', 'state': 'present'})
+2021-09-21 18:04:09,548 p=8161 u=buenrosm n=ansible | ok: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'bd': 31, 'description': 'load_balancers', 'vrf': 'mgmt_vrf', 'l2_unknown_unicast': 'flood', 'l3_unknown_multicast': 'flood', 'arp_flooding': 'True', 'ip_learning': 'yes', 'limit_ip_learn': 'True', 'enable_routing': 'False', 'state': 'present'})
+2021-09-21 18:04:09,568 p=8161 u=buenrosm n=ansible | PLAY [Add EPG] ************************************************************************************************************************
+2021-09-21 18:04:09,642 p=8161 u=buenrosm n=ansible | TASK [Add a new EPG] ******************************************************************************************************************
+2021-09-21 18:04:13,487 p=8161 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_anp', 'description': 'switches', 'bd': 29, 'preferred_group': 'no', 'vrf': 'mgmt_vrf', 'epg': 29, 'state': 'present'})
+2021-09-21 18:04:16,885 p=8161 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_anp', 'description': 'routers', 'bd': 30, 'preferred_group': 'no', 'vrf': 'mgmt_vrf', 'epg': 30, 'state': 'present'})
+2021-09-21 18:04:20,301 p=8161 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_anp', 'description': 'load_balancers', 'bd': 31, 'preferred_group': 'no', 'vrf': 'mgmt_vrf', 'epg': 31, 'state': 'present'})
+2021-09-21 18:04:20,309 p=8161 u=buenrosm n=ansible | PLAY [Bind EPG to domain] *************************************************************************************************************
+2021-09-21 18:04:20,376 p=8161 u=buenrosm n=ansible | TASK [Bind EPG to domain] *************************************************************************************************************
+2021-09-21 18:04:24,214 p=8161 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_anp', 'epg': 29, 'domain': 'cisco_lab_physdom', 'domain_type': 'phys', 'state': 'present'})
+2021-09-21 18:04:27,654 p=8161 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_anp', 'epg': 30, 'domain': 'cisco_lab_physdom', 'domain_type': 'phys', 'state': 'present'})
+2021-09-21 18:04:31,069 p=8161 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_anp', 'epg': 31, 'domain': 'cisco_lab_physdom', 'domain_type': 'phys', 'state': 'present'})
+2021-09-21 18:04:31,091 p=8161 u=buenrosm n=ansible | PLAY [Bind interfaces to EPG] *********************************************************************************************************
+2021-09-21 18:04:31,143 p=8161 u=buenrosm n=ansible | TASK [EPG Static Binding] *************************************************************************************************************
+2021-09-21 18:04:34,955 p=8161 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_anp', 'epg': 29, 'encap_id': 29, 'deploy_immediacy': 'immediate', 'interface_mode': 'trunk', 'interface_type': 'switch_port', 'pod': 1, 'leafs': 101, 'interface': '1/12', 'state': 'present'})
+2021-09-21 18:04:38,354 p=8161 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_anp', 'epg': 29, 'encap_id': 29, 'deploy_immediacy': 'immediate', 'interface_mode': 'trunk', 'interface_type': 'switch_port', 'pod': 1, 'leafs': 102, 'interface': '1/12', 'state': 'present'})
+2021-09-21 18:04:38,362 p=8161 u=buenrosm n=ansible | PLAY [Bind interfaces to EPG] *********************************************************************************************************
+2021-09-21 18:04:38,428 p=8161 u=buenrosm n=ansible | TASK [EPG Static Binding] *************************************************************************************************************
+2021-09-21 18:04:42,056 p=8161 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_anp', 'epg': 30, 'encap_id': 30, 'deploy_immediacy': 'immediate', 'interface_mode': 'trunk', 'interface_type': 'vpc', 'pod': 1, 'leafs': '101-102', 'interface': 'HCI_Server_1_ipg', 'state': 'present'})
+2021-09-21 18:04:45,448 p=8161 u=buenrosm n=ansible | changed: [131.226.217.153 -> localhost] => (item={'tenant': 'Prod_Tnt', 'ap': 'mgmt_anp', 'epg': 31, 'encap_id': 31, 'deploy_immediacy': 'immediate', 'interface_mode': 'native', 'interface_type': 'vpc', 'pod': 1, 'leafs': '101-102', 'interface': 'HadoopServer01_ipg', 'state': 'present'})
+2021-09-21 18:04:45,451 p=8161 u=buenrosm n=ansible | PLAY RECAP ****************************************************************************************************************************
+2021-09-21 18:04:45,452 p=8161 u=buenrosm n=ansible | 131.226.217.153            : ok=9    changed=4    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2021-09-24 10:12:08,931 p=95 u=buenrosm n=ansible | PLAY [create access_port_selector and bind to ipg] *********************************************************************
+2021-09-24 10:12:09,541 p=95 u=buenrosm n=ansible | TASK [create access_port_selector and bind to ipg] *********************************************************************
+2021-09-24 10:12:14,195 p=95 u=buenrosm n=ansible | failed: [131.226.217.153 -> localhost] (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '12', 'to_port': '12', 'state': 'present'}) => changed=false 
+  ansible_loop_var: item
+  error:
+    code: -1
+    text: 'Unable to parse output as JSON, see ''raw'' output. Expecting value: line 1 column 1 (char 0)'
+  item:
+    access_port_selector: switch01
+    from_port: '12'
+    interface_type: switch_port
+    leaf_interface_profile: L101
+    leaf_port_blk: 101
+    policy_group: auto_neg_ipg
+    state: present
+    to_port: '12'
+  msg: 'Authentication failed: -1 Unable to parse output as JSON, see ''raw'' output. Expecting value: line 1 column 1 (char 0)'
+  raw: |-
+    <html>
+    <head><title>502 Bad Gateway</title></head>
+    <body bgcolor="white">
+    <center><h1>502 Bad Gateway</h1></center>
+    <hr><center>nginx/1.13.12</center>
+    </body>
+    </html>
+2021-09-24 10:12:16,917 p=95 u=buenrosm n=ansible | failed: [131.226.217.153 -> localhost] (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '12', 'to_port': '12', 'state': 'present'}) => changed=false 
+  ansible_loop_var: item
+  error:
+    code: -1
+    text: 'Unable to parse output as JSON, see ''raw'' output. Expecting value: line 1 column 1 (char 0)'
+  item:
+    access_port_selector: switch01
+    from_port: '12'
+    interface_type: switch_port
+    leaf_interface_profile: L102
+    leaf_port_blk: 102
+    policy_group: auto_neg_ipg
+    state: present
+    to_port: '12'
+  msg: 'Authentication failed: -1 Unable to parse output as JSON, see ''raw'' output. Expecting value: line 1 column 1 (char 0)'
+  raw: |-
+    <html>
+    <head><title>502 Bad Gateway</title></head>
+    <body bgcolor="white">
+    <center><h1>502 Bad Gateway</h1></center>
+    <hr><center>nginx/1.13.12</center>
+    </body>
+    </html>
+2021-09-24 10:12:16,924 p=95 u=buenrosm n=ansible | PLAY RECAP *************************************************************************************************************
+2021-09-24 10:12:16,925 p=95 u=buenrosm n=ansible | 131.226.217.153            : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2021-09-24 10:12:57,424 p=146 u=buenrosm n=ansible | PLAY [create access_port_selector and bind to ipg] *********************************************************************
+2021-09-24 10:12:57,541 p=146 u=buenrosm n=ansible | TASK [create access_port_selector and bind to ipg] *********************************************************************
+2021-09-24 10:13:00,740 p=146 u=buenrosm n=ansible | failed: [131.226.217.153 -> localhost] (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'L101', 'leaf_port_blk': 101, 'from_port': '12', 'to_port': '12', 'state': 'present'}) => changed=false 
+  ansible_loop_var: item
+  error:
+    code: -1
+    text: 'Unable to parse output as JSON, see ''raw'' output. Expecting value: line 1 column 1 (char 0)'
+  item:
+    access_port_selector: switch01
+    from_port: '12'
+    interface_type: switch_port
+    leaf_interface_profile: L101
+    leaf_port_blk: 101
+    policy_group: auto_neg_ipg
+    state: present
+    to_port: '12'
+  msg: 'Authentication failed: -1 Unable to parse output as JSON, see ''raw'' output. Expecting value: line 1 column 1 (char 0)'
+  raw: |-
+    <html>
+    <head><title>502 Bad Gateway</title></head>
+    <body bgcolor="white">
+    <center><h1>502 Bad Gateway</h1></center>
+    <hr><center>nginx/1.13.12</center>
+    </body>
+    </html>
+2021-09-24 10:13:03,354 p=146 u=buenrosm n=ansible | failed: [131.226.217.153 -> localhost] (item={'access_port_selector': 'switch01', 'policy_group': 'auto_neg_ipg', 'interface_type': 'switch_port', 'leaf_interface_profile': 'L102', 'leaf_port_blk': 102, 'from_port': '12', 'to_port': '12', 'state': 'present'}) => changed=false 
+  ansible_loop_var: item
+  error:
+    code: -1
+    text: 'Unable to parse output as JSON, see ''raw'' output. Expecting value: line 1 column 1 (char 0)'
+  item:
+    access_port_selector: switch01
+    from_port: '12'
+    interface_type: switch_port
+    leaf_interface_profile: L102
+    leaf_port_blk: 102
+    policy_group: auto_neg_ipg
+    state: present
+    to_port: '12'
+  msg: 'Authentication failed: -1 Unable to parse output as JSON, see ''raw'' output. Expecting value: line 1 column 1 (char 0)'
+  raw: |-
+    <html>
+    <head><title>502 Bad Gateway</title></head>
+    <body bgcolor="white">
+    <center><h1>502 Bad Gateway</h1></center>
+    <hr><center>nginx/1.13.12</center>
+    </body>
+    </html>
+2021-09-24 10:13:03,380 p=146 u=buenrosm n=ansible | PLAY RECAP *************************************************************************************************************
+2021-09-24 10:13:03,383 p=146 u=buenrosm n=ansible | 131.226.217.153            : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   

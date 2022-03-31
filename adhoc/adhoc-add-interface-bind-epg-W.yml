@@ -1,0 +1,40 @@
+---
+- name: Bind interfaces to EPG
+  hosts: 172.29.13.5
+  connection: network_cli
+  gather_facts: false
+  
+  tasks:
+
+
+  - name: EPG Static Binding        
+    aci_static_binding_to_epg:
+      host: 172.29.13.5
+      username: 3619264
+      password: '{{ ansible_password }}'
+      tenant: lowes
+      ap: NPE-AP
+      epg: "{{ item.epg }}"
+      encap_id: "{{ item.encap_id }}"
+      deploy_immediacy: immediate
+      interface_mode: "{{ item.interface_mode }}"
+      interface_type: "{{ item.interface_type }}"
+      pod: 1
+      leafs: "{{ item.leafs }}" 
+      interface: "{{ item.interface }}"
+      state: present
+      validate_certs: no
+    delegate_to: localhost
+    loop:
+      - { epg: '160', encap_id: '160', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '323', interface: '1/48' }      
+      - { epg: '1531', encap_id: '1531', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '323', interface: '1/48' }
+      - { epg: '1532', encap_id: '1532', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '323', interface: '1/48' }
+      - { epg: '1541', encap_id: '1541', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '323', interface: '1/48' }
+      - { epg: '1551', encap_id: '1551', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '323', interface: '1/48' }
+      - { epg: '1561', encap_id: '1561', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '323', interface: '1/48' }
+      - { epg: '1661', encap_id: '1661', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '323', interface: '1/48' }
+      - { epg: '1701', encap_id: '1701', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '323', interface: '1/48' }
+      - { epg: '1702', encap_id: '1702', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '323', interface: '1/48' }
+      - { epg: '1711', encap_id: '1711', interface_mode: 'trunk', interface_type: 'switch_port', leafs: '323', interface: '1/48' }
+
+

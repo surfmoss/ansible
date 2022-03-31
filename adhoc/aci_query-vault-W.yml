@@ -1,0 +1,21 @@
+---
+- name: Query playbook
+  hosts: 172.29.13.5
+  connection: network_cli
+  gather_facts: no
+  
+  tasks:
+
+  - name: Query all tenants
+    aci_tenant:
+      host: 172.29.13.5
+      username: 3619264
+      password: '{{ ansible_password }}' 
+      validate_certs: no
+
+      state: query 
+
+    register: all_tenants
+
+  - debug:
+      var: all_tenants

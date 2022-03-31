@@ -1,0 +1,45 @@
+---
+- name: create an IPG object
+  hosts: 172.29.13.5
+  connection: network_cli
+  gather_facts: false
+  
+  tasks:
+
+  - name: Create a Leaf Access Port Policy Group (no description)
+    aci_interface_policy_leaf_policy_group:
+      host: 172.29.13.5
+      username: 3619264
+      password: '{{ ansible_password }}'
+      validate_certs: no
+      lag_type: node
+      link_level_policy: 10GB-policy
+      cdp_policy: cdp-disable
+      mcp_policy: MCP-enable
+      port_channel_policy: LACP-active
+      lldp_policy: LLDP-enable
+      l2_interface_policy: L2_int_pol
+      aep: L3-npe-hadoop-aep
+      policy_group: '{{ item.policy_group }}'
+      state: present
+    loop:
+      - { policy_group: 'L2_LXHDPWRKPRDS036_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS037_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS038_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS039_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS040_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS041_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS042_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS043_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS044_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS045_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS046_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS047_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS048_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS049_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS050_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS051_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS052_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS053_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS054_ipg' }
+      - { policy_group: 'L2_LXHDPWRKPRDS055_ipg' }

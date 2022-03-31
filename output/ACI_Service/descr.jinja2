@@ -1,0 +1,10 @@
+{%- set record_info = [] %}
+{%- for attr in aci_attr %} {% if attr["descr_json"] == "yes" %}
+    {{- record_info.append({
+            "descr": attr["Hostname"]
+        })
+    }}
+{%- endif %} {% endfor %}
+{"resource":
+    {{- record_info| safe }}
+}

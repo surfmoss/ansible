@@ -1,0 +1,7 @@
+﻿Tenant,AP,VRF,Encap,Description,BD,Vlan_Pool,Domain_Name,Domain_Type,Attached_Entity_Profile,Policy_Group,Interface_Mode,Interface_Type,Pod,LACP_Type,Leaf_Interface_Profile,Leaf_Pair,Port,Node,Hostname,State_Sel,Encap_json,BD_json,EPG_json,Domain_bind_json,selector_json,bind_int_json,vpc_ipg_json,vpc_sel_json,vpc_bind_json
+Prod_Tnt,mgmt_anp,mgmt_vrf,29,switches,29,cisco_vlan_pool,cisco_lab_physdom,phys,,auto_neg_ipg,trunk,switch_port,1,,L101,,e1/12,101,switch01,present,yes,yes,yes,yes,yes,yes,,,
+Prod_Tnt,mgmt_anp,mgmt_vrf,29,switches,29,cisco_vlan_pool,cisco_lab_physdom,phys,,auto_neg_ipg,trunk,switch_port,1,,L102,,e1/12,102,switch01,present,,,,,yes,yes,,,
+Prod_Tnt,mgmt_anp,mgmt_vrf,30,routers,30,cisco_vlan_pool,cisco_lab_physdom,phys,cisco_lab_aep,HCI_Server_1_ipg,trunk,vpc,1,LACP_Active_Dest_IP,L101,101-102,e1/13,101,Router_vpc,present,yes,yes,yes,yes,,,yes,yes,yes
+Prod_Tnt,mgmt_anp,mgmt_vrf,30,routers,30,cisco_vlan_pool,cisco_lab_physdom,phys,cisco_lab_aep,HCI_Server_1_ipg,trunk,vpc,1,LACP_Active_Dest_IP,L102,101-102,e1/13,102,Router_vpc,present,,,,,,,,yes,
+Prod_Tnt,mgmt_anp,mgmt_vrf,31,load_balancers,31,cisco_vlan_pool,cisco_lab_physdom,phys,cisco_lab_aep,HadoopServer01_ipg,native,vpc,1,LACP_Active,L101,101-102,e1/14,101,Load_Balancer_vpc,present,yes,yes,yes,yes,,,yes,yes,yes
+Prod_Tnt,mgmt_anp,mgmt_vrf,31,load_balancers,31,cisco_vlan_pool,cisco_lab_physdom,phys,cisco_lab_aep,HadoopServer01_ipg,native,vpc,1,LACP_Active,L102,101-102,e1/14,102,Load_Balancer_vpc,present,,,,,,,,yes,

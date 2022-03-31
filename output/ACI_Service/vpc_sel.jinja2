@@ -1,0 +1,17 @@
+{%- set record_info = [] %}
+{%- for attr in aci_attr %} {% if attr["vpc_sel_json"] == "yes" %}
+    {{- record_info.append({
+            "access_port_selector": attr['Hostname'],
+            "policy_group": attr["Policy_Group"],
+            "interface_type": attr["Interface_Type"],
+            "leaf_interface_profile": attr["Leaf_Interface_Profile"],
+            "leaf_port_blk": attr['Node'],
+            "from_port": attr['Port'].split("/")[1],
+            "to_port": attr['Port'].split("/")[1],
+            "state": attr["State_Sel"]
+        })
+    }}
+{%- endif %} {% endfor %}
+{"resource":
+    {{- record_info| safe }}
+}

@@ -1,0 +1,19 @@
+{%- set record_info = [] %}
+{%- for attr in aci_attr %} {% if attr["EPG_json"] == "yes" %}
+    {{- record_info.append({
+            "tenant": attr['Tenant'],
+            "ap": attr['AP'],
+            "description": attr['Description'],
+            "bd": attr["BD"],
+            "preferred_group": "no",
+            "vrf": attr['VRF'],
+            "epg": attr['Encap'],
+            "state": attr["State_Sel"]
+        })
+    }}
+{%- endif %} {% endfor %}
+{"resource":
+    {{- record_info| safe }}
+}
+
+

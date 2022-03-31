@@ -1,0 +1,30 @@
+---
+- name: Bind interfaces to EPG
+  hosts: 131.226.217.153
+  connection: network_cli
+  gather_facts: false
+  vars:
+    version_file: "{{lookup('file','/home/buenrosm/ansible/roles/cisco_lab_initial/files/bind_int_epg.json') | from_json }}"
+
+  tasks:
+
+
+  - name: EPG Static Binding        
+    aci_static_binding_to_epg:
+      host: 131.226.217.153
+      username: admin
+      password: '{{ ansible_password }}'
+      tenant: "{{ item.tenant }}"
+      ap: "{{ item.ap }}"
+      epg: "{{ item.epg }}"
+      encap_id: "{{ item.encap_id }}"
+      deploy_immediacy: "{{ item.deploy_immediacy }}"
+      interface_mode: "{{ item.interface_mode }}"
+      interface_type: "{{ item.interface_type }}"
+      pod: "{{ item.pod }}"
+      leafs: "{{ item.leafs }}" 
+      interface: "{{ item.interface }}"
+      state: "{{ item.state }}"
+      validate_certs: no
+    delegate_to: localhost
+    loop: "{{ version_file.resource }}"

@@ -1,0 +1,29 @@
+{%- set record_info = [] %}
+{%- for attr in aci_attr %} {% if attr["alias_json"] == "yes" %}
+    {{- record_info.append({
+                 [
+                   {
+                     "path": "/api/node/mo/uni/tn-Tier4/ap-Tier4_SysControl/epg-2100.json",
+                     "content": {
+                       "totalCount": "1",
+                       "imdata": [
+                       {
+                         "fvAEPg": {
+                           "attributes": {
+                             "childAction": "",
+                             "dn": "uni/tn-Tier4/ap-Tier4_SysControl/epg-2100",
+                             "nameAlias": "2100_WSDC_Tier4_MC_Phoenix",
+                             "status": "modified"
+                           }
+                         }
+                       }
+                     ]
+                   }
+                 }
+               ]
+        })
+    }}
+{%- endif %} {% endfor %}
+{"resource":
+    {{- record_info| safe }}
+}

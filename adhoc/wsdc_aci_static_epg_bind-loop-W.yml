@@ -1,0 +1,62 @@
+---
+- name: Bind a VPC to an EPG
+  hosts: 172.26.13.211
+  connection: network_cli
+  gather_facts: false
+  
+  tasks:
+  - name: EPG Static Binding        
+    aci_static_binding_to_epg:
+      host: 172.26.13.211
+      username: 3619264
+      password: '{{ ansible_password }}'
+      tenant: lowes
+      ap: Prod-AP
+      epg: '194'
+      encap_id: 194
+      deploy_immediacy: immediate
+      interface_mode: 802.1p
+      interface_type: vpc
+      pod: 1
+      leafs: "{{ item.leafs }}" 
+      interface: "{{ item.interface }}"
+      state: present
+      validate_certs: no
+    delegate_to: localhost
+    loop:
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD046_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD048_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD050_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD052_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD054_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD056_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD058_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD060_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD062_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD064_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD066_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD068_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD070_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD072_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD074_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD076_ipg' }
+      - { leafs: '316-317', interface: 'L2_LXHDPWRKPRD078_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD045_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD047_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD049_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD051_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD053_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD055_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD057_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD059_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD061_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD063_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD065_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD067_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD069_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD071_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD073_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD075_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD077_ipg' }
+      - { leafs: '318-319', interface: 'L2_LXHDPWRKPRD079_ipg' }
+

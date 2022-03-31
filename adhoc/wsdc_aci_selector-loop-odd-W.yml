@@ -1,0 +1,110 @@
+---
+- name: create an interface selector
+  hosts: 172.26.13.211
+  connection: network_cli
+  gather_facts: false
+  
+  tasks:
+  - name: Associate an Interface Access Port Selector to an Interface Policy        
+    aci_access_port_to_interface_policy_leaf_profile:
+      host: 172.26.13.211
+      username: 3619264
+      password: '{{ ansible_password }}'
+      leaf_interface_profile: "{{ item.leaf_interface_profile }}"
+      access_port_selector: "{{ item.access_port_selector }}"
+      # state: present
+      leaf_port_blk: "{{ item.leaf_port_blk }}"
+      interface_type: port_channel
+      from_port: '{{ item.from_port }}'
+      #state: present
+      to_port: '{{ item.to_port }}'
+      state: present
+      validate_certs: no
+    delegate_to: localhost
+    loop:
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw045', leaf_port_blk: '318', from_port: '1', to_port: '1' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw047', leaf_port_blk: '318', from_port: '2', to_port: '2' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw049', leaf_port_blk: '318', from_port: '3', to_port: '3' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw051', leaf_port_blk: '318', from_port: '4', to_port: '4' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw053', leaf_port_blk: '318', from_port: '5', to_port: '5' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw055', leaf_port_blk: '318', from_port: '6', to_port: '6' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw057', leaf_port_blk: '318', from_port: '7', to_port: '7' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw059', leaf_port_blk: '318', from_port: '8', to_port: '8' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw061', leaf_port_blk: '318', from_port: '9', to_port: '9' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw063', leaf_port_blk: '318', from_port: '10', to_port: '10' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw065', leaf_port_blk: '318', from_port: '11', to_port: '11' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw067', leaf_port_blk: '318', from_port: '12', to_port: '12' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw069', leaf_port_blk: '318', from_port: '13', to_port: '13' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw071', leaf_port_blk: '318', from_port: '14', to_port: '14' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw073', leaf_port_blk: '318', from_port: '15', to_port: '15' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw075', leaf_port_blk: '318', from_port: '16', to_port: '16' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw077', leaf_port_blk: '318', from_port: '17', to_port: '17' }  
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw079', leaf_port_blk: '318', from_port: '18', to_port: '18' }   
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw045', leaf_port_blk: '319', from_port: '1', to_port: '1' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw047', leaf_port_blk: '319', from_port: '2', to_port: '2' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw049', leaf_port_blk: '319', from_port: '3', to_port: '3' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw051', leaf_port_blk: '319', from_port: '4', to_port: '4' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw053', leaf_port_blk: '319', from_port: '5', to_port: '5' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw055', leaf_port_blk: '319', from_port: '6', to_port: '6' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw057', leaf_port_blk: '319', from_port: '7', to_port: '7' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw059', leaf_port_blk: '319', from_port: '8', to_port: '8' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw061', leaf_port_blk: '319', from_port: '9', to_port: '9' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw063', leaf_port_blk: '319', from_port: '10', to_port: '10' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw065', leaf_port_blk: '319', from_port: '11', to_port: '11' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw067', leaf_port_blk: '319', from_port: '12', to_port: '12' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw069', leaf_port_blk: '319', from_port: '13', to_port: '13' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw071', leaf_port_blk: '319', from_port: '14', to_port: '14' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw073', leaf_port_blk: '319', from_port: '15', to_port: '15' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw075', leaf_port_blk: '319', from_port: '16', to_port: '16' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw077', leaf_port_blk: '319', from_port: '17', to_port: '17' }  
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw079', leaf_port_blk: '319', from_port: '18', to_port: '18' }
+  
+  - name: Associate an Interface Access Port Selector to an Interface Policy
+    aci_access_port_to_interface_policy_leaf_profile:
+      host: 172.26.13.211
+      username: 3619264
+      password: '{{ ansible_password }}'
+      leaf_interface_profile: "{{ item.leaf_interface_profile }}"
+      access_port_selector: "{{ item.access_port_selector }}"
+      leaf_port_blk: "{{ item.leaf_port_blk }}"
+      interface_type: port_channel
+      policy_group: "{{ item.policy_group }}"
+      state: present
+      validate_certs: no
+    delegate_to: localhost   
+    loop:
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw045', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD045_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw047', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD047_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw049', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD049_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw051', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD051_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw053', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD053_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw055', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD055_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw057', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD057_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw059', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD059_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw061', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD061_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw063', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD063_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw065', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD065_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw067', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD067_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw069', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD069_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw071', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD071_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw073', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD073_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw075', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD075_ipg' }
+      - { leaf_interface_profile: 'LF318-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw077', leaf_port_blk: '318', policy_group: 'L2_LXHDPWRKPRD077_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw045', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD045_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw047', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD047_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw049', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD049_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw051', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD051_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw053', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD053_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw055', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD055_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw057', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD057_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw059', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD059_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw061', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD061_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw063', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD063_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw065', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD065_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw067', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD067_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw069', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD069_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw071', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD071_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw073', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD073_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw075', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD075_ipg' }
+      - { leaf_interface_profile: 'LF319-IntProfile', access_port_selector: 'vpc-lxhdpwrkprdw077', leaf_port_blk: '319', policy_group: 'L2_LXHDPWRKPRD077_ipg' }  
+

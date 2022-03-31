@@ -1,0 +1,28 @@
+---
+- name: Add Vlan to vlan pool
+  hosts: 131.226.217.153
+  connection: network_cli
+  gather_facts: false
+  vars:
+    version_file: "{{lookup('file','/home/buenrosm/ansible/roles/cisco_lab_initial/files/encap.json') | from_json }}"
+
+  tasks:
+
+
+  - name: Add a new VLAN encap block
+    aci_vlan_pool_encap_block:
+      host: 131.226.217.153
+      username: admin
+      password: '{{ ansible_password }}'
+      pool: "{{ item.pool }}" 
+      block_start: "{{ item.block_start }}"
+      block_end: "{{ item.block_end }}"
+      allocation_mode: "{{ item.allocation_mode }}" 
+      description: "{{ item.description }}"
+      block_name: "{{ item.block_name }}"
+      pool_allocation_mode: "{{ item.pool_allocation_mode }}" 
+      validate_certs: no
+      state: "{{ item.state }}"
+    delegate_to: localhost
+    loop: "{{ version_file.resource }}"
+

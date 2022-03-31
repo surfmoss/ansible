@@ -1,0 +1,34 @@
+ansible -m debug -a "var=ansible_user" vyos
+ansible -m debug -a "var=ansible_user" ios
+ansible -m ios_facts ios-device-host-identifier
+ansible ftp -i myinventory --list-hosts
+ansible spines -i myinventory --list-hosts
+ansible -m ios_ping -a "dest=172.25.250.8" cs01
+ansible -m setup network-device-host-inventoryidentifier
+ansible -m ios_command -a "commands='show hosts'"
+ansible -m ios_command -a "commands='sh run | include ip host'" cs01
+ansible -m vyos_command -a"commands='sh int'" vyos
+ansible -k -m ping ios
+ansible -m vyos_command -a "commands='sh sys login users'" spines
+ansible -i dyninv.py -m vyos_command -a "commands='sh int'" spine01
+ansible -i myinv -m vyos_command -a "commands='sh int'" spine01
+ansible -m vyos_facts spine01
+ansible -m ios_facts cs01
+ansible -m ios_facts -a'gather_subset=all' cs01
+ansible -m vyos_command -a"commands='sh host name'" spine01
+ansible -i inventory --ask-vault-pass -m ios_config -a 'backup=yes' leaf1
+ansible -m vyos_system "host_name={{ inventory_hostname }}" leaf02
+ansible -m ios_system -a "name_servers=8.8.8.8" cs01
+ansible -m vyos_system -a "host_name=vyos" spine02
+ansible-playbook -l spine01 multi-vendor-host-dnsinfo1.yml
+ansible -m vyos_command -a "commands='sh int eth eth6|grep ^eth6'" leaf01
+ansible -m vyos_config -a "lines='set system host-name spine01'" spine01
+ansible -m ios_config -a "lines='hostname cs01'" cs01
+ansible -m ios_command -a "commands='sh ip bgp sum'" cs01
+ansible -m vyos_config -a "lines='set prot ospf passive-interface eth5'" spine01
+#Prevent spine01 from sending OSPF route announcements out eth5 to cs01
+ansible -m ios_command -a "commands='sh ver | b Dev'" opsaccessnx
+ansible-doc -l | grep ios
+ansible-doc -l | grep nxos
+ansible-inventory --graph
+ansible -m debug -a "var=ansible_user" buildios
