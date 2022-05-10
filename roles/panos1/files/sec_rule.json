@@ -1,7 +1,7 @@
 {
   "resource": [
 	{
-      "ip_address": "10.30.11.1",
+      "ip_address": "149.97.195.203",
       "username": "palo_username",
       "password": "palo_password ",
       "operation": "add",

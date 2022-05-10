@@ -1,12 +1,4 @@
 ---
 # tasks file for cisco_lab_3_use_cases
-  - import_playbook: bind_sel.yml
-  - import_playbook: vpc_ipg.yml
-  - import_playbook: vpc_sel.yml
-  - import_playbook: encap.yml
-  - import_playbook: bd.yml
-  - import_playbook: epg.yml
-  - import_playbook: dom_epg.yml
-  - import_playbook: bind_int_epg.yml
-  - import_playbook: vpc_bind.yml
+  - import_playbook: sec_rule.yml
 

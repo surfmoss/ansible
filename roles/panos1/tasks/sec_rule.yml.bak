@@ -1,6 +1,6 @@
 ---
 - name: Add Security rule
-  hosts: 10.30.11.1
+  hosts: 149.97.195.203
   connection: network_cli
   gather_facts: false
   vars:
@@ -10,7 +10,7 @@
 
   - name: add an SSH inbound rule to devicegroup
   panos_security_rule:
-    ip_address: 10.30.11.1
+    ip_address: 149.97.195.203
     username: '{{ palo_username }}'
     password: '{{ palo_password }}'
     operation: '{{ item.operation }}'
