@@ -1,0 +1,23 @@
+---
+- name: Bind EPG to domain 
+  hosts: 131.226.217.153
+  connection: network_cli
+  gather_facts: false
+  vars: 
+    version_file: "{{lookup('file','/home/buenrosm/ansible/roles/cisco_lab_initial/files/dom_epg.json') | from_json }}"
+  tasks:
+
+  - name: Bind EPG to domain 
+    aci_epg_to_domain:
+      host: 131.226.217.153
+      username: admin
+      password: '{{ ansible_password }}'
+      tenant: "{{ item.tenant }}"
+      ap: "{{ item.ap }}"
+      epg: "{{ item.epg }}"
+      domain: "{{ item.domain }}"
+      domain_type: "{{ item.domain_type }}"
+      state: "{{ item.state }}"
+      validate_certs: no
+    delegate_to: localhost
+    loop: "{{ version_file.resource }}"

@@ -1,0 +1,30 @@
+{
+  "resource": [
+    {
+      "tenant": "Prod_Tnt",
+      "ap": "mgmt_anp",
+      "epg": 29,
+      "encap_id": 29,
+      "deploy_immediacy": "immediate",
+      "interface_mode": "trunk",
+      "interface_type": "switch_port",
+      "pod": 1,
+      "leafs": 101,
+      "interface": "1/12",
+      "state": "present"
+    },
+    {
+      "tenant": "Prod_Tnt",
+      "ap": "mgmt_anp",
+      "epg": 29,
+      "encap_id": 29,
+      "deploy_immediacy": "immediate",
+      "interface_mode": "trunk",
+      "interface_type": "switch_port",
+      "pod": 1,
+      "leafs": 102,
+      "interface": "1/12",
+      "state": "present"
+    }
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "resource": [
+    {
+      "tenant": "Prod_Tnt",
+      "ap": "mgmt_anp",
+      "epg": 29,
+      "domain": "cisco_lab_physdom",
+      "domain_type": "phys",
+      "state": "present"
+    },
+    {
+      "tenant": "Prod_Tnt",
+      "ap": "mgmt_anp",
+      "epg": 30,
+      "domain": "cisco_lab_physdom",
+      "domain_type": "phys",
+      "state": "present"
+    },
+    {
+      "tenant": "Prod_Tnt",
+      "ap": "mgmt_anp",
+      "epg": 31,
+      "domain": "cisco_lab_physdom",
+      "domain_type": "phys",
+      "state": "present"
+    }
+  ]
+}

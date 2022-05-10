@@ -1,0 +1,44 @@
+{
+  "resource": [
+    {
+      "access_port_selector": "Router_vpc",
+      "policy_group": "HCI_Server_1_ipg",
+      "interface_type": "vpc",
+      "leaf_interface_profile": "L101",
+      "leaf_port_blk": 101,
+      "from_port": "13",
+      "to_port": "13",
+      "state": "present"
+    },
+    {
+      "access_port_selector": "Router_vpc",
+      "policy_group": "HCI_Server_1_ipg",
+      "interface_type": "vpc",
+      "leaf_interface_profile": "L102",
+      "leaf_port_blk": 102,
+      "from_port": "13",
+      "to_port": "13",
+      "state": "present"
+    },
+    {
+      "access_port_selector": "Load_Balancer_vpc",
+      "policy_group": "HadoopServer01_ipg",
+      "interface_type": "vpc",
+      "leaf_interface_profile": "L101",
+      "leaf_port_blk": 101,
+      "from_port": "14",
+      "to_port": "14",
+      "state": "present"
+    },
+    {
+      "access_port_selector": "Load_Balancer_vpc",
+      "policy_group": "HadoopServer01_ipg",
+      "interface_type": "vpc",
+      "leaf_interface_profile": "L102",
+      "leaf_port_blk": 102,
+      "from_port": "14",
+      "to_port": "14",
+      "state": "present"
+    }
+  ]
+}

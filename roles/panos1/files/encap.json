@@ -1,0 +1,34 @@
+{
+  "resource": [
+    {
+      "pool": "cisco_vlan_pool",
+      "block_start": 29,
+      "block_end": 29,
+      "allocation_mode": "static",
+      "description": "switches",
+      "block_name": 29,
+      "pool_allocation_mode": "static",
+      "state": "present"
+    },
+    {
+      "pool": "cisco_vlan_pool",
+      "block_start": 30,
+      "block_end": 30,
+      "allocation_mode": "static",
+      "description": "routers",
+      "block_name": 30,
+      "pool_allocation_mode": "static",
+      "state": "present"
+    },
+    {
+      "pool": "cisco_vlan_pool",
+      "block_start": 31,
+      "block_end": 31,
+      "allocation_mode": "static",
+      "description": "load_balancers",
+      "block_name": 31,
+      "pool_allocation_mode": "static",
+      "state": "present"
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+---
+- name: Add EPG
+  hosts: 131.226.217.153
+  connection: network_cli
+  gather_facts: false
+  vars: 
+    version_file: "{{lookup('file','/home/buenrosm/ansible/roles/cisco_lab_initial/files/epg.json') | from_json }}"
+  tasks:
+
+  - name: Add a new EPG 
+    aci_epg:
+      host: 131.226.217.153
+      username: admin
+      password: '{{ ansible_password }}'
+      tenant: "{{ item.tenant }}"
+      ap: "{{ item.ap }}"
+      epg: "{{ item.epg }}"
+      description: "{{ item.description }}"
+      bd: "{{ item.bd }}"
+      preferred_group: "{{ item.preferred_group }}"
+      validate_certs: no
+      state: "{{ item.state }}"
+    delegate_to: localhost
+    loop: "{{ version_file.resource }}"

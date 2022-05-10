@@ -1,0 +1,24 @@
+{
+  "resource": [
+	{
+      "ip_address": "ip_address",
+      "username": "palo_username",
+      "password": "palo_password ",
+      "operation": "add",
+      "rule_name": "SSH permit",
+      "description": "SSH rule test",
+      "tag_name": ["ProjectX"],
+      "source_zone": ["public"],
+      "destination_zone": ["private"],
+      "source_ip": ["any"],
+      "source_user": ["any"],
+      "destination_ip": ["1.1.1.1"],
+      "category": ["any"],
+      "application": ["ssh"],
+      "service": ["application-default"],
+      "hip_profiles": ["any"],
+      "action": "allow",
+      "devicegroup": "Cloud Edge"
+    }
+  ]
+}
