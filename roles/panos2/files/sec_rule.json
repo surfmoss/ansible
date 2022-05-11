@@ -2,13 +2,103 @@
   "resource": [
 	{
       "state": "present",
-	  "rule_name": "Ansible1_SSH_permit",
+	  "rule_name": "Ansible_1_SSH_permit",
       "application": "ssh",
       "description": "SSH rule test",
       "source_zone": "Public",	  
       "destination_zone": "Users",
 	  "action": "allow",
 	  "commit": "false"
-    }
+    },
+		{
+      "state": "present",
+	  "rule_name": "Ansible_2_kerberos_permit",
+      "application": "kerberos",
+      "description": "kerberos rule test",
+      "source_zone": "Public",	  
+      "destination_zone": "Users",
+	  "action": "allow",
+	  "commit": "false"
+    },
+		{
+      "state": "present",
+	  "rule_name": "Ansible_3_SSL_permit",
+      "application": "ssl",
+      "description": "ssl rule test",
+      "source_zone": "Public",	  
+      "destination_zone": "Users",
+	  "action": "allow",
+	  "commit": "false"
+    },
+		{
+      "state": "present",
+	  "rule_name": "Ansible_4_FTP_permit",
+      "application": "ftp",
+      "description": "ftp rule test",
+      "source_zone": "Public",	  
+      "destination_zone": "Users",
+	  "action": "allow",
+	  "commit": "false"
+    },
+		{
+      "state": "present",
+	  "rule_name": "Ansible_5_LDAP_permit",
+      "application": "ldap",
+      "description": "ldap rule test",
+      "source_zone": "Public",	  
+      "destination_zone": "Users",
+	  "action": "allow",
+	  "commit": "false"
+    },
+		{
+      "state": "present",
+	  "rule_name": "Ansible_6_SSH_permit",
+      "application": "ntp",
+      "description": "NTP rule test",
+      "source_zone": "Public",	  
+      "destination_zone": "Users",
+	  "action": "allow",
+	  "commit": "false"
+    },
+		{
+      "state": "present",
+	  "rule_name": "Ansible_7_SMTP_permit",
+      "application": "smtp",
+      "description": "smtp rule test",
+      "source_zone": "Public",	  
+      "destination_zone": "Users",
+	  "action": "allow",
+	  "commit": "false"
+    },
+		{
+      "state": "present",
+	  "rule_name": "Ansible_8_DNS_permit",
+      "application": "dns",
+      "description": "dns rule test",
+      "source_zone": "Public",	  
+      "destination_zone": "Users",
+	  "action": "allow",
+	  "commit": "false"
+    },
+		{
+      "state": "present",
+	  "rule_name": "Ansible_9_SNMP_permit",
+      "application": "snmp",
+      "description": "SNMP rule test",
+      "source_zone": "Public",	  
+      "destination_zone": "Users",
+	  "action": "allow",
+	  "commit": "false"
+    },
+		{
+      "state": "present",
+	  "rule_name": "Ansible_10_NFS_permit",
+      "application": "nfs",
+      "description": "nfs rule test",
+      "source_zone": "Public",	  
+      "destination_zone": "Users",
+	  "action": "allow",
+	  "commit": "true"
+    }	
   ]
 }

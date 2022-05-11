@@ -2031,3 +2031,145 @@ Should be written as:
 in ansible.cfg.
 2022-05-10 23:56:31,664 p=8518 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
 2022-05-10 23:56:31,665 p=8518 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-11 00:05:48,553 p=8667 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-11 00:05:48,560 p=8667 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-11 00:05:49,419 p=8667 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:05:49,421 p=8667 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-11 00:05:50,209 p=8667 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:05:50,211 p=8667 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-11 00:05:50,997 p=8667 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:05:50,999 p=8667 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-11 00:05:51,013 p=8667 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:05:51,015 p=8667 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-11 00:05:51,038 p=8667 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => 
+  msg: 'An unhandled exception occurred while templating ''{{lookup(''file'',''/home/buenrosm/ansible/roles/panos2/files/sec_rule.json'') | from_json }}''. Error was a <class ''json.decoder.JSONDecodeError''>, original message: Expecting value: line 103 column 3 (char 2560)'
+2022-05-11 00:05:51,039 p=8667 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-11 00:05:51,039 p=8667 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-11 00:14:15,914 p=8797 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-11 00:14:15,921 p=8797 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-11 00:14:16,781 p=8797 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:14:16,783 p=8797 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-11 00:14:17,563 p=8797 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:14:17,564 p=8797 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-11 00:14:18,365 p=8797 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:14:18,366 p=8797 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-11 00:14:18,381 p=8797 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:14:18,382 p=8797 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-11 00:14:19,260 p=8797 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:14:20,081 p=8797 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-11 00:14:20,082 p=8797 u=buenrosm n=ansible | failed: [localhost] (item={'state': 'present', 'rule_name': 'Ansible_2_http_permit', 'application': 'http', 'description': 'HTTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: http
+    commit: 'false'
+    description: HTTP rule test
+    destination_zone: Users
+    rule_name: Ansible_2_http_permit
+    source_zone: Public
+    state: present
+  msg: |-
+    Failed create:  Ansible_2_http_permit -> application 'http' is not an allowed keyword
+     Ansible_2_http_permit -> application 'http' is not a valid reference
+     Ansible_2_http_permit -> application is invalid
+2022-05-11 00:14:20,917 p=8797 u=buenrosm n=ansible | failed: [localhost] (item={'state': 'present', 'rule_name': 'Ansible_3_HTTPS_permit', 'application': 'https', 'description': 'https rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: https
+    commit: 'false'
+    description: https rule test
+    destination_zone: Users
+    rule_name: Ansible_3_HTTPS_permit
+    source_zone: Public
+    state: present
+  msg: |-
+    Failed create:  Ansible_3_HTTPS_permit -> application 'https' is not an allowed keyword
+     Ansible_3_HTTPS_permit -> application 'https' is not a valid reference
+     Ansible_3_HTTPS_permit -> application is invalid
+2022-05-11 00:14:21,730 p=8797 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_4_FTP_permit', 'application': 'ftp', 'description': 'ftp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:14:22,535 p=8797 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_5_LDAP_permit', 'application': 'ldap', 'description': 'ldap rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:14:23,352 p=8797 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_6_SSH_permit', 'application': 'ntp', 'description': 'NTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:14:24,151 p=8797 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_7_SMTP_permit', 'application': 'smtp', 'description': 'smtp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:14:24,953 p=8797 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_8_DNS_permit', 'application': 'dns', 'description': 'dns rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:14:25,778 p=8797 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_9_SNMP_permit', 'application': 'snmp', 'description': 'SNMP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:15:01,705 p=8797 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_10_NFS_permit', 'application': 'nfs', 'description': 'nfs rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'true'})
+2022-05-11 00:15:01,707 p=8797 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-11 00:15:01,708 p=8797 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-11 00:17:31,499 p=9127 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-11 00:17:31,506 p=9127 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-11 00:17:32,374 p=9127 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:17:32,376 p=9127 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-11 00:17:33,172 p=9127 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:17:33,173 p=9127 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-11 00:17:33,973 p=9127 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:17:33,975 p=9127 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-11 00:17:33,988 p=9127 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:17:33,990 p=9127 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-11 00:17:34,884 p=9127 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:17:35,727 p=9127 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-11 00:17:35,729 p=9127 u=buenrosm n=ansible | failed: [localhost] (item={'state': 'present', 'rule_name': 'Ansible_2_http_permit', 'application': 'http', 'description': 'HTTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: http
+    commit: 'false'
+    description: HTTP rule test
+    destination_zone: Users
+    rule_name: Ansible_2_http_permit
+    source_zone: Public
+    state: present
+  msg: |-
+    Failed create:  Ansible_2_http_permit -> application 'http' is not an allowed keyword
+     Ansible_2_http_permit -> application 'http' is not a valid reference
+     Ansible_2_http_permit -> application is invalid
+2022-05-11 00:17:36,585 p=9127 u=buenrosm n=ansible | failed: [localhost] (item={'state': 'present', 'rule_name': 'Ansible_3_HTTPS_permit', 'application': 'https', 'description': 'https rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: https
+    commit: 'false'
+    description: https rule test
+    destination_zone: Users
+    rule_name: Ansible_3_HTTPS_permit
+    source_zone: Public
+    state: present
+  msg: |-
+    Failed create:  Ansible_3_HTTPS_permit -> application 'https' is not an allowed keyword
+     Ansible_3_HTTPS_permit -> application 'https' is not a valid reference
+     Ansible_3_HTTPS_permit -> application is invalid
+2022-05-11 00:17:37,379 p=9127 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_4_FTP_permit', 'application': 'ftp', 'description': 'ftp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:17:38,180 p=9127 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_5_LDAP_permit', 'application': 'ldap', 'description': 'ldap rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:17:38,984 p=9127 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_6_SSH_permit', 'application': 'ntp', 'description': 'NTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:17:39,784 p=9127 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_7_SMTP_permit', 'application': 'smtp', 'description': 'smtp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:17:39,963 p=9127 u=buenrosm n=ansible |  [ERROR]: User interrupted execution
+
+2022-05-11 00:18:46,835 p=9408 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-11 00:18:46,842 p=9408 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-11 00:18:47,692 p=9408 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:18:47,693 p=9408 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-11 00:18:48,483 p=9408 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:18:48,484 p=9408 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-11 00:18:49,275 p=9408 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:18:49,276 p=9408 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-11 00:18:49,291 p=9408 u=buenrosm n=ansible | ok: [localhost]
+2022-05-11 00:18:49,292 p=9408 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-11 00:18:50,176 p=9408 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:18:50,999 p=9408 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_2_kerberos_permit', 'application': 'kerberos', 'description': 'kerberos rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:18:51,810 p=9408 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_3_SSL_permit', 'application': 'ssl', 'description': 'ssl rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:18:52,635 p=9408 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_4_FTP_permit', 'application': 'ftp', 'description': 'ftp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:18:53,451 p=9408 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_5_LDAP_permit', 'application': 'ldap', 'description': 'ldap rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:18:54,251 p=9408 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_6_SSH_permit', 'application': 'ntp', 'description': 'NTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:18:55,057 p=9408 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_7_SMTP_permit', 'application': 'smtp', 'description': 'smtp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:18:55,887 p=9408 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_8_DNS_permit', 'application': 'dns', 'description': 'dns rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:18:56,727 p=9408 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_9_SNMP_permit', 'application': 'snmp', 'description': 'SNMP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-11 00:19:34,147 p=9408 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_10_NFS_permit', 'application': 'nfs', 'description': 'nfs rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'true'})
+2022-05-11 00:19:34,148 p=9408 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-11 00:19:34,150 p=9408 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-11 00:19:34,150 p=9408 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
