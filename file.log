@@ -1666,3 +1666,368 @@ in ansible.cfg.
 2022-05-10 23:19:25,246 p=6527 u=buenrosm n=ansible | ok: [localhost]
 2022-05-10 23:19:25,248 p=6527 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
 2022-05-10 23:19:25,248 p=6527 u=buenrosm n=ansible | localhost                  : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:35:58,012 p=6920 u=buenrosm n=ansible | ERROR! Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/buenrosm/ansible/roles/panos2/tasks/sec_rule.yml': line 33, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        commit: "item.commit"
+    delegate_to: localhost
+    ^ here
+
+2022-05-10 23:37:56,021 p=6973 u=buenrosm n=ansible | ERROR! Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/buenrosm/ansible/roles/panos2/tasks/sec_rule.yml': line 33, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        commit: "item.commit"
+    loop: "{{ version_file.resource }}"
+    ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2022-05-10 23:39:18,499 p=6977 u=buenrosm n=ansible | ERROR! Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/buenrosm/ansible/roles/panos2/tasks/sec_rule.yml': line 33, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        commit: "item.commit"
+    loop: -  "{{ version_file.resource }}"
+    ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2022-05-10 23:41:48,590 p=6986 u=buenrosm n=ansible | ERROR! Syntax Error while loading YAML.
+  mapping values are not allowed in this context
+
+The error appears to be in '/home/buenrosm/ansible/roles/panos2/tasks/sec_rule.yml': line 6, column 21, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  gather_facts: False
+  vars: version_file: "{{lookup('file','/home/buenrosm/ansible/roles/panos2/files/sec_rule.json') | from_json }}"
+                    ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+
+2022-05-10 23:42:32,321 p=6990 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:42:32,328 p=6990 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:42:33,196 p=6990 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:42:33,197 p=6990 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:42:33,988 p=6990 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:42:33,989 p=6990 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:42:34,779 p=6990 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:42:34,781 p=6990 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:42:34,788 p=6990 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:42:34,806 p=6990 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:42:34,982 p=6990 u=buenrosm n=ansible | failed: [localhost -> localhost] (item={'state': 'present', 'rule_name': 'SSH permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'LAN', 'destination_zone': 'WAN', 'action': 'allow', 'commit': 'false'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: ssh
+    commit: 'false'
+    description: SSH rule test
+    destination_zone: WAN
+    rule_name: SSH permit
+    source_zone: LAN
+    state: present
+  msg: 'argument commit is of type <class ''str''> and we were unable to convert to bool: The value ''item.commit'' is not a valid boolean.  Valid booleans include: 0, 1, ''n'', ''true'', ''off'', ''on'', ''no'', ''y'', ''false'', ''f'', ''1'', ''t'', ''yes'', ''0'''
+2022-05-10 23:42:34,983 p=6990 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:42:34,984 p=6990 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:44:45,759 p=7126 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:44:45,765 p=7126 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:44:46,619 p=7126 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:44:46,620 p=7126 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:44:47,407 p=7126 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:44:47,408 p=7126 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:44:48,200 p=7126 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:44:48,202 p=7126 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:44:48,210 p=7126 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:44:48,229 p=7126 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:44:48,402 p=7126 u=buenrosm n=ansible | failed: [localhost -> localhost] (item={'state': 'present', 'rule_name': 'Ansible1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': False}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: ssh
+    commit: false
+    description: SSH rule test
+    destination_zone: Users
+    rule_name: Ansible1_SSH_permit
+    source_zone: Public
+    state: present
+  msg: 'argument commit is of type <class ''str''> and we were unable to convert to bool: The value ''item.commit'' is not a valid boolean.  Valid booleans include: 0, 1, ''1'', ''off'', ''y'', ''no'', ''true'', ''0'', ''f'', ''n'', ''t'', ''yes'', ''false'', ''on'''
+2022-05-10 23:44:48,404 p=7126 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:44:48,404 p=7126 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:45:30,943 p=7254 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:45:30,950 p=7254 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:45:31,807 p=7254 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:45:31,808 p=7254 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:45:32,604 p=7254 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:45:32,605 p=7254 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:45:33,397 p=7254 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:45:33,398 p=7254 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:45:33,406 p=7254 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:45:33,424 p=7254 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:45:33,597 p=7254 u=buenrosm n=ansible | failed: [localhost -> localhost] (item={'state': 'present', 'rule_name': 'Ansible1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'False'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: ssh
+    commit: 'False'
+    description: SSH rule test
+    destination_zone: Users
+    rule_name: Ansible1_SSH_permit
+    source_zone: Public
+    state: present
+  msg: 'argument commit is of type <class ''str''> and we were unable to convert to bool: The value ''item.commit'' is not a valid boolean.  Valid booleans include: ''t'', ''y'', 1, 0, ''n'', ''no'', ''true'', ''yes'', ''false'', ''1'', ''0'', ''f'', ''on'', ''off'''
+2022-05-10 23:45:33,598 p=7254 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:45:33,598 p=7254 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:48:10,118 p=7400 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:48:10,125 p=7400 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:48:10,989 p=7400 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:48:10,990 p=7400 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:48:11,789 p=7400 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:48:11,790 p=7400 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:48:12,581 p=7400 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:48:12,583 p=7400 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:48:12,591 p=7400 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:48:12,611 p=7400 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:48:12,791 p=7400 u=buenrosm n=ansible | failed: [localhost -> localhost] (item={'state': 'present', 'rule_name': 'Ansible1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'False'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: ssh
+    commit: 'False'
+    description: SSH rule test
+    destination_zone: Users
+    rule_name: Ansible1_SSH_permit
+    source_zone: Public
+    state: present
+  msg: 'argument commit is of type <class ''str''> and we were unable to convert to bool: The value ''item.commit'' is not a valid boolean.  Valid booleans include: 0, 1, ''off'', ''1'', ''on'', ''t'', ''no'', ''f'', ''false'', ''0'', ''true'', ''y'', ''yes'', ''n'''
+2022-05-10 23:48:12,792 p=7400 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:48:12,792 p=7400 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:48:55,025 p=7527 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:48:55,032 p=7527 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:48:55,889 p=7527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:48:55,891 p=7527 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:48:56,719 p=7527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:48:56,720 p=7527 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:48:57,517 p=7527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:48:57,519 p=7527 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:48:57,526 p=7527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:48:57,528 p=7527 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:48:57,714 p=7527 u=buenrosm n=ansible | failed: [localhost] (item={'state': 'present', 'rule_name': 'Ansible1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'False'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: ssh
+    commit: 'False'
+    description: SSH rule test
+    destination_zone: Users
+    rule_name: Ansible1_SSH_permit
+    source_zone: Public
+    state: present
+  msg: 'argument commit is of type <class ''str''> and we were unable to convert to bool: The value ''item.commit'' is not a valid boolean.  Valid booleans include: 0, 1, ''false'', ''t'', ''n'', ''no'', ''yes'', ''f'', ''off'', ''y'', ''0'', ''on'', ''1'', ''true'''
+2022-05-10 23:48:57,715 p=7527 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:48:57,715 p=7527 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:49:39,238 p=7654 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:49:39,245 p=7654 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:49:40,102 p=7654 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:49:40,103 p=7654 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:49:40,884 p=7654 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:49:40,885 p=7654 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:49:41,678 p=7654 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:49:41,680 p=7654 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:49:41,687 p=7654 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:49:41,688 p=7654 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:49:41,713 p=7654 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => 
+  msg: 'An unhandled exception occurred while templating ''{{lookup(''file'',''/home/buenrosm/ansible/roles/panos2/files/sec_rule.json'') | from_json }}''. Error was a <class ''json.decoder.JSONDecodeError''>, original message: Expecting value: line 11 column 17 (char 262)'
+2022-05-10 23:49:41,714 p=7654 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:49:41,715 p=7654 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:50:14,805 p=7760 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:50:14,812 p=7760 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:50:15,660 p=7760 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:50:15,661 p=7760 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:50:16,451 p=7760 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:50:16,452 p=7760 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:50:17,242 p=7760 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:50:17,244 p=7760 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:50:17,251 p=7760 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:50:17,253 p=7760 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:50:17,437 p=7760 u=buenrosm n=ansible | failed: [localhost] (item={'state': 'present', 'rule_name': 'Ansible1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'False'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: ssh
+    commit: 'False'
+    description: SSH rule test
+    destination_zone: Users
+    rule_name: Ansible1_SSH_permit
+    source_zone: Public
+    state: present
+  msg: 'argument commit is of type <class ''str''> and we were unable to convert to bool: The value ''item.commit'' is not a valid boolean.  Valid booleans include: 0, ''on'', 1, ''n'', ''1'', ''yes'', ''y'', ''0'', ''no'', ''true'', ''off'', ''t'', ''f'', ''false'''
+2022-05-10 23:50:17,438 p=7760 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:50:17,438 p=7760 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:50:59,418 p=7888 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:50:59,425 p=7888 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:51:00,297 p=7888 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:51:00,298 p=7888 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:51:01,112 p=7888 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:51:01,113 p=7888 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:51:01,963 p=7888 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:51:01,965 p=7888 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:51:01,973 p=7888 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:51:01,974 p=7888 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:51:01,998 p=7888 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => 
+  msg: 'An unhandled exception occurred while templating ''{{lookup(''file'',''/home/buenrosm/ansible/roles/panos2/files/sec_rule.json'') | from_json }}''. Error was a <class ''json.decoder.JSONDecodeError''>, original message: Expecting value: line 11 column 17 (char 262)'
+2022-05-10 23:51:02,000 p=7888 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:51:02,000 p=7888 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:51:56,922 p=7994 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:51:56,929 p=7994 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:51:57,795 p=7994 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:51:57,796 p=7994 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:51:58,595 p=7994 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:51:58,596 p=7994 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:51:59,366 p=7994 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:51:59,367 p=7994 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:51:59,374 p=7994 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:51:59,375 p=7994 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:51:59,554 p=7994 u=buenrosm n=ansible | failed: [localhost] (item={'state': 'present', 'rule_name': 'Ansible1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: ssh
+    commit: 'false'
+    description: SSH rule test
+    destination_zone: Users
+    rule_name: Ansible1_SSH_permit
+    source_zone: Public
+    state: present
+  msg: 'argument commit is of type <class ''str''> and we were unable to convert to bool: The value ''item.commit'' is not a valid boolean.  Valid booleans include: ''n'', 1, ''f'', ''t'', 0, ''y'', ''off'', ''yes'', ''1'', ''true'', ''0'', ''on'', ''false'', ''no'''
+2022-05-10 23:51:59,555 p=7994 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:51:59,555 p=7994 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:52:39,248 p=8122 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:52:39,255 p=8122 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:52:40,115 p=8122 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:52:40,117 p=8122 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:52:40,913 p=8122 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:52:40,914 p=8122 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:52:41,705 p=8122 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:52:41,707 p=8122 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:52:41,714 p=8122 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:52:41,715 p=8122 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:52:41,906 p=8122 u=buenrosm n=ansible | failed: [localhost] (item={'state': 'present', 'rule_name': 'Ansible1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: ssh
+    commit: 'false'
+    description: SSH rule test
+    destination_zone: Users
+    rule_name: Ansible1_SSH_permit
+    source_zone: Public
+    state: present
+  msg: 'argument commit is of type <class ''list''> and we were unable to convert to bool: <class ''list''> cannot be converted to a bool'
+2022-05-10 23:52:41,907 p=8122 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:52:41,908 p=8122 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:53:25,503 p=8250 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:53:25,510 p=8250 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:53:26,373 p=8250 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:53:26,375 p=8250 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:53:27,169 p=8250 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:53:27,171 p=8250 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:53:27,960 p=8250 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:53:27,962 p=8250 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:53:27,969 p=8250 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:53:27,970 p=8250 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:53:28,162 p=8250 u=buenrosm n=ansible | failed: [localhost] (item={'state': 'present', 'rule_name': 'Ansible1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: ssh
+    commit: 'false'
+    description: SSH rule test
+    destination_zone: Users
+    rule_name: Ansible1_SSH_permit
+    source_zone: Public
+    state: present
+  msg: 'value of state must be one of: present, absent, got: item.state'
+2022-05-10 23:53:28,163 p=8250 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:53:28,163 p=8250 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:56:00,598 p=8392 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:56:00,605 p=8392 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:56:01,471 p=8392 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:56:01,472 p=8392 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:56:02,289 p=8392 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:56:02,291 p=8392 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:56:03,095 p=8392 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:56:03,097 p=8392 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:56:03,104 p=8392 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:56:03,106 p=8392 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:56:03,308 p=8392 u=buenrosm n=ansible | failed: [localhost] (item={'state': 'present', 'rule_name': 'Ansible1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    application: ssh
+    commit: 'false'
+    description: SSH rule test
+    destination_zone: Users
+    rule_name: Ansible1_SSH_permit
+    source_zone: Public
+    state: present
+  msg: 'argument commit is of type <class ''str''> and we were unable to convert to bool: The value ''allow'' is not a valid boolean.  Valid booleans include: 0, 1, ''t'', ''f'', ''yes'', ''n'', ''true'', ''1'', ''off'', ''0'', ''on'', ''y'', ''false'', ''no'''
+2022-05-10 23:56:03,309 p=8392 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:56:03,309 p=8392 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:56:28,344 p=8518 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:56:28,351 p=8518 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:56:29,205 p=8518 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:56:29,207 p=8518 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:56:30,009 p=8518 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:56:30,011 p=8518 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:56:30,799 p=8518 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:56:30,801 p=8518 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:56:30,808 p=8518 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:56:30,810 p=8518 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-10 23:56:31,663 p=8518 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-10 23:56:31,664 p=8518 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 23:56:31,664 p=8518 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:56:31,665 p=8518 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

@@ -1,0 +1,4 @@
+---
+# tasks file for cisco_lab_3_use_cases
+  - import_playbook: sec_rule.yml
+

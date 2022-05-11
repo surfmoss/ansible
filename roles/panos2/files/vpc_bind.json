@@ -1,0 +1,30 @@
+{
+  "resource": [
+    {
+      "tenant": "Prod_Tnt",
+      "ap": "mgmt_anp",
+      "epg": 30,
+      "encap_id": 30,
+      "deploy_immediacy": "immediate",
+      "interface_mode": "trunk",
+      "interface_type": "vpc",
+      "pod": 1,
+      "leafs": "101-102",
+      "interface": "HCI_Server_1_ipg",
+      "state": "present"
+    },
+    {
+      "tenant": "Prod_Tnt",
+      "ap": "mgmt_anp",
+      "epg": 31,
+      "encap_id": 31,
+      "deploy_immediacy": "immediate",
+      "interface_mode": "native",
+      "interface_type": "vpc",
+      "pod": 1,
+      "leafs": "101-102",
+      "interface": "HadoopServer01_ipg",
+      "state": "present"
+    }
+  ]
+}

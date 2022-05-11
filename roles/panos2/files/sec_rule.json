@@ -1,0 +1,14 @@
+{
+  "resource": [
+	{
+      "state": "present",
+	  "rule_name": "Ansible1_SSH_permit",
+      "application": "ssh",
+      "description": "SSH rule test",
+      "source_zone": "Public",	  
+      "destination_zone": "Users",
+	  "action": "allow",
+	  "commit": "false"
+    }
+  ]
+}

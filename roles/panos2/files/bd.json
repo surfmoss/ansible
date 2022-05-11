@@ -1,0 +1,43 @@
+{
+  "resource": [
+    {
+      "tenant": "Prod_Tnt",
+      "bd": 29,
+      "description": "switches",
+      "vrf": "mgmt_vrf",
+      "l2_unknown_unicast": "flood",
+      "l3_unknown_multicast": "flood",
+      "arp_flooding": "True",
+      "ip_learning": "yes",
+      "limit_ip_learn": "True",
+      "enable_routing": "False",
+      "state": "present"
+    },
+    {
+      "tenant": "Prod_Tnt",
+      "bd": 30,
+      "description": "routers",
+      "vrf": "mgmt_vrf",
+      "l2_unknown_unicast": "flood",
+      "l3_unknown_multicast": "flood",
+      "arp_flooding": "True",
+      "ip_learning": "yes",
+      "limit_ip_learn": "True",
+      "enable_routing": "False",
+      "state": "present"
+    },
+    {
+      "tenant": "Prod_Tnt",
+      "bd": 31,
+      "description": "load_balancers",
+      "vrf": "mgmt_vrf",
+      "l2_unknown_unicast": "flood",
+      "l3_unknown_multicast": "flood",
+      "arp_flooding": "True",
+      "ip_learning": "yes",
+      "limit_ip_learn": "True",
+      "enable_routing": "False",
+      "state": "present"
+    }
+  ]
+}

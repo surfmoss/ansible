@@ -1,0 +1,34 @@
+---
+- name: Sec_rule
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:  
+    version_file: "{{lookup('file','/home/buenrosm/ansible/roles/panos2/files/sec_rule.json') | from_json }}"
+
+
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+
+
+  tasks:
+
+    - name: include variables
+      include_vars: ~/ansible/group_vars/panos/vars.yml
+      no_log: 'yes'
+
+
+    - name: add a rule 
+      panos_security_rule:
+        ip_address: 192.168.55.10
+        state: "{{ item.state }}"
+        rule_name: "{{ item.rule_name }}"
+        application: "{{ item.application }}"
+        description: "{{ item.description }}"
+        source_zone: "{{ item.source_zone }}"
+        destination_zone: "{{ item.destination_zone }}"
+        api_key: "{{ palo_api }}"
+        action: "{{ item.action }}"
+        commit: "{{ item.action }}"
+      loop: "{{ version_file.resource }}" 
+ 
