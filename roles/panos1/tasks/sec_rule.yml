@@ -1,33 +1,30 @@
 ---
 - name: Add Security rule
   hosts: 149.97.195.203
-  connection: panos
+  connection: local
   gather_facts: false
   vars:
     version_file: "{{lookup('file','/home/buenrosm/ansible/roles/panos1/files/sec_rule.json') | from_json }}"
+
+  collections:
+      - paloaltonetworks.panos
 
   tasks:
 
   - name: add an SSH inbound rule to devicegroup
     panos_security_rule:
       ip_address: 149.97.195.203
-      username: '{{ palo_username }}'
-      password: '{{ palo_password }}'
-      operation: '{{ item.operation }}'
+      device_group: '{{ item.device_group }}'
       rule_name: '{{ item. rule_name }}'
       description: '{{ item.description }}'
       tag_name: '{{ item.tag_name }}'
       source_zone: '{{ item.source_zone }}'
-      destination_zone: '{{ item.destination_zone }}'
       source_ip: '{{ item.source_ip }}'
-      source_user: '{{ item.source_user }}'
+      destination_zone: '{{ item.destination_zone }}'      
       destination_ip: '{{ item.destination_ip }}'
-      category: '{{ item.category }}'
       application: '{{ item.application }}'
-      service: '{{ item.service }}'
-      hip_profiles: '{{ item.hip_profiles }}'
-      action: '{{ item.action }}'
-      devicegroup: '{{ item.devicegroup }}'
+      action: '{{ item.action }}'      
+      api_key: '{{ item.api_key }}'
     delegate_to: localhost
     loop: "{{ version_file.resource }}" 
  

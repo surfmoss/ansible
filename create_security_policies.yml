@@ -1,0 +1,103 @@
+# FILENAME
+# create_security_policies.yml
+#
+# DESCRIPTION
+# Sample playbook used for AWS Automation webinar
+#
+# REQUIREMENTS
+# pip install ansible
+# ansible-galaxy install PaloAltoNetworks.paloaltonetworks
+# create vars.yml and configure with your credentials (vars-sample.yml file provided)
+#
+# EXECUTE
+# ansible-playbook create_security_policies.yml
+---
+- name: Sec_rule
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+
+  tasks:
+
+    - name: include variables
+      include_vars: ~/ansible/group_vars/panos/vars.yml
+      no_log: 'yes'
+
+
+    - name: add a rule to allow HTTP
+      panos_security_rule:
+        ip_address: 192.168.55.10
+        username: "{{ palo_username }}"
+        password: "{{ palo_password }}"
+        state: 'present'
+        rule_name: 'Ansible_1_Web_traffic'
+        application: 'web-browsing'
+        description: 'Allow HTTP traffic'
+        source_zone: ['Public']
+        destination_zone: ['Users']
+        api_key: "{{ palo_api }}"
+        action: 'allow'
+        commit: "False"
+
+    - name: SSH Inbound
+      panos_security_rule:
+        ip_address: 192.168.55.10
+        username: "{{ palo_username }}"
+        password: "{{ palo_password}}"
+        state: 'present'
+        rule_name: 'Ansible_2_SSH_traffic'
+        application: ['ping', 'ssh']
+        description: 'Allow SSH traffic'
+        source_zone: ['Public']
+        destination_zone: ['Users']
+        api_key: "{{ palo_api }}"
+        action: 'allow'
+        commit: "False"
+
+    - name: SSH 221 Inbound
+      panos_security_rule:
+        ip_address: 192.168.55.10
+        username: "{{ palo_username }}"
+        password: "{{ palo_password}}"
+        state: 'present'
+        rule_name: 'Ansible_3_SSH_221 traffic'
+        application: ['ping', 'ssh']
+        service: 'service-tcp-221'
+        description: 'Allow SSH traffic'
+        source_zone: ['Public']
+        destination_zone: ['Users']
+        api_key: "{{ palo_api }}"
+        action: 'allow'
+        commit: "False"
+
+    - name: allow all rule 
+      panos_security_rule:
+        ip_address: 192.168.55.10
+        username: "{{ palo_username }}"
+        password: "{{ palo_password}}"
+        state: 'present'
+        rule_name: 'Ansible_4_allow_out_all'
+        application: 'any'
+        description: 'allow all outbound'
+        source_zone: ['Users']
+        destination_zone: ['Public']
+        api_key: "{{ palo_api }}"
+        action: 'allow'
+        commit: "False"
+
+    - name: Log default deny
+      panos_security_rule:
+        ip_address: 192.168.55.10
+        username: "{{ palo_username }}"
+        password: "{{ palo_password}}"
+        state: 'present'
+        rule_name: 'Ansible_5_Log_default_deny'
+        description: 'Allow SSH traffic'
+        source_zone: ['Public']
+        destination_zone: ['Users']
+        api_key: "{{ palo_api }}"
+        action: 'deny'
+        commit: "True"

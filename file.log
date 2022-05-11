@@ -338,3 +338,1331 @@ in ansible.cfg.
 2022-05-10 15:23:13,594 p=942 u=buenrosm n=ansible | ERROR! failed to combine variables, expected dicts but got a 'dict' and a 'AnsibleUnicode': 
 {"ansible_connection": "network_cli", "domain_name": "cisco.com", "nameservers": null, "ansible_password": "!v3G@!4@Y", "ansible_user": "admin"}
 "<<<<<<< HEAD $ANSIBLE_VAULT;1.1;AES256 36303138306333633639646432326661363136613838323662333133663064333332316632623531 3035316637316338643738326661306365346661663630630a663763636262313730363939623461 31363434653333663333396563396366653062643330613866623234663737666261313231346437 6437646233343365300a663762396331376130323336666234326335613664316262386139346266 63383432633634353366353532633362653038633830383638666432386330623034616239616436 35386462623065356265396363356362613839303764373733623961376633346662356461663632 31656364393934306632326332343438343937303865613362376135333137363166326339393037 36346632343230633434383837356532326663333936393338653133646162386238646664303331 66623836323234613261396335313064363662633066633030376432373734323132353063666132 63383461636433323066336332643463396265303834356638616637333861663062336339316330 63653738383064643962336366633330363130643939636461353431353363363633626662643163 32383233393264326163393533316630393464623063393438616265623465613637623862363236 3536 ======= 1 >>>>>>> 6fb93ba6a23bcbf158c159187b013a0980c693df"
+2022-05-10 15:24:05,028 p=973 u=buenrosm n=ansible | [DEPRECATION WARNING]: panos_security_rule is kept for backwards compatibility but usage is 
+discouraged. The module documentation details page may explain more about this rationale.. This feature
+ will be removed in a future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-10 15:24:05,048 p=973 u=buenrosm n=ansible | PLAY [Add Security rule] *******************************************************************************
+2022-05-10 15:24:05,059 p=973 u=buenrosm n=ansible | ERROR! failed to combine variables, expected dicts but got a 'dict' and a 'AnsibleUnicode': 
+{"ansible_connection": "network_cli", "domain_name": "cisco.com", "nameservers": null, "ansible_password": "!v3G@!4@Y", "ansible_user": "admin"}
+"<<<<<<< HEAD $ANSIBLE_VAULT;1.1;AES256 36303138306333633639646432326661363136613838323662333133663064333332316632623531 3035316637316338643738326661306365346661663630630a663763636262313730363939623461 31363434653333663333396563396366653062643330613866623234663737666261313231346437 6437646233343365300a663762396331376130323336666234326335613664316262386139346266 63383432633634353366353532633362653038633830383638666432386330623034616239616436 35386462623065356265396363356362613839303764373733623961376633346662356461663632 31656364393934306632326332343438343937303865613362376135333137363166326339393037 36346632343230633434383837356532326663333936393338653133646162386238646664303331 66623836323234613261396335313064363662633066633030376432373734323132353063666132 63383461636433323066336332643463396265303834356638616637333861663062336339316330 63653738383064643962336366633330363130643939636461353431353363363633626662643163 32383233393264326163393533316630393464623063393438616265623465613637623862363236 3536 ======= 1 >>>>>>> 6fb93ba6a23bcbf158c159187b013a0980c693df"
+2022-05-10 15:24:21,655 p=977 u=buenrosm n=ansible | ansible-playbook 2.9.6
+  config file = /home/buenrosm/ansible/ansible.cfg
+  configured module search path = ['/home/buenrosm/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.2 (default, Mar 13 2020, 10:14:16) [GCC 9.3.0]
+2022-05-10 15:24:21,655 p=977 u=buenrosm n=ansible | Using /home/buenrosm/ansible/ansible.cfg as config file
+2022-05-10 15:24:26,136 p=977 u=buenrosm n=ansible | host_list declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 15:24:26,136 p=977 u=buenrosm n=ansible | script declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 15:24:26,136 p=977 u=buenrosm n=ansible | auto declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 15:24:26,138 p=977 u=buenrosm n=ansible | Parsed /home/buenrosm/ansible/inventory inventory source with ini plugin
+2022-05-10 15:24:26,261 p=977 u=buenrosm n=ansible | [DEPRECATION WARNING]: panos_security_rule is kept for backwards compatibility but usage is 
+discouraged. The module documentation details page may explain more about this rationale.. This feature
+ will be removed in a future release. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-10 15:24:26,281 p=977 u=buenrosm n=ansible | PLAYBOOK: main.yml *************************************************************************************
+2022-05-10 15:24:26,281 p=977 u=buenrosm n=ansible | 1 plays in roles/panos1/tasks/main.yml
+2022-05-10 15:24:26,282 p=977 u=buenrosm n=ansible | PLAY [Add Security rule] *******************************************************************************
+2022-05-10 15:24:26,286 p=977 u=buenrosm n=ansible | META: ran handlers
+2022-05-10 15:24:26,294 p=977 u=buenrosm n=ansible | ERROR! failed to combine variables, expected dicts but got a 'dict' and a 'AnsibleUnicode': 
+{"ansible_connection": "network_cli", "domain_name": "cisco.com", "nameservers": null, "ansible_password": "!v3G@!4@Y", "ansible_user": "admin"}
+"<<<<<<< HEAD $ANSIBLE_VAULT;1.1;AES256 36303138306333633639646432326661363136613838323662333133663064333332316632623531 3035316637316338643738326661306365346661663630630a663763636262313730363939623461 31363434653333663333396563396366653062643330613866623234663737666261313231346437 6437646233343365300a663762396331376130323336666234326335613664316262386139346266 63383432633634353366353532633362653038633830383638666432386330623034616239616436 35386462623065356265396363356362613839303764373733623961376633346662356461663632 31656364393934306632326332343438343937303865613362376135333137363166326339393037 36346632343230633434383837356532326663333936393338653133646162386238646664303331 66623836323234613261396335313064363662633066633030376432373734323132353063666132 63383461636433323066336332643463396265303834356638616637333861663062336339316330 63653738383064643962336366633330363130643939636461353431353363363633626662643163 32383233393264326163393533316630393464623063393438616265623465613637623862363236 3536 ======= 1 >>>>>>> 6fb93ba6a23bcbf158c159187b013a0980c693df"
+2022-05-10 15:33:08,442 p=1102 u=buenrosm n=ansible | [DEPRECATION WARNING]: panos_security_rule is kept for backwards compatibility but usage is discouraged.
+ The module documentation details page may explain more about this rationale.. This feature will be 
+removed in a future release. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 15:33:08,462 p=1102 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:33:08,473 p=1102 u=buenrosm n=ansible | ERROR! failed to combine variables, expected dicts but got a 'dict' and a 'AnsibleUnicode': 
+{"ansible_connection": "network_cli", "domain_name": "cisco.com", "nameservers": null, "ansible_password": "!v3G@!4@Y", "ansible_user": "admin"}
+"<<<<<<< HEAD $ANSIBLE_VAULT;1.1;AES256 36303138306333633639646432326661363136613838323662333133663064333332316632623531 3035316637316338643738326661306365346661663630630a663763636262313730363939623461 31363434653333663333396563396366653062643330613866623234663737666261313231346437 6437646233343365300a663762396331376130323336666234326335613664316262386139346266 63383432633634353366353532633362653038633830383638666432386330623034616239616436 35386462623065356265396363356362613839303764373733623961376633346662356461663632 31656364393934306632326332343438343937303865613362376135333137363166326339393037 36346632343230633434383837356532326663333936393338653133646162386238646664303331 66623836323234613261396335313064363662633066633030376432373734323132353063666132 63383461636433323066336332643463396265303834356638616637333861663062336339316330 63653738383064643962336366633330363130643939636461353431353363363633626662643163 32383233393264326163393533316630393464623063393438616265623465613637623862363236 3536 ======= 1 >>>>>>> 6fb93ba6a23bcbf158c159187b013a0980c693df"
+2022-05-10 15:36:01,774 p=1121 u=buenrosm n=ansible | [DEPRECATION WARNING]: panos_security_rule is kept for backwards compatibility but usage is discouraged.
+ The module documentation details page may explain more about this rationale.. This feature will be 
+removed in a future release. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 15:36:01,794 p=1121 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:36:01,851 p=1121 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 15:36:02,024 p=1121 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'ip_address': '149.97.195.203', 'api_key': 'palo_api', 'operation': 'add', 'rule_name': 'SSH permit', 'description': 'SSH rule test', 'tag_name': ['ProjectX'], 'source_zone': ['LAN'], 'destination_zone': ['WAN'], 'source_ip': ['any'], 'source_user': ['any'], 'destination_ip': ['1.1.1.1'], 'category': ['any'], 'application': ['ssh'], 'service': ['application-default'], 'hip_profiles': ['any'], 'action': 'allow', 'devicegroup': 'Cloud Edge'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: palo_api
+    application:
+    - ssh
+    category:
+    - any
+    description: SSH rule test
+    destination_ip:
+    - 1.1.1.1
+    destination_zone:
+    - WAN
+    devicegroup: Cloud Edge
+    hip_profiles:
+    - any
+    ip_address: 149.97.195.203
+    operation: add
+    rule_name: SSH permit
+    service:
+    - application-default
+    source_ip:
+    - any
+    source_user:
+    - any
+    source_zone:
+    - LAN
+    tag_name:
+    - ProjectX
+  msg: Missing required libraries.
+2022-05-10 15:36:02,026 p=1121 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 15:36:02,026 p=1121 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 15:37:37,996 p=1216 u=buenrosm n=ansible | [DEPRECATION WARNING]: panos_security_rule is kept for backwards compatibility but usage is discouraged.
+ The module documentation details page may explain more about this rationale.. This feature will be 
+removed in a future release. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 15:37:38,016 p=1216 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:37:38,049 p=1216 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 15:37:38,209 p=1216 u=buenrosm n=ansible | failed: [uvo1z5poxqndtoubmve.env.cloudshare.com -> localhost] (item={'ip_address': 'uvo1z5poxqndtoubmve.env.cloudshare.com', 'api_key': 'palo_api', 'operation': 'add', 'rule_name': 'SSH permit', 'description': 'SSH rule test', 'tag_name': ['ProjectX'], 'source_zone': ['LAN'], 'destination_zone': ['WAN'], 'source_ip': ['any'], 'source_user': ['any'], 'destination_ip': ['1.1.1.1'], 'category': ['any'], 'application': ['ssh'], 'service': ['application-default'], 'hip_profiles': ['any'], 'action': 'allow', 'devicegroup': 'Cloud Edge'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: palo_api
+    application:
+    - ssh
+    category:
+    - any
+    description: SSH rule test
+    destination_ip:
+    - 1.1.1.1
+    destination_zone:
+    - WAN
+    devicegroup: Cloud Edge
+    hip_profiles:
+    - any
+    ip_address: uvo1z5poxqndtoubmve.env.cloudshare.com
+    operation: add
+    rule_name: SSH permit
+    service:
+    - application-default
+    source_ip:
+    - any
+    source_user:
+    - any
+    source_zone:
+    - LAN
+    tag_name:
+    - ProjectX
+  msg: Missing required libraries.
+2022-05-10 15:37:38,210 p=1216 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 15:37:38,211 p=1216 u=buenrosm n=ansible | uvo1z5poxqndtoubmve.env.cloudshare.com : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 15:40:05,724 p=1676 u=buenrosm n=ansible | [DEPRECATION WARNING]: panos_security_rule is kept for backwards compatibility but usage is discouraged.
+ The module documentation details page may explain more about this rationale.. This feature will be 
+removed in a future release. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 15:40:05,744 p=1676 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:40:05,778 p=1676 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 15:40:05,938 p=1676 u=buenrosm n=ansible | failed: [uvo1z5poxqndtoubmve.env.cloudshare.com -> localhost] (item={'ip_address': 'uvo1z5poxqndtoubmve.env.cloudshare.com', 'api_key': 'palo_api', 'operation': 'add', 'rule_name': 'SSH permit', 'description': 'SSH rule test', 'tag_name': ['ProjectX'], 'source_zone': ['LAN'], 'destination_zone': ['WAN'], 'source_ip': ['any'], 'source_user': ['any'], 'destination_ip': ['1.1.1.1'], 'category': ['any'], 'application': ['ssh'], 'service': ['application-default'], 'hip_profiles': ['any'], 'action': 'allow', 'devicegroup': 'Cloud Edge'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: palo_api
+    application:
+    - ssh
+    category:
+    - any
+    description: SSH rule test
+    destination_ip:
+    - 1.1.1.1
+    destination_zone:
+    - WAN
+    devicegroup: Cloud Edge
+    hip_profiles:
+    - any
+    ip_address: uvo1z5poxqndtoubmve.env.cloudshare.com
+    operation: add
+    rule_name: SSH permit
+    service:
+    - application-default
+    source_ip:
+    - any
+    source_user:
+    - any
+    source_zone:
+    - LAN
+    tag_name:
+    - ProjectX
+  msg: Missing required libraries.
+2022-05-10 15:40:05,939 p=1676 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 15:40:05,939 p=1676 u=buenrosm n=ansible | uvo1z5poxqndtoubmve.env.cloudshare.com : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 15:41:25,845 p=1746 u=buenrosm n=ansible | [DEPRECATION WARNING]: panos_security_rule is kept for backwards compatibility but usage is discouraged.
+ The module documentation details page may explain more about this rationale.. This feature will be 
+removed in a future release. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 15:41:25,865 p=1746 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:41:25,898 p=1746 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 15:41:26,057 p=1746 u=buenrosm n=ansible | failed: [uvo1z5poxqndtoubmve.env.cloudshare.com -> localhost] (item={'ip_address': 'uvo1z5poxqndtoubmve.env.cloudshare.com', 'api_key': 'palo_api', 'operation': 'add', 'rule_name': 'SSH permit', 'description': 'SSH rule test', 'tag_name': ['ProjectX'], 'source_zone': ['LAN'], 'destination_zone': ['WAN'], 'source_ip': ['any'], 'source_user': ['any'], 'destination_ip': ['1.1.1.1'], 'category': ['any'], 'application': ['ssh'], 'service': ['application-default'], 'hip_profiles': ['any'], 'action': 'allow', 'devicegroup': 'Cloud Edge'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: palo_api
+    application:
+    - ssh
+    category:
+    - any
+    description: SSH rule test
+    destination_ip:
+    - 1.1.1.1
+    destination_zone:
+    - WAN
+    devicegroup: Cloud Edge
+    hip_profiles:
+    - any
+    ip_address: uvo1z5poxqndtoubmve.env.cloudshare.com
+    operation: add
+    rule_name: SSH permit
+    service:
+    - application-default
+    source_ip:
+    - any
+    source_user:
+    - any
+    source_zone:
+    - LAN
+    tag_name:
+    - ProjectX
+  msg: Missing required libraries.
+2022-05-10 15:41:26,058 p=1746 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 15:41:26,058 p=1746 u=buenrosm n=ansible | uvo1z5poxqndtoubmve.env.cloudshare.com : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 15:42:56,047 p=1777 u=buenrosm n=ansible | Process install dependency map
+2022-05-10 15:42:56,047 p=1777 u=buenrosm n=ansible | |
+2022-05-10 15:42:56,148 p=1777 u=buenrosm n=ansible | /
+2022-05-10 15:42:56,248 p=1777 u=buenrosm n=ansible | -
+2022-05-10 15:42:56,348 p=1777 u=buenrosm n=ansible | \
+2022-05-10 15:42:56,449 p=1777 u=buenrosm n=ansible | |
+2022-05-10 15:42:56,550 p=1777 u=buenrosm n=ansible | /
+2022-05-10 15:42:56,651 p=1777 u=buenrosm n=ansible | ERROR! Unknown error when attempting to call Galaxy at 'https://galaxy.ansible.com/api/': <urlopen error [SSL: CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain (_ssl.c:1108)>
+2022-05-10 15:44:02,519 p=1782 u=buenrosm n=ansible | Process install dependency map
+2022-05-10 15:44:02,519 p=1782 u=buenrosm n=ansible | |
+2022-05-10 15:44:02,620 p=1782 u=buenrosm n=ansible | /
+2022-05-10 15:44:02,721 p=1782 u=buenrosm n=ansible | -
+2022-05-10 15:44:02,824 p=1782 u=buenrosm n=ansible | \
+2022-05-10 15:44:02,925 p=1782 u=buenrosm n=ansible | |
+2022-05-10 15:44:03,025 p=1782 u=buenrosm n=ansible | /
+2022-05-10 15:44:03,126 p=1782 u=buenrosm n=ansible | -
+2022-05-10 15:44:03,227 p=1782 u=buenrosm n=ansible | \
+2022-05-10 15:44:03,328 p=1782 u=buenrosm n=ansible | |
+2022-05-10 15:44:03,429 p=1782 u=buenrosm n=ansible | /
+2022-05-10 15:44:03,530 p=1782 u=buenrosm n=ansible | -
+2022-05-10 15:44:03,631 p=1782 u=buenrosm n=ansible | \
+2022-05-10 15:44:03,732 p=1782 u=buenrosm n=ansible | |
+2022-05-10 15:44:03,833 p=1782 u=buenrosm n=ansible | /
+2022-05-10 15:44:03,934 p=1782 u=buenrosm n=ansible | -
+2022-05-10 15:44:04,035 p=1782 u=buenrosm n=ansible | Starting collection install process
+2022-05-10 15:44:04,037 p=1782 u=buenrosm n=ansible | |
+2022-05-10 15:44:04,138 p=1782 u=buenrosm n=ansible | Installing 'paloaltonetworks.panos:2.9.0' to '/home/buenrosm/.ansible/collections/ansible_collections/paloaltonetworks/panos'
+2022-05-10 15:44:04,139 p=1782 u=buenrosm n=ansible | /
+2022-05-10 15:44:04,240 p=1782 u=buenrosm n=ansible | -
+2022-05-10 15:44:04,341 p=1782 u=buenrosm n=ansible | \
+2022-05-10 15:44:04,442 p=1782 u=buenrosm n=ansible | |
+2022-05-10 15:44:04,543 p=1782 u=buenrosm n=ansible | /
+2022-05-10 15:44:04,644 p=1782 u=buenrosm n=ansible | -
+2022-05-10 15:44:04,745 p=1782 u=buenrosm n=ansible | \
+2022-05-10 15:44:04,846 p=1782 u=buenrosm n=ansible | |
+2022-05-10 15:44:04,947 p=1782 u=buenrosm n=ansible | /
+2022-05-10 15:44:05,047 p=1782 u=buenrosm n=ansible | -
+2022-05-10 15:44:05,148 p=1782 u=buenrosm n=ansible | \
+2022-05-10 15:44:05,249 p=1782 u=buenrosm n=ansible | |
+2022-05-10 15:44:05,350 p=1782 u=buenrosm n=ansible | /
+2022-05-10 15:44:05,451 p=1782 u=buenrosm n=ansible | -
+2022-05-10 15:44:05,552 p=1782 u=buenrosm n=ansible | \
+2022-05-10 15:44:05,653 p=1782 u=buenrosm n=ansible | |
+2022-05-10 15:44:05,754 p=1782 u=buenrosm n=ansible | /
+2022-05-10 15:44:05,855 p=1782 u=buenrosm n=ansible | -
+2022-05-10 15:44:05,956 p=1782 u=buenrosm n=ansible | \
+2022-05-10 15:44:06,057 p=1782 u=buenrosm n=ansible | |
+2022-05-10 15:44:06,158 p=1782 u=buenrosm n=ansible | /
+2022-05-10 15:44:06,259 p=1782 u=buenrosm n=ansible | -
+2022-05-10 15:44:06,361 p=1782 u=buenrosm n=ansible | \
+2022-05-10 15:44:16,582 p=1786 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:44:16,617 p=1786 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 15:44:16,803 p=1786 u=buenrosm n=ansible | failed: [uvo1z5poxqndtoubmve.env.cloudshare.com -> localhost] (item={'ip_address': 'uvo1z5poxqndtoubmve.env.cloudshare.com', 'api_key': 'palo_api', 'operation': 'add', 'rule_name': 'SSH permit', 'description': 'SSH rule test', 'tag_name': ['ProjectX'], 'source_zone': ['LAN'], 'destination_zone': ['WAN'], 'source_ip': ['any'], 'source_user': ['any'], 'destination_ip': ['1.1.1.1'], 'category': ['any'], 'application': ['ssh'], 'service': ['application-default'], 'hip_profiles': ['any'], 'action': 'allow', 'devicegroup': 'Cloud Edge'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: palo_api
+    application:
+    - ssh
+    category:
+    - any
+    description: SSH rule test
+    destination_ip:
+    - 1.1.1.1
+    destination_zone:
+    - WAN
+    devicegroup: Cloud Edge
+    hip_profiles:
+    - any
+    ip_address: uvo1z5poxqndtoubmve.env.cloudshare.com
+    operation: add
+    rule_name: SSH permit
+    service:
+    - application-default
+    source_ip:
+    - any
+    source_user:
+    - any
+    source_zone:
+    - LAN
+    tag_name:
+    - ProjectX
+  msg: 'Unsupported parameters for (panos_security_rule) module: operation Supported parameters include: action, antivirus, api_key, application, audit_comment, category, commit, data_filtering, description, destination_ip, destination_zone, device_group, devicegroup, disable_server_response_inspection, disabled, existing_rule, file_blocking, group_profile, group_tag, hip_profiles, icmp_unreachable, ip_address, location, log_end, log_setting, log_start, negate_destination, negate_source, negate_target, password, port, provider, rule_name, rule_type, rulebase, schedule, service, source_ip, source_user, source_zone, spyware, state, tag_name, target, url_filtering, username, vsys, vulnerability, wildfire_analysis'
+2022-05-10 15:44:16,804 p=1786 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 15:44:16,804 p=1786 u=buenrosm n=ansible | uvo1z5poxqndtoubmve.env.cloudshare.com : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 15:46:10,538 p=1841 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:46:10,571 p=1841 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 15:46:10,745 p=1841 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'ip_address': '149.97.195.203', 'api_key': 'palo_api', 'operation': 'add', 'rule_name': 'SSH permit', 'description': 'SSH rule test', 'tag_name': ['ProjectX'], 'source_zone': ['LAN'], 'destination_zone': ['WAN'], 'source_ip': ['any'], 'source_user': ['any'], 'destination_ip': ['1.1.1.1'], 'category': ['any'], 'application': ['ssh'], 'service': ['application-default'], 'hip_profiles': ['any'], 'action': 'allow', 'devicegroup': 'Cloud Edge'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: palo_api
+    application:
+    - ssh
+    category:
+    - any
+    description: SSH rule test
+    destination_ip:
+    - 1.1.1.1
+    destination_zone:
+    - WAN
+    devicegroup: Cloud Edge
+    hip_profiles:
+    - any
+    ip_address: 149.97.195.203
+    operation: add
+    rule_name: SSH permit
+    service:
+    - application-default
+    source_ip:
+    - any
+    source_user:
+    - any
+    source_zone:
+    - LAN
+    tag_name:
+    - ProjectX
+  msg: 'Unsupported parameters for (panos_security_rule) module: operation Supported parameters include: action, antivirus, api_key, application, audit_comment, category, commit, data_filtering, description, destination_ip, destination_zone, device_group, devicegroup, disable_server_response_inspection, disabled, existing_rule, file_blocking, group_profile, group_tag, hip_profiles, icmp_unreachable, ip_address, location, log_end, log_setting, log_start, negate_destination, negate_source, negate_target, password, port, provider, rule_name, rule_type, rulebase, schedule, service, source_ip, source_user, source_zone, spyware, state, tag_name, target, url_filtering, username, vsys, vulnerability, wildfire_analysis'
+2022-05-10 15:46:10,746 p=1841 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 15:46:10,746 p=1841 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 15:52:40,010 p=1903 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:52:40,043 p=1903 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 15:52:40,220 p=1903 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'ip_address': '149.97.195.203', 'api_key': 'palo_api', 'operation': 'add', 'rule_name': 'SSH permit', 'description': 'SSH rule test', 'tag_name': 'ProjectX', 'source_zone': 'LAN', 'destination_zone': 'WAN', 'source_ip': 'any', 'source_user': 'any', 'destination_ip': '1.1.1.1', 'category': 'any', 'application': 'ssh', 'service': 'application-default', 'hip_profiles': 'any', 'action': 'allow', 'devicegroup': 'Cloud Edge'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: palo_api
+    application: ssh
+    category: any
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    devicegroup: Cloud Edge
+    hip_profiles: any
+    ip_address: 149.97.195.203
+    operation: add
+    rule_name: SSH permit
+    service: application-default
+    source_ip: any
+    source_user: any
+    source_zone: LAN
+    tag_name: ProjectX
+  msg: 'Unsupported parameters for (panos_security_rule) module: operation Supported parameters include: action, antivirus, api_key, application, audit_comment, category, commit, data_filtering, description, destination_ip, destination_zone, device_group, devicegroup, disable_server_response_inspection, disabled, existing_rule, file_blocking, group_profile, group_tag, hip_profiles, icmp_unreachable, ip_address, location, log_end, log_setting, log_start, negate_destination, negate_source, negate_target, password, port, provider, rule_name, rule_type, rulebase, schedule, service, source_ip, source_user, source_zone, spyware, state, tag_name, target, url_filtering, username, vsys, vulnerability, wildfire_analysis'
+2022-05-10 15:52:40,221 p=1903 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 15:52:40,221 p=1903 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 15:56:20,603 p=1943 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:56:20,635 p=1943 u=buenrosm n=ansible | ERROR! An unhandled exception occurred while templating '{{lookup('file','/home/buenrosm/ansible/roles/panos1/files/sec_rule.json') | from_json }}'. Error was a <class 'json.decoder.JSONDecodeError'>, original message: Expecting property name enclosed in double quotes: line 21 column 5 (char 561)
+2022-05-10 15:56:40,761 p=1952 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:56:40,794 p=1952 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 15:56:40,964 p=1952 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'palo_api', 'application': 'ssh', 'category': 'any', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'devicegroup': 'Cloud Edge', 'hip_profiles': 'any', 'ip_address': '149.97.195.203', 'operation': 'add', 'rule_name': 'SSH permit', 'service': 'application-default', 'source_ip': 'any', 'source_user': 'any', 'source_zone': 'LAN', 'tag_name': 'ProjectX'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: palo_api
+    application: ssh
+    category: any
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    devicegroup: Cloud Edge
+    hip_profiles: any
+    ip_address: 149.97.195.203
+    operation: add
+    rule_name: SSH permit
+    service: application-default
+    source_ip: any
+    source_user: any
+    source_zone: LAN
+    tag_name: ProjectX
+  msg: 'Unsupported parameters for (panos_security_rule) module: operation Supported parameters include: action, antivirus, api_key, application, audit_comment, category, commit, data_filtering, description, destination_ip, destination_zone, device_group, devicegroup, disable_server_response_inspection, disabled, existing_rule, file_blocking, group_profile, group_tag, hip_profiles, icmp_unreachable, ip_address, location, log_end, log_setting, log_start, negate_destination, negate_source, negate_target, password, port, provider, rule_name, rule_type, rulebase, schedule, service, source_ip, source_user, source_zone, spyware, state, tag_name, target, url_filtering, username, vsys, vulnerability, wildfire_analysis'
+2022-05-10 15:56:40,966 p=1952 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 15:56:40,966 p=1952 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 15:58:39,162 p=1993 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 15:58:39,198 p=1993 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 15:58:39,370 p=1993 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'palo_api', 'application': 'ssh', 'category': 'any', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'hip_profiles': 'any', 'ip_address': '149.97.195.203', 'operation': 'add', 'rule_name': 'SSH permit', 'service': 'application-default', 'source_ip': 'any', 'source_user': 'any', 'source_zone': 'LAN', 'tag_name': 'ProjectX'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: palo_api
+    application: ssh
+    category: any
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    hip_profiles: any
+    ip_address: 149.97.195.203
+    operation: add
+    rule_name: SSH permit
+    service: application-default
+    source_ip: any
+    source_user: any
+    source_zone: LAN
+    tag_name: ProjectX
+  msg: 'Unsupported parameters for (panos_security_rule) module: operation Supported parameters include: action, antivirus, api_key, application, audit_comment, category, commit, data_filtering, description, destination_ip, destination_zone, device_group, devicegroup, disable_server_response_inspection, disabled, existing_rule, file_blocking, group_profile, group_tag, hip_profiles, icmp_unreachable, ip_address, location, log_end, log_setting, log_start, negate_destination, negate_source, negate_target, password, port, provider, rule_name, rule_type, rulebase, schedule, service, source_ip, source_user, source_zone, spyware, state, tag_name, target, url_filtering, username, vsys, vulnerability, wildfire_analysis'
+2022-05-10 15:58:39,371 p=1993 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 15:58:39,371 p=1993 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:01:00,151 p=2034 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:01:00,184 p=2034 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:01:00,358 p=2034 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'palo_api', 'application': 'ssh', 'category': 'any', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'hip_profiles': 'any', 'ip_address': '149.97.195.203', 'rule_name': 'SSH permit', 'service': 'application-default', 'source_ip': 'any', 'source_user': 'any', 'source_zone': 'LAN', 'tag_name': 'ProjectX'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: palo_api
+    application: ssh
+    category: any
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    hip_profiles: any
+    ip_address: 149.97.195.203
+    rule_name: SSH permit
+    service: application-default
+    source_ip: any
+    source_user: any
+    source_zone: LAN
+    tag_name: ProjectX
+  msg: Missing required library "pan-os-python".
+2022-05-10 16:01:00,359 p=2034 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:01:00,359 p=2034 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:01:38,547 p=2068 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:01:38,580 p=2068 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:01:38,751 p=2068 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': '', 'application': 'ssh', 'category': 'any', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'hip_profiles': 'any', 'ip_address': '149.97.195.203', 'rule_name': 'SSH permit', 'service': 'application-default', 'source_ip': 'any', 'source_user': 'any', 'source_zone': 'LAN', 'tag_name': 'ProjectX'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: ''
+    application: ssh
+    category: any
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    hip_profiles: any
+    ip_address: 149.97.195.203
+    rule_name: SSH permit
+    service: application-default
+    source_ip: any
+    source_user: any
+    source_zone: LAN
+    tag_name: ProjectX
+  msg: Missing required library "pan-os-python".
+2022-05-10 16:01:38,752 p=2068 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:01:38,753 p=2068 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:01:52,807 p=2098 u=buenrosm n=ansible | Process install dependency map
+2022-05-10 16:01:52,807 p=2098 u=buenrosm n=ansible | |
+2022-05-10 16:01:52,909 p=2098 u=buenrosm n=ansible | ERROR! Invalid collection name 'pan-os-python', name must be in the format <namespace>.<collection>. Please make sure namespace and collection name contains characters from [a-zA-Z0-9_] only.
+2022-05-10 16:04:25,499 p=2109 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:04:25,532 p=2109 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:04:25,704 p=2109 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': '{{ palo_api }}', 'application': 'ssh', 'category': 'any', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'hip_profiles': 'any', 'ip_address': '149.97.195.203', 'rule_name': 'SSH permit', 'service': 'application-default', 'source_ip': 'any', 'source_user': 'any', 'source_zone': 'LAN', 'tag_name': 'ProjectX'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: '{{ palo_api }}'
+    application: ssh
+    category: any
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    hip_profiles: any
+    ip_address: 149.97.195.203
+    rule_name: SSH permit
+    service: application-default
+    source_ip: any
+    source_user: any
+    source_zone: LAN
+    tag_name: ProjectX
+  msg: Missing required library "pan-os-python".
+2022-05-10 16:04:25,705 p=2109 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:04:25,705 p=2109 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:06:25,105 p=2141 u=buenrosm n=ansible | Process install dependency map
+2022-05-10 16:06:25,106 p=2141 u=buenrosm n=ansible | |
+2022-05-10 16:06:25,208 p=2141 u=buenrosm n=ansible | /
+2022-05-10 16:06:25,309 p=2141 u=buenrosm n=ansible | -
+2022-05-10 16:06:25,409 p=2141 u=buenrosm n=ansible | \
+2022-05-10 16:06:25,510 p=2141 u=buenrosm n=ansible | |
+2022-05-10 16:06:25,611 p=2141 u=buenrosm n=ansible | /
+2022-05-10 16:06:25,712 p=2141 u=buenrosm n=ansible | -
+2022-05-10 16:06:25,813 p=2141 u=buenrosm n=ansible | \
+2022-05-10 16:06:25,914 p=2141 u=buenrosm n=ansible | |
+2022-05-10 16:06:26,016 p=2141 u=buenrosm n=ansible | ERROR! Failed to find collection python3.panos:*
+2022-05-10 16:17:54,173 p=2168 u=buenrosm n=ansible | Process install dependency map
+2022-05-10 16:17:54,174 p=2168 u=buenrosm n=ansible | |
+2022-05-10 16:17:54,274 p=2168 u=buenrosm n=ansible | /
+2022-05-10 16:17:54,375 p=2168 u=buenrosm n=ansible | -
+2022-05-10 16:17:54,476 p=2168 u=buenrosm n=ansible | \
+2022-05-10 16:17:54,577 p=2168 u=buenrosm n=ansible | |
+2022-05-10 16:17:54,678 p=2168 u=buenrosm n=ansible | /
+2022-05-10 16:17:54,780 p=2168 u=buenrosm n=ansible | -
+2022-05-10 16:17:54,880 p=2168 u=buenrosm n=ansible | \
+2022-05-10 16:17:54,981 p=2168 u=buenrosm n=ansible | |
+2022-05-10 16:17:55,082 p=2168 u=buenrosm n=ansible | /
+2022-05-10 16:17:55,183 p=2168 u=buenrosm n=ansible | -
+2022-05-10 16:17:55,284 p=2168 u=buenrosm n=ansible | \
+2022-05-10 16:17:55,385 p=2168 u=buenrosm n=ansible | |
+2022-05-10 16:17:55,485 p=2168 u=buenrosm n=ansible | /
+2022-05-10 16:17:55,586 p=2168 u=buenrosm n=ansible | -
+2022-05-10 16:17:55,688 p=2168 u=buenrosm n=ansible | Starting collection install process
+2022-05-10 16:17:55,689 p=2168 u=buenrosm n=ansible | |
+2022-05-10 16:17:55,790 p=2168 u=buenrosm n=ansible | Skipping 'paloaltonetworks.panos' as it is already installed
+2022-05-10 16:18:05,068 p=2173 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:18:05,101 p=2173 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:18:05,272 p=2173 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': '{{ palo_api }}', 'application': 'ssh', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'provider': '149.97.195.203', 'rule_name': 'SSH permit', 'source_ip': 'any', 'source_zone': 'LAN', 'tag_name': 'production'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: '{{ palo_api }}'
+    application: ssh
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    provider: 149.97.195.203
+    rule_name: SSH permit
+    source_ip: any
+    source_zone: LAN
+    tag_name: production
+  msg: Failure when processing no_log parameters. Module invocation will be hidden. dictionary requested, could not parse JSON or key=value
+2022-05-10 16:18:05,273 p=2173 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:18:05,273 p=2173 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:18:50,005 p=2207 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:18:50,037 p=2207 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:18:50,217 p=2207 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==', 'application': 'ssh', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'provider': '149.97.195.203', 'rule_name': 'SSH permit', 'source_ip': 'any', 'source_zone': 'LAN', 'tag_name': 'production'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==
+    application: ssh
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    provider: 149.97.195.203
+    rule_name: SSH permit
+    source_ip: any
+    source_zone: LAN
+    tag_name: production
+  msg: Failure when processing no_log parameters. Module invocation will be hidden. dictionary requested, could not parse JSON or key=value
+2022-05-10 16:18:50,219 p=2207 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:18:50,219 p=2207 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:19:11,811 p=2237 u=buenrosm n=ansible | ansible-playbook 2.9.6
+  config file = /home/buenrosm/ansible/ansible.cfg
+  configured module search path = ['/home/buenrosm/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.2 (default, Mar 13 2020, 10:14:16) [GCC 9.3.0]
+2022-05-10 16:19:11,811 p=2237 u=buenrosm n=ansible | Using /home/buenrosm/ansible/ansible.cfg as config file
+2022-05-10 16:19:16,283 p=2237 u=buenrosm n=ansible | host_list declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 16:19:16,283 p=2237 u=buenrosm n=ansible | script declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 16:19:16,283 p=2237 u=buenrosm n=ansible | auto declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 16:19:16,285 p=2237 u=buenrosm n=ansible | Parsed /home/buenrosm/ansible/inventory inventory source with ini plugin
+2022-05-10 16:19:16,379 p=2237 u=buenrosm n=ansible | PLAYBOOK: main.yml **************************************************************************************
+2022-05-10 16:19:16,379 p=2237 u=buenrosm n=ansible | 1 plays in roles/panos1/tasks/main.yml
+2022-05-10 16:19:16,380 p=2237 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:19:16,384 p=2237 u=buenrosm n=ansible | META: ran handlers
+2022-05-10 16:19:16,391 p=2237 u=buenrosm n=ansible | ERROR! Decryption failed (no vault secrets were found that could decrypt) on /home/buenrosm/ansible/group_vars/network/vars.yml
+2022-05-10 16:19:17,430 p=2241 u=buenrosm n=ansible | ansible-playbook 2.9.6
+  config file = /home/buenrosm/ansible/ansible.cfg
+  configured module search path = ['/home/buenrosm/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.2 (default, Mar 13 2020, 10:14:16) [GCC 9.3.0]
+2022-05-10 16:19:17,430 p=2241 u=buenrosm n=ansible | Using /home/buenrosm/ansible/ansible.cfg as config file
+2022-05-10 16:19:20,523 p=2241 u=buenrosm n=ansible | host_list declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 16:19:20,523 p=2241 u=buenrosm n=ansible | script declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 16:19:20,523 p=2241 u=buenrosm n=ansible | auto declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 16:19:20,525 p=2241 u=buenrosm n=ansible | Parsed /home/buenrosm/ansible/inventory inventory source with ini plugin
+2022-05-10 16:19:20,621 p=2241 u=buenrosm n=ansible | PLAYBOOK: main.yml **************************************************************************************
+2022-05-10 16:19:20,621 p=2241 u=buenrosm n=ansible | 1 plays in roles/panos1/tasks/main.yml
+2022-05-10 16:19:20,622 p=2241 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:19:20,626 p=2241 u=buenrosm n=ansible | META: ran handlers
+2022-05-10 16:19:20,655 p=2241 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:19:20,655 p=2241 u=buenrosm n=ansible | task path: /home/buenrosm/ansible/roles/panos1/tasks/sec_rule.yml:14
+2022-05-10 16:19:20,667 p=2245 u=buenrosm n=ansible | <localhost> ESTABLISH LOCAL CONNECTION FOR USER: buenrosm
+2022-05-10 16:19:20,668 p=2245 u=buenrosm n=ansible | <localhost> EXEC /bin/sh -c 'echo ~buenrosm && sleep 0'
+2022-05-10 16:19:20,671 p=2245 u=buenrosm n=ansible | <localhost> EXEC /bin/sh -c '( umask 77 && mkdir -p "` echo /home/buenrosm/.ansible/tmp/ansible-tmp-1652213960.667638-141243156292015 `" && echo ansible-tmp-1652213960.667638-141243156292015="` echo /home/buenrosm/.ansible/tmp/ansible-tmp-1652213960.667638-141243156292015 `" ) && sleep 0'
+2022-05-10 16:19:20,747 p=2245 u=buenrosm n=ansible | Using module file /home/buenrosm/.ansible/collections/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py
+2022-05-10 16:19:20,747 p=2245 u=buenrosm n=ansible | <localhost> PUT /home/buenrosm/.ansible/tmp/ansible-local-22417vnyeq_z/tmpaapyutcd TO /home/buenrosm/.ansible/tmp/ansible-tmp-1652213960.667638-141243156292015/AnsiballZ_panos_security_rule.py
+2022-05-10 16:19:20,748 p=2245 u=buenrosm n=ansible | <localhost> EXEC /bin/sh -c 'chmod u+x /home/buenrosm/.ansible/tmp/ansible-tmp-1652213960.667638-141243156292015/ /home/buenrosm/.ansible/tmp/ansible-tmp-1652213960.667638-141243156292015/AnsiballZ_panos_security_rule.py && sleep 0'
+2022-05-10 16:19:20,751 p=2245 u=buenrosm n=ansible | <localhost> EXEC /bin/sh -c '/usr/bin/python3 /home/buenrosm/.ansible/tmp/ansible-tmp-1652213960.667638-141243156292015/AnsiballZ_panos_security_rule.py && sleep 0'
+2022-05-10 16:19:20,825 p=2245 u=buenrosm n=ansible | <localhost> EXEC /bin/sh -c 'rm -f -r /home/buenrosm/.ansible/tmp/ansible-tmp-1652213960.667638-141243156292015/ > /dev/null 2>&1 && sleep 0'
+2022-05-10 16:19:20,833 p=2241 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==', 'application': 'ssh', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'provider': '149.97.195.203', 'rule_name': 'SSH permit', 'source_ip': 'any', 'source_zone': 'LAN', 'tag_name': 'production'}) => changed=false 
+  ansible_loop_var: item
+  invocation:
+    module_args: HIDDEN DUE TO FAILURE
+  item:
+    action: allow
+    api_key: LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==
+    application: ssh
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    provider: 149.97.195.203
+    rule_name: SSH permit
+    source_ip: any
+    source_zone: LAN
+    tag_name: production
+  msg: Failure when processing no_log parameters. Module invocation will be hidden. dictionary requested, could not parse JSON or key=value
+2022-05-10 16:19:20,834 p=2241 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:19:20,834 p=2241 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:25:00,805 p=4118 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:25:00,839 p=4118 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:25:01,043 p=4118 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==', 'application': 'ssh', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'provider': '149.97.195.203', 'rule_name': 'SSH permit', 'source_ip': 'any', 'source_zone': 'LAN', 'tag_name': 'production'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==
+    application: ssh
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    provider: 149.97.195.203
+    rule_name: SSH permit
+    source_ip: any
+    source_zone: LAN
+    tag_name: production
+  msg: Failure when processing no_log parameters. Module invocation will be hidden. dictionary requested, could not parse JSON or key=value
+2022-05-10 16:25:01,044 p=4118 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:25:01,044 p=4118 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:25:33,101 p=4156 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:25:33,134 p=4156 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:25:33,343 p=4156 u=buenrosm n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: TypeError: deprecate() got an unexpected keyword argument 'collection_name'
+2022-05-10 16:25:33,345 p=4156 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==', 'application': 'ssh', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'ip_address': '149.97.195.203', 'rule_name': 'SSH permit', 'source_ip': 'any', 'source_zone': 'LAN', 'tag_name': 'production'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==
+    application: ssh
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    ip_address: 149.97.195.203
+    rule_name: SSH permit
+    source_ip: any
+    source_zone: LAN
+    tag_name: production
+  module_stderr: |-
+    Traceback (most recent call last):
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652214333.1456163-194112342902565/AnsiballZ_panos_security_rule.py", line 102, in <module>
+        _ansiballz_main()
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652214333.1456163-194112342902565/AnsiballZ_panos_security_rule.py", line 94, in _ansiballz_main
+        invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652214333.1456163-194112342902565/AnsiballZ_panos_security_rule.py", line 40, in invoke_module
+        runpy.run_module(mod_name='ansible_collections.paloaltonetworks.panos.plugins.modules.panos_security_rule', init_globals=None, run_name='__main__', alter_sys=True)
+      File "/usr/lib/python3.8/runpy.py", line 207, in run_module
+        return _run_module_code(code, init_globals, run_name, mod_spec)
+      File "/usr/lib/python3.8/runpy.py", line 97, in _run_module_code
+        _run_code(code, mod_globals, init_globals,
+      File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+        exec(code, run_globals)
+      File "/tmp/ansible_panos_security_rule_payload_1zwc5x0m/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py", line 530, in <module>
+      File "/tmp/ansible_panos_security_rule_payload_1zwc5x0m/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py", line 452, in main
+      File "/tmp/ansible_panos_security_rule_payload_1zwc5x0m/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/module_utils/panos.py", line 172, in get_pandevice_parent
+    TypeError: deprecate() got an unexpected keyword argument 'collection_name'
+  module_stdout: ''
+  msg: |-
+    MODULE FAILURE
+    See stdout/stderr for the exact error
+  rc: 1
+2022-05-10 16:25:33,346 p=4156 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:25:33,346 p=4156 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:26:59,017 p=4192 u=buenrosm n=ansible | ERROR! Unexpected Exception, this is probably a bug: 'AnsibleUnicode' object has no attribute 'append'
+2022-05-10 16:26:59,018 p=4192 u=buenrosm n=ansible | to see the full traceback, use -vvv
+2022-05-10 16:26:59,030 p=4192 u=buenrosm n=ansible | the full traceback was:
+
+Traceback (most recent call last):
+  File "/usr/bin/ansible-playbook", line 123, in <module>
+    exit_code = cli.run()
+  File "/usr/lib/python3/dist-packages/ansible/cli/playbook.py", line 127, in run
+    results = pbex.run()
+  File "/usr/lib/python3/dist-packages/ansible/executor/playbook_executor.py", line 91, in run
+    pb = Playbook.load(playbook_path, variable_manager=self._variable_manager, loader=self._loader)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/__init__.py", line 51, in load
+    pb._load_playbook_data(file_name=file_name, variable_manager=variable_manager)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/__init__.py", line 96, in _load_playbook_data
+    pb = PlaybookInclude.load(entry, basedir=self._basedir, variable_manager=variable_manager, loader=self._loader)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/playbook_include.py", line 42, in load
+    return PlaybookInclude().load_data(ds=data, basedir=basedir, variable_manager=variable_manager, loader=loader)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/playbook_include.py", line 72, in load_data
+    pb._load_playbook_data(file_name=file_name, variable_manager=variable_manager, vars=self.vars.copy())
+  File "/usr/lib/python3/dist-packages/ansible/playbook/__init__.py", line 103, in _load_playbook_data
+    entry_obj = Play.load(entry, variable_manager=variable_manager, loader=self._loader, vars=vars)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/play.py", line 116, in load
+    return p.load_data(data, variable_manager=variable_manager, loader=loader)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/base.py", line 235, in load_data
+    self._attributes[target_name] = method(name, ds[name])
+  File "/usr/lib/python3/dist-packages/ansible/playbook/collectionsearch.py", line 39, in _load_collections
+    _ensure_default_collection(collection_list=ds)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/collectionsearch.py", line 27, in _ensure_default_collection
+    collection_list.append('ansible.legacy')
+AttributeError: 'AnsibleUnicode' object has no attribute 'append'
+
+2022-05-10 16:27:09,976 p=4196 u=buenrosm n=ansible | ERROR! Unexpected Exception, this is probably a bug: 'AnsibleUnicode' object has no attribute 'append'
+2022-05-10 16:27:09,976 p=4196 u=buenrosm n=ansible | to see the full traceback, use -vvv
+2022-05-10 16:27:09,976 p=4196 u=buenrosm n=ansible | the full traceback was:
+
+Traceback (most recent call last):
+  File "/usr/bin/ansible-playbook", line 123, in <module>
+    exit_code = cli.run()
+  File "/usr/lib/python3/dist-packages/ansible/cli/playbook.py", line 127, in run
+    results = pbex.run()
+  File "/usr/lib/python3/dist-packages/ansible/executor/playbook_executor.py", line 91, in run
+    pb = Playbook.load(playbook_path, variable_manager=self._variable_manager, loader=self._loader)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/__init__.py", line 51, in load
+    pb._load_playbook_data(file_name=file_name, variable_manager=variable_manager)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/__init__.py", line 96, in _load_playbook_data
+    pb = PlaybookInclude.load(entry, basedir=self._basedir, variable_manager=variable_manager, loader=self._loader)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/playbook_include.py", line 42, in load
+    return PlaybookInclude().load_data(ds=data, basedir=basedir, variable_manager=variable_manager, loader=loader)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/playbook_include.py", line 72, in load_data
+    pb._load_playbook_data(file_name=file_name, variable_manager=variable_manager, vars=self.vars.copy())
+  File "/usr/lib/python3/dist-packages/ansible/playbook/__init__.py", line 103, in _load_playbook_data
+    entry_obj = Play.load(entry, variable_manager=variable_manager, loader=self._loader, vars=vars)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/play.py", line 116, in load
+    return p.load_data(data, variable_manager=variable_manager, loader=loader)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/base.py", line 235, in load_data
+    self._attributes[target_name] = method(name, ds[name])
+  File "/usr/lib/python3/dist-packages/ansible/playbook/collectionsearch.py", line 39, in _load_collections
+    _ensure_default_collection(collection_list=ds)
+  File "/usr/lib/python3/dist-packages/ansible/playbook/collectionsearch.py", line 27, in _ensure_default_collection
+    collection_list.append('ansible.legacy')
+AttributeError: 'AnsibleUnicode' object has no attribute 'append'
+
+2022-05-10 16:27:48,905 p=4204 u=buenrosm n=ansible | ERROR! Syntax Error while loading YAML.
+  block sequence entries are not allowed in this context
+
+The error appears to be in '/home/buenrosm/ansible/roles/panos1/tasks/sec_rule.yml': line 9, column 16, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+  collections: - paloaltonetworks.panos
+               ^ here
+
+2022-05-10 16:28:08,758 p=4212 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:28:08,791 p=4212 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:28:08,997 p=4212 u=buenrosm n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: TypeError: deprecate() got an unexpected keyword argument 'collection_name'
+2022-05-10 16:28:09,000 p=4212 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==', 'application': 'ssh', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'ip_address': '149.97.195.203', 'rule_name': 'SSH permit', 'source_ip': 'any', 'source_zone': 'LAN', 'tag_name': 'production'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==
+    application: ssh
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    ip_address: 149.97.195.203
+    rule_name: SSH permit
+    source_ip: any
+    source_zone: LAN
+    tag_name: production
+  module_stderr: |-
+    Traceback (most recent call last):
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652214488.802845-159713343415072/AnsiballZ_panos_security_rule.py", line 102, in <module>
+        _ansiballz_main()
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652214488.802845-159713343415072/AnsiballZ_panos_security_rule.py", line 94, in _ansiballz_main
+        invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652214488.802845-159713343415072/AnsiballZ_panos_security_rule.py", line 40, in invoke_module
+        runpy.run_module(mod_name='ansible_collections.paloaltonetworks.panos.plugins.modules.panos_security_rule', init_globals=None, run_name='__main__', alter_sys=True)
+      File "/usr/lib/python3.8/runpy.py", line 207, in run_module
+        return _run_module_code(code, init_globals, run_name, mod_spec)
+      File "/usr/lib/python3.8/runpy.py", line 97, in _run_module_code
+        _run_code(code, mod_globals, init_globals,
+      File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+        exec(code, run_globals)
+      File "/tmp/ansible_panos_security_rule_payload__llanrff/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py", line 530, in <module>
+      File "/tmp/ansible_panos_security_rule_payload__llanrff/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py", line 452, in main
+      File "/tmp/ansible_panos_security_rule_payload__llanrff/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/module_utils/panos.py", line 172, in get_pandevice_parent
+    TypeError: deprecate() got an unexpected keyword argument 'collection_name'
+  module_stdout: ''
+  msg: |-
+    MODULE FAILURE
+    See stdout/stderr for the exact error
+  rc: 1
+2022-05-10 16:28:09,001 p=4212 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:28:09,001 p=4212 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:30:23,481 p=4249 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:30:23,514 p=4249 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:30:23,718 p=4249 u=buenrosm n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: TypeError: deprecate() got an unexpected keyword argument 'collection_name'
+2022-05-10 16:30:23,720 p=4249 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==', 'application': 'ssh', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'ip_address': '149.97.195.203', 'rule_name': 'SSH permit', 'source_ip': 'any', 'source_zone': 'LAN', 'tag_name': 'production'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==
+    application: ssh
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    ip_address: 149.97.195.203
+    rule_name: SSH permit
+    source_ip: any
+    source_zone: LAN
+    tag_name: production
+  module_stderr: |-
+    Traceback (most recent call last):
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652214623.5257595-221025142747345/AnsiballZ_panos_security_rule.py", line 102, in <module>
+        _ansiballz_main()
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652214623.5257595-221025142747345/AnsiballZ_panos_security_rule.py", line 94, in _ansiballz_main
+        invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652214623.5257595-221025142747345/AnsiballZ_panos_security_rule.py", line 40, in invoke_module
+        runpy.run_module(mod_name='ansible_collections.paloaltonetworks.panos.plugins.modules.panos_security_rule', init_globals=None, run_name='__main__', alter_sys=True)
+      File "/usr/lib/python3.8/runpy.py", line 207, in run_module
+        return _run_module_code(code, init_globals, run_name, mod_spec)
+      File "/usr/lib/python3.8/runpy.py", line 97, in _run_module_code
+        _run_code(code, mod_globals, init_globals,
+      File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+        exec(code, run_globals)
+      File "/tmp/ansible_panos_security_rule_payload_grj9ig22/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py", line 530, in <module>
+      File "/tmp/ansible_panos_security_rule_payload_grj9ig22/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py", line 452, in main
+      File "/tmp/ansible_panos_security_rule_payload_grj9ig22/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/module_utils/panos.py", line 172, in get_pandevice_parent
+    TypeError: deprecate() got an unexpected keyword argument 'collection_name'
+  module_stdout: ''
+  msg: |-
+    MODULE FAILURE
+    See stdout/stderr for the exact error
+  rc: 1
+2022-05-10 16:30:23,721 p=4249 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:30:23,722 p=4249 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 16:58:11,528 p=4287 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 16:58:11,592 p=4287 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 16:58:11,904 p=4287 u=buenrosm n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: TypeError: deprecate() got an unexpected keyword argument 'collection_name'
+2022-05-10 16:58:11,909 p=4287 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==', 'application': 'ssh', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'ip_address': '149.97.195.203', 'rule_name': 'SSH permit', 'source_ip': 'any', 'source_zone': 'LAN', 'tag_name': 'production'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==
+    application: ssh
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    ip_address: 149.97.195.203
+    rule_name: SSH permit
+    source_ip: any
+    source_zone: LAN
+    tag_name: production
+  module_stderr: |-
+    Traceback (most recent call last):
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652216291.6125655-210028324084775/AnsiballZ_panos_security_rule.py", line 102, in <module>
+        _ansiballz_main()
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652216291.6125655-210028324084775/AnsiballZ_panos_security_rule.py", line 94, in _ansiballz_main
+        invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652216291.6125655-210028324084775/AnsiballZ_panos_security_rule.py", line 40, in invoke_module
+        runpy.run_module(mod_name='ansible_collections.paloaltonetworks.panos.plugins.modules.panos_security_rule', init_globals=None, run_name='__main__', alter_sys=True)
+      File "/usr/lib/python3.8/runpy.py", line 207, in run_module
+        return _run_module_code(code, init_globals, run_name, mod_spec)
+      File "/usr/lib/python3.8/runpy.py", line 97, in _run_module_code
+        _run_code(code, mod_globals, init_globals,
+      File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+        exec(code, run_globals)
+      File "/tmp/ansible_panos_security_rule_payload_nij_hukz/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py", line 530, in <module>
+      File "/tmp/ansible_panos_security_rule_payload_nij_hukz/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py", line 452, in main
+      File "/tmp/ansible_panos_security_rule_payload_nij_hukz/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/module_utils/panos.py", line 172, in get_pandevice_parent
+    TypeError: deprecate() got an unexpected keyword argument 'collection_name'
+  module_stdout: ''
+  msg: |-
+    MODULE FAILURE
+    See stdout/stderr for the exact error
+  rc: 1
+2022-05-10 16:58:11,910 p=4287 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 16:58:11,910 p=4287 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:01:06,776 p=4326 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:01:06,834 p=4326 u=buenrosm n=ansible | TASK [add an SSH inbound rule to devicegroup] ***********************************************************
+2022-05-10 17:01:07,146 p=4326 u=buenrosm n=ansible | An exception occurred during task execution. To see the full traceback, use -vvv. The error was: TypeError: deprecate() got an unexpected keyword argument 'collection_name'
+2022-05-10 17:01:07,152 p=4326 u=buenrosm n=ansible | failed: [149.97.195.203 -> localhost] (item={'action': 'allow', 'api_key': 'LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==', 'application': 'ssh', 'description': 'SSH rule test', 'destination_ip': '1.1.1.1', 'destination_zone': 'WAN', 'device_group': 'Cloud Edge', 'ip_address': '149.97.195.203', 'rule_name': 'SSH permit', 'source_ip': 'any', 'source_zone': 'LAN', 'tag_name': 'production'}) => changed=false 
+  ansible_loop_var: item
+  item:
+    action: allow
+    api_key: LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==
+    application: ssh
+    description: SSH rule test
+    destination_ip: 1.1.1.1
+    destination_zone: WAN
+    device_group: Cloud Edge
+    ip_address: 149.97.195.203
+    rule_name: SSH permit
+    source_ip: any
+    source_zone: LAN
+    tag_name: production
+  module_stderr: |-
+    Traceback (most recent call last):
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652216466.8537204-200581756061700/AnsiballZ_panos_security_rule.py", line 102, in <module>
+        _ansiballz_main()
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652216466.8537204-200581756061700/AnsiballZ_panos_security_rule.py", line 94, in _ansiballz_main
+        invoke_module(zipped_mod, temp_path, ANSIBALLZ_PARAMS)
+      File "/home/buenrosm/.ansible/tmp/ansible-tmp-1652216466.8537204-200581756061700/AnsiballZ_panos_security_rule.py", line 40, in invoke_module
+        runpy.run_module(mod_name='ansible_collections.paloaltonetworks.panos.plugins.modules.panos_security_rule', init_globals=None, run_name='__main__', alter_sys=True)
+      File "/usr/lib/python3.8/runpy.py", line 207, in run_module
+        return _run_module_code(code, init_globals, run_name, mod_spec)
+      File "/usr/lib/python3.8/runpy.py", line 97, in _run_module_code
+        _run_code(code, mod_globals, init_globals,
+      File "/usr/lib/python3.8/runpy.py", line 87, in _run_code
+        exec(code, run_globals)
+      File "/tmp/ansible_panos_security_rule_payload_rlkj9vve/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py", line 530, in <module>
+      File "/tmp/ansible_panos_security_rule_payload_rlkj9vve/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/modules/panos_security_rule.py", line 452, in main
+      File "/tmp/ansible_panos_security_rule_payload_rlkj9vve/ansible_panos_security_rule_payload.zip/ansible_collections/paloaltonetworks/panos/plugins/module_utils/panos.py", line 172, in get_pandevice_parent
+    TypeError: deprecate() got an unexpected keyword argument 'collection_name'
+  module_stdout: ''
+  msg: |-
+    MODULE FAILURE
+    See stdout/stderr for the exact error
+  rc: 1
+2022-05-10 17:01:07,155 p=4326 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:01:07,156 p=4326 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:09:48,593 p=4385 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:09:48,631 p=4385 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:09:48,669 p=4385 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: |-
+    The task includes an option with an undefined variable. The error was: 'provider' is undefined
+  
+    The error appears to be in '/home/buenrosm/ansible/adhoc_panos_rule': line 12, column 5, but may
+    be elsewhere in the file depending on the exact syntax problem.
+  
+    The offending line appears to be:
+  
+  
+      - name: Add test rule 1 to the firewall
+        ^ here
+2022-05-10 17:09:48,670 p=4385 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:09:48,670 p=4385 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:14:50,252 p=4401 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:14:50,288 p=4401 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:14:50,322 p=4401 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: |-
+    The task includes an option with an undefined variable. The error was: 'provider' is undefined
+  
+    The error appears to be in '/home/buenrosm/ansible/adhoc_panos_rule': line 11, column 5, but may
+    be elsewhere in the file depending on the exact syntax problem.
+  
+    The offending line appears to be:
+  
+  
+      - name: Add test rule 1 to the firewall
+        ^ here
+2022-05-10 17:14:50,323 p=4401 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:14:50,323 p=4401 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:15:44,631 p=4409 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:15:44,667 p=4409 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:15:44,707 p=4409 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: |-
+    The task includes an option with an undefined variable. The error was: 'provider' is undefined
+  
+    The error appears to be in '/home/buenrosm/ansible/adhoc_panos_rule': line 10, column 5, but may
+    be elsewhere in the file depending on the exact syntax problem.
+  
+    The offending line appears to be:
+  
+      tasks:
+      - name: Add test rule 1 to the firewall
+        ^ here
+2022-05-10 17:15:44,709 p=4409 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:15:44,709 p=4409 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:18:32,768 p=4442 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:18:32,791 p=4442 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:18:32,835 p=4442 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:18:32,837 p=4442 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:18:32,837 p=4442 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:19:45,458 p=4449 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:19:45,488 p=4449 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:19:45,531 p=4449 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:19:45,532 p=4449 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:19:45,533 p=4449 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:20:31,408 p=4490 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:20:31,431 p=4490 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:20:31,470 p=4490 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:20:31,471 p=4490 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:20:31,471 p=4490 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:23:46,440 p=4497 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:23:46,464 p=4497 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:23:46,507 p=4497 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:23:46,508 p=4497 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:23:46,509 p=4497 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:24:08,753 p=4505 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:24:08,773 p=4505 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:24:08,808 p=4505 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:24:08,810 p=4505 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:24:08,810 p=4505 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:26:58,191 p=4513 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:26:58,214 p=4513 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:26:58,253 p=4513 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:26:58,254 p=4513 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:26:58,254 p=4513 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:27:17,983 p=4520 u=buenrosm n=ansible | ansible-playbook 2.9.6
+  config file = /home/buenrosm/ansible/ansible.cfg
+  configured module search path = ['/home/buenrosm/.ansible/plugins/modules', '/usr/share/ansible/plugins/modules']
+  ansible python module location = /usr/lib/python3/dist-packages/ansible
+  executable location = /usr/bin/ansible-playbook
+  python version = 3.8.10 (default, Mar 15 2022, 12:22:08) [GCC 9.4.0]
+2022-05-10 17:27:17,984 p=4520 u=buenrosm n=ansible | Using /home/buenrosm/ansible/ansible.cfg as config file
+2022-05-10 17:27:21,481 p=4520 u=buenrosm n=ansible | host_list declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 17:27:21,481 p=4520 u=buenrosm n=ansible | script declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 17:27:21,481 p=4520 u=buenrosm n=ansible | auto declined parsing /home/buenrosm/ansible/inventory as it did not pass its verify_file() method
+2022-05-10 17:27:21,485 p=4520 u=buenrosm n=ansible | Parsed /home/buenrosm/ansible/inventory inventory source with ini plugin
+2022-05-10 17:27:21,646 p=4520 u=buenrosm n=ansible | PLAYBOOK: adhoc_panos_rule ******************************************************************************
+2022-05-10 17:27:21,646 p=4520 u=buenrosm n=ansible | 1 plays in adhoc_panos_rule
+2022-05-10 17:27:21,647 p=4520 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:27:21,654 p=4520 u=buenrosm n=ansible | META: ran handlers
+2022-05-10 17:27:21,669 p=4520 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:27:21,669 p=4520 u=buenrosm n=ansible | task path: /home/buenrosm/ansible/adhoc_panos_rule:12
+2022-05-10 17:27:21,708 p=4520 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:27:21,709 p=4520 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:27:21,709 p=4520 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:32:11,531 p=4550 u=buenrosm n=ansible | [DEPRECATION WARNING]: panos_security_rule is kept for backwards compatibility but usage is discouraged.
+ The module documentation details page may explain more about this rationale.. This feature will be 
+removed in a future release. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 17:32:11,570 p=4550 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:32:11,580 p=4550 u=buenrosm n=ansible | ERROR! Attempting to decrypt but no vault secrets found
+2022-05-10 17:32:20,446 p=4554 u=buenrosm n=ansible | [DEPRECATION WARNING]: panos_security_rule is kept for backwards compatibility but usage is discouraged.
+ The module documentation details page may explain more about this rationale.. This feature will be 
+removed in a future release. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 17:32:20,495 p=4554 u=buenrosm n=ansible | PLAY [Add Security rule] ********************************************************************************
+2022-05-10 17:32:20,539 p=4554 u=buenrosm n=ansible | TASK [Add test rule 1 to the firewall] ******************************************************************
+2022-05-10 17:32:20,585 p=4554 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:32:20,587 p=4554 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:32:20,587 p=4554 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:41:39,028 p=4643 u=buenrosm n=ansible | [WARNING]: - PaloAltoNetworks.paloaltonetworks was NOT installed successfully: Unknown error when
+attempting to call Galaxy at 'https://galaxy.ansible.com/api/': <urlopen error [SSL:
+CERTIFICATE_VERIFY_FAILED] certificate verify failed: self signed certificate in certificate chain
+(_ssl.c:1131)>
+
+2022-05-10 17:41:39,028 p=4643 u=buenrosm n=ansible | ERROR! - you can use --ignore-errors to skip failed roles and finish processing the list.
+2022-05-10 17:41:49,051 p=4645 u=buenrosm n=ansible | - downloading role 'paloaltonetworks', owned by PaloAltoNetworks
+2022-05-10 17:41:56,517 p=4645 u=buenrosm n=ansible | - downloading role from https://github.com/PaloAltoNetworks/ansible-pan/archive/v2.4.1.tar.gz
+2022-05-10 17:42:00,010 p=4645 u=buenrosm n=ansible | - extracting PaloAltoNetworks.paloaltonetworks to /home/buenrosm/.ansible/roles/PaloAltoNetworks.paloaltonetworks
+2022-05-10 17:42:00,051 p=4645 u=buenrosm n=ansible | - PaloAltoNetworks.paloaltonetworks (v2.4.1) was installed successfully
+2022-05-10 17:44:30,979 p=4658 u=buenrosm n=ansible | PLAY [localhost] ****************************************************************************************
+2022-05-10 17:44:30,994 p=4658 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 17:44:32,417 p=4658 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 17:44:32,420 p=4658 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 17:44:35,555 p=4658 u=buenrosm n=ansible | changed: [localhost]
+2022-05-10 17:44:35,558 p=4658 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 17:44:36,906 p=4658 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 17:44:36,918 p=4658 u=buenrosm n=ansible | TASK [include variables (free-form)] ********************************************************************
+2022-05-10 17:44:36,931 p=4658 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  censored: 'the output has been hidden due to the fact that ''no_log: true'' was specified for this result'
+2022-05-10 17:44:36,932 p=4658 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:44:36,932 p=4658 u=buenrosm n=ansible | localhost                  : ok=3    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:47:50,748 p=4759 u=buenrosm n=ansible | PLAY [localhost] ****************************************************************************************
+2022-05-10 17:47:50,762 p=4759 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 17:47:52,200 p=4759 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 17:47:52,203 p=4759 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 17:47:53,534 p=4759 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 17:47:53,537 p=4759 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 17:47:54,966 p=4759 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 17:47:54,971 p=4759 u=buenrosm n=ansible | TASK [include variables (free-form)] ********************************************************************
+2022-05-10 17:47:54,985 p=4759 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  censored: 'the output has been hidden due to the fact that ''no_log: true'' was specified for this result'
+2022-05-10 17:47:54,987 p=4759 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:47:54,987 p=4759 u=buenrosm n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:50:26,054 p=4882 u=buenrosm n=ansible | PLAY [149.97.195.203] ***********************************************************************************
+2022-05-10 17:50:26,095 p=4882 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 17:50:26,117 p=4882 u=buenrosm n=ansible | fatal: [149.97.195.203]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:50:26,119 p=4882 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:50:26,119 p=4882 u=buenrosm n=ansible | 149.97.195.203             : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:57:19,553 p=4918 u=buenrosm n=ansible | PLAY [192.168.55.10] ************************************************************************************
+2022-05-10 17:57:19,579 p=4918 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 17:57:19,593 p=4918 u=buenrosm n=ansible | fatal: [192.168.55.10]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:57:19,594 p=4918 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:57:19,594 p=4918 u=buenrosm n=ansible | 192.168.55.10              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 17:58:39,916 p=4926 u=buenrosm n=ansible | PLAY [192.168.55.10] ************************************************************************************
+2022-05-10 17:58:39,944 p=4926 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 17:58:39,957 p=4926 u=buenrosm n=ansible | fatal: [192.168.55.10]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 17:58:39,958 p=4926 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 17:58:39,958 p=4926 u=buenrosm n=ansible | 192.168.55.10              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 18:00:18,701 p=4934 u=buenrosm n=ansible | PLAY [192.168.55.10] ************************************************************************************
+2022-05-10 18:00:18,727 p=4934 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 18:00:18,740 p=4934 u=buenrosm n=ansible | fatal: [192.168.55.10]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 18:00:18,741 p=4934 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 18:00:18,742 p=4934 u=buenrosm n=ansible | 192.168.55.10              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 22:42:18,152 p=4977 u=buenrosm n=ansible | PLAY [localhost] ****************************************************************************************
+2022-05-10 22:42:18,158 p=4977 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 22:42:18,982 p=4977 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:42:18,983 p=4977 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 22:42:19,760 p=4977 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:42:19,761 p=4977 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 22:42:20,545 p=4977 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:42:20,547 p=4977 u=buenrosm n=ansible | TASK [include variables (free-form)] ********************************************************************
+2022-05-10 22:42:20,554 p=4977 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  censored: 'the output has been hidden due to the fact that ''no_log: true'' was specified for this result'
+2022-05-10 22:42:20,555 p=4977 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 22:42:20,555 p=4977 u=buenrosm n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 22:43:50,950 p=5078 u=buenrosm n=ansible | PLAY [localhost] ****************************************************************************************
+2022-05-10 22:43:50,957 p=5078 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 22:43:51,832 p=5078 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:43:51,833 p=5078 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 22:43:52,658 p=5078 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:43:52,659 p=5078 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 22:43:53,467 p=5078 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:43:53,469 p=5078 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 22:43:53,491 p=5078 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => 
+  msg: |-
+    The task includes an option with an undefined variable. The error was: 'provider' is undefined
+  
+    The error appears to be in '/home/buenrosm/ansible/create_security_policies.yml': line 24, column 7, but may
+    be elsewhere in the file depending on the exact syntax problem.
+  
+    The offending line appears to be:
+  
+  
+        - name: add a rule to allow HTTP
+          ^ here
+2022-05-10 22:43:53,492 p=5078 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 22:43:53,492 p=5078 u=buenrosm n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 22:45:04,749 p=5176 u=buenrosm n=ansible | PLAY [localhost] ****************************************************************************************
+2022-05-10 22:45:04,755 p=5176 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 22:45:05,579 p=5176 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:45:05,580 p=5176 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 22:45:06,351 p=5176 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:45:06,352 p=5176 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 22:45:07,117 p=5176 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:45:07,119 p=5176 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 22:45:07,141 p=5176 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => 
+  msg: |-
+    The task includes an option with an undefined variable. The error was: 'palo_username' is undefined
+  
+    The error appears to be in '/home/buenrosm/ansible/create_security_policies.yml': line 24, column 7, but may
+    be elsewhere in the file depending on the exact syntax problem.
+  
+    The offending line appears to be:
+  
+  
+        - name: add a rule to allow HTTP
+          ^ here
+2022-05-10 22:45:07,141 p=5176 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 22:45:07,142 p=5176 u=buenrosm n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 22:45:54,151 p=5274 u=buenrosm n=ansible | PLAY [192.168.55.10] ************************************************************************************
+2022-05-10 22:45:54,165 p=5274 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 22:45:54,174 p=5274 u=buenrosm n=ansible | fatal: [192.168.55.10]: FAILED! => 
+  msg: network os panos is not supported
+2022-05-10 22:45:54,175 p=5274 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 22:45:54,175 p=5274 u=buenrosm n=ansible | 192.168.55.10              : ok=0    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 22:48:31,030 p=5324 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 22:48:31,037 p=5324 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 22:48:31,882 p=5324 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:48:31,883 p=5324 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 22:48:32,646 p=5324 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:48:32,647 p=5324 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 22:48:33,405 p=5324 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:48:33,406 p=5324 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 22:48:33,428 p=5324 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => 
+  msg: |-
+    The task includes an option with an undefined variable. The error was: 'palo_username' is undefined
+  
+    The error appears to be in '/home/buenrosm/ansible/create_security_policies.yml': line 25, column 7, but may
+    be elsewhere in the file depending on the exact syntax problem.
+  
+    The offending line appears to be:
+  
+  
+        - name: add a rule to allow HTTP
+          ^ here
+2022-05-10 22:48:33,428 p=5324 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 22:48:33,429 p=5324 u=buenrosm n=ansible | localhost                  : ok=3    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 22:52:18,486 p=5422 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 22:52:18,493 p=5422 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 22:52:19,347 p=5422 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:52:19,348 p=5422 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 22:52:20,127 p=5422 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:52:20,128 p=5422 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 22:52:20,923 p=5422 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:52:20,925 p=5422 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 22:52:20,939 p=5422 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:52:20,940 p=5422 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 22:52:21,126 p=5422 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: Param "operation" is removed; use "state" instead
+2022-05-10 22:52:21,127 p=5422 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 22:52:21,127 p=5422 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 22:54:00,105 p=5550 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 22:54:00,111 p=5550 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 22:54:00,956 p=5550 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:54:00,957 p=5550 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 22:54:01,716 p=5550 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:54:01,717 p=5550 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 22:54:02,508 p=5550 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:54:02,510 p=5550 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 22:54:02,523 p=5550 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:54:02,525 p=5550 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 22:54:02,710 p=5550 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'value of state must be one of: present, absent, got: add'
+2022-05-10 22:54:02,711 p=5550 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 22:54:02,711 p=5550 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 22:54:55,646 p=5672 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 22:54:55,652 p=5672 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 22:54:56,527 p=5672 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:54:56,529 p=5672 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 22:54:57,322 p=5672 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:54:57,323 p=5672 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 22:54:58,107 p=5672 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:54:58,109 p=5672 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 22:54:58,123 p=5672 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 22:54:58,125 p=5672 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 22:54:58,658 p=5672 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 22:54:58,658 p=5672 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'Failed connection: URLError: code: 403 reason: Invalid Credential'
+2022-05-10 22:54:58,659 p=5672 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 22:54:58,660 p=5672 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:01:16,818 p=5817 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:01:16,825 p=5817 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:01:17,681 p=5817 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:01:17,682 p=5817 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:01:18,447 p=5817 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:01:18,448 p=5817 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:01:19,208 p=5817 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:01:19,210 p=5817 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:01:19,216 p=5817 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:01:19,218 p=5817 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 23:01:20,236 p=5817 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 23:01:20,237 p=5817 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: |-
+    Failed create:  Web traffic -> from 'untrust' is not an allowed keyword
+     Web traffic -> from 'untrust' is not a valid reference
+     Web traffic -> from is invalid
+2022-05-10 23:01:20,238 p=5817 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:01:20,238 p=5817 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:05:06,363 p=5958 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:05:06,370 p=5958 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:05:07,232 p=5958 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:05:07,234 p=5958 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:05:08,030 p=5958 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:05:08,031 p=5958 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:05:08,828 p=5958 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:05:08,830 p=5958 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:05:08,837 p=5958 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:05:08,838 p=5958 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 23:05:09,732 p=5958 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 23:05:09,732 p=5958 u=buenrosm n=ansible | changed: [localhost]
+2022-05-10 23:05:09,733 p=5958 u=buenrosm n=ansible | TASK [SSH Inbound] **************************************************************************************
+2022-05-10 23:05:10,577 p=5958 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: |-
+    Failed create:  SSH traffic -> application '_ssh' is not an allowed keyword
+     SSH traffic -> application '_ssh' is not a valid reference
+     SSH traffic -> application is invalid
+2022-05-10 23:05:10,578 p=5958 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:05:10,579 p=5958 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:15:24,491 p=6133 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:15:24,498 p=6133 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:15:25,362 p=6133 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:15:25,363 p=6133 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:15:26,162 p=6133 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:15:26,164 p=6133 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:15:26,961 p=6133 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:15:26,963 p=6133 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:15:26,971 p=6133 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:15:26,972 p=6133 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 23:15:27,855 p=6133 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 23:15:27,855 p=6133 u=buenrosm n=ansible | changed: [localhost]
+2022-05-10 23:15:27,856 p=6133 u=buenrosm n=ansible | TASK [SSH Inbound] **************************************************************************************
+2022-05-10 23:15:28,685 p=6133 u=buenrosm n=ansible | changed: [localhost]
+2022-05-10 23:15:28,687 p=6133 u=buenrosm n=ansible | TASK [SSH 221 Inbound] **********************************************************************************
+2022-05-10 23:15:29,497 p=6133 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: |-
+    Failed create:  Ansible_3_SSH_221 traffic -> service 'service-tcp-221' is not an allowed keyword
+     Ansible_3_SSH_221 traffic -> service 'service-tcp-221' is not a valid reference
+     Ansible_3_SSH_221 traffic -> service is invalid
+2022-05-10 23:15:29,497 p=6133 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:15:29,498 p=6133 u=buenrosm n=ansible | localhost                  : ok=6    changed=2    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:18:20,008 p=6305 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:18:20,015 p=6305 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:18:20,880 p=6305 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:18:20,882 p=6305 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:18:21,683 p=6305 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:18:21,684 p=6305 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:18:22,492 p=6305 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:18:22,494 p=6305 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:18:22,502 p=6305 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:18:22,503 p=6305 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 23:18:23,409 p=6305 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 23:18:23,409 p=6305 u=buenrosm n=ansible | changed: [localhost]
+2022-05-10 23:18:23,411 p=6305 u=buenrosm n=ansible | TASK [SSH Inbound] **************************************************************************************
+2022-05-10 23:18:24,236 p=6305 u=buenrosm n=ansible | changed: [localhost]
+2022-05-10 23:18:24,237 p=6305 u=buenrosm n=ansible | TASK [SSH 221 Inbound] **********************************************************************************
+2022-05-10 23:18:25,050 p=6305 u=buenrosm n=ansible | changed: [localhost]
+2022-05-10 23:18:25,051 p=6305 u=buenrosm n=ansible | TASK [allow all rule] ***********************************************************************************
+2022-05-10 23:18:25,886 p=6305 u=buenrosm n=ansible | changed: [localhost]
+2022-05-10 23:18:25,887 p=6305 u=buenrosm n=ansible | TASK [Log default deny] *********************************************************************************
+2022-05-10 23:19:07,184 p=6305 u=buenrosm n=ansible | changed: [localhost]
+2022-05-10 23:19:07,185 p=6305 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:19:07,185 p=6305 u=buenrosm n=ansible | localhost                  : ok=9    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-10 23:19:19,465 p=6527 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-10 23:19:19,472 p=6527 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-10 23:19:20,339 p=6527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:19:20,340 p=6527 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-10 23:19:21,135 p=6527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:19:21,136 p=6527 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-10 23:19:21,931 p=6527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:19:21,933 p=6527 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-10 23:19:21,940 p=6527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:19:21,942 p=6527 u=buenrosm n=ansible | TASK [add a rule to allow HTTP] *************************************************************************
+2022-05-10 23:19:22,647 p=6527 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-10 23:19:22,647 p=6527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:19:22,648 p=6527 u=buenrosm n=ansible | TASK [SSH Inbound] **************************************************************************************
+2022-05-10 23:19:23,292 p=6527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:19:23,293 p=6527 u=buenrosm n=ansible | TASK [SSH 221 Inbound] **********************************************************************************
+2022-05-10 23:19:23,949 p=6527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:19:23,950 p=6527 u=buenrosm n=ansible | TASK [allow all rule] ***********************************************************************************
+2022-05-10 23:19:24,594 p=6527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:19:24,596 p=6527 u=buenrosm n=ansible | TASK [Log default deny] *********************************************************************************
+2022-05-10 23:19:25,246 p=6527 u=buenrosm n=ansible | ok: [localhost]
+2022-05-10 23:19:25,248 p=6527 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-10 23:19:25,248 p=6527 u=buenrosm n=ansible | localhost                  : ok=9    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

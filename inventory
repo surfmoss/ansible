@@ -1,8 +1,12 @@
 [apic]
 131.226.217.153
 172.23.223.150
+
+[FW]
 10.30.11.1
 149.97.195.203
+uvo1z5poxqndtoubmve.env.cloudshare.com
+192.168.55.10
 
 [sadc_lf]
 
@@ -29,6 +33,9 @@ WSDC-S014-140.lowes.com
 [dmz_ios]
 10.10.10.10
 
+[panos:children]
+FW
+
 [aci:children]
 apic
 
@@ -49,3 +56,4 @@ sadc_lf
 ios
 nxos
 aci
+panos

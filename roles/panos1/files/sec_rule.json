@@ -1,24 +1,18 @@
 {
   "resource": [
 	{
-      "ip_address": "149.97.195.203",
-      "username": "palo_username",
-      "password": "palo_password ",
-      "operation": "add",
-      "rule_name": "SSH permit",
-      "description": "SSH rule test",
-      "tag_name": ["ProjectX"],
-      "source_zone": ["LAN"],
-      "destination_zone": ["WAN"],
-      "source_ip": ["any"],
-      "source_user": ["any"],
-      "destination_ip": ["1.1.1.1"],
-      "category": ["any"],
-      "application": ["ssh"],
-      "service": ["application-default"],
-      "hip_profiles": ["any"],
       "action": "allow",
-      "devicegroup": "Cloud Edge"
+      "api_key": "LUFRPT1UNVhZVWx6T2t3RG5FQ3JjQXpzMmwrSGhiek09S0s3QzBaSGdhblpTWWtiWmtpbDZKNXQrT1cwNi82RWxoK25kVUxhM2ZMcE9CYzMzYVVPOVIybzFZZ0k0Q3lPRQ==",
+      "application": "ssh",
+      "description": "SSH rule test",	
+      "destination_ip": "1.1.1.1",
+      "destination_zone": "WAN",
+      "device_group": "Cloud Edge",
+      "ip_address": "149.97.195.203",  
+      "rule_name": "SSH permit",
+      "source_ip": "any",	  
+      "source_zone": "LAN",	  
+      "tag_name": "production"
     }
   ]
 }
