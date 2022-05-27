@@ -1,0 +1,8 @@
+ansible_network_os: panos
+ansible_user: username
+ansible_password: changeme
+ansiblelab_user: otherusername
+ansiblelab_password: changemetoo
+palo_username: firewallusername
+palo_password: firewallpass
+palo_api: copy_paste_api_here_osjjsdj;sld;lskd[kwpwS3gwdFBjYzJCdThLNHM9Y2NOdGxCM01PZEhRcFhZem94MXhzMFJzaHN6d3lisjdksdls;lsf;lk;skf==

@@ -2173,3 +2173,699 @@ in ansible.cfg.
 in ansible.cfg.
 2022-05-11 00:19:34,150 p=9408 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
 2022-05-11 00:19:34,150 p=9408 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 13:47:47,634 p=197 u=buenrosm n=ansible | PLAY [Sec_rule] ************************************************************************
+2022-05-13 13:47:47,654 p=197 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] *********
+2022-05-13 13:47:48,751 p=197 u=buenrosm n=ansible | ok: [localhost]
+2022-05-13 13:47:48,752 p=197 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] **********
+2022-05-13 13:47:49,538 p=197 u=buenrosm n=ansible | ok: [localhost]
+2022-05-13 13:47:49,539 p=197 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] **********
+2022-05-13 13:47:50,332 p=197 u=buenrosm n=ansible | ok: [localhost]
+2022-05-13 13:47:50,342 p=197 u=buenrosm n=ansible | TASK [include variables] ***************************************************************
+2022-05-13 13:47:50,358 p=197 u=buenrosm n=ansible | ok: [localhost]
+2022-05-13 13:47:50,359 p=197 u=buenrosm n=ansible | TASK [add a rule] **********************************************************************
+2022-05-13 13:47:51,894 p=197 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-13 13:47:52,692 p=197 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_2_kerberos_permit', 'application': 'kerberos', 'description': 'kerberos rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-13 13:47:53,498 p=197 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_3_SSL_permit', 'application': 'ssl', 'description': 'ssl rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-13 13:47:54,344 p=197 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_4_FTP_permit', 'application': 'ftp', 'description': 'ftp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-13 13:47:55,191 p=197 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_5_LDAP_permit', 'application': 'ldap', 'description': 'ldap rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-13 13:47:56,014 p=197 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_6_SSH_permit', 'application': 'ntp', 'description': 'NTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-13 13:47:56,849 p=197 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_7_SMTP_permit', 'application': 'smtp', 'description': 'smtp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-13 13:47:57,676 p=197 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_8_DNS_permit', 'application': 'dns', 'description': 'dns rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-13 13:47:58,500 p=197 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_9_SNMP_permit', 'application': 'snmp', 'description': 'SNMP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-13 13:48:58,739 p=197 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_10_NFS_permit', 'application': 'nfs', 'description': 'nfs rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'true'})
+2022-05-13 13:48:58,740 p=197 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. 
+This feature will be removed in version 2.12. Deprecation warnings can be disabled by 
+setting deprecation_warnings=False in ansible.cfg.
+2022-05-13 13:48:58,742 p=197 u=buenrosm n=ansible | PLAY RECAP *****************************************************************************
+2022-05-13 13:48:58,742 p=197 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-13 13:50:56,220 p=528 u=buenrosm n=ansible | ERROR! Incorrect options passed
+2022-05-19 14:19:49,261 p=1069 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:19:49,276 p=1069 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:19:50,732 p=1069 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:19:50,734 p=1069 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:19:52,103 p=1069 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:19:52,105 p=1069 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:19:53,487 p=1069 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:19:53,490 p=1069 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:19:53,515 p=1069 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:19:53,518 p=1069 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:19:53,908 p=1069 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'Unsupported parameters for (panos_op) module: state Supported parameters include: api_key, cmd, cmd_is_xml, ip_address, password, port, provider, username'
+2022-05-19 14:19:53,910 p=1069 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:19:53,910 p=1069 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:20:19,780 p=1191 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:20:19,800 p=1191 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:20:21,283 p=1191 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:20:21,285 p=1191 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:20:22,609 p=1191 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:20:22,612 p=1191 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:20:23,942 p=1191 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:20:23,945 p=1191 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:20:23,972 p=1191 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:20:23,975 p=1191 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:20:26,120 p=1191 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:20:26,121 p=1191 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'Failed to run command : show session info | match "Throughput" : URLError: code: 400 reason: Request is not a valid XML'
+2022-05-19 14:20:26,123 p=1191 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:20:26,123 p=1191 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:21:42,874 p=1313 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:21:42,889 p=1313 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:21:44,475 p=1313 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:21:44,478 p=1313 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:21:45,919 p=1313 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:21:45,922 p=1313 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:21:47,410 p=1313 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:21:47,414 p=1313 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:21:47,446 p=1313 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:21:47,449 p=1313 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:21:48,810 p=1313 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:21:48,811 p=1313 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'Failed to run command : show session info | match "Throughput" : URLError: code: 400 reason: Request is not a valid XML'
+2022-05-19 14:21:48,812 p=1313 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:21:48,813 p=1313 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:23:12,676 p=1441 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:23:12,692 p=1441 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:23:14,296 p=1441 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:23:14,299 p=1441 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:23:15,767 p=1441 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:23:15,771 p=1441 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:23:17,225 p=1441 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:23:17,229 p=1441 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:23:17,261 p=1441 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:23:17,263 p=1441 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:23:19,336 p=1441 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:23:19,338 p=1441 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'Failed to run command : show session info | match "Throughput" : URLError: code: 400 reason: Request is not a valid XML'
+2022-05-19 14:23:19,341 p=1441 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:23:19,341 p=1441 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:23:58,702 p=1563 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:23:58,721 p=1563 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:24:00,338 p=1563 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:24:00,341 p=1563 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:24:01,834 p=1563 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:24:01,837 p=1563 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:24:03,248 p=1563 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:24:03,251 p=1563 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:24:03,282 p=1563 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:24:03,285 p=1563 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:24:05,701 p=1563 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:24:05,702 p=1563 u=buenrosm n=ansible | changed: [localhost]
+2022-05-19 14:24:05,704 p=1563 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:24:05,704 p=1563 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:27:08,959 p=1699 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:27:08,976 p=1699 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:27:10,591 p=1699 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:27:10,594 p=1699 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:27:12,078 p=1699 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:27:12,082 p=1699 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:27:13,561 p=1699 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:27:13,566 p=1699 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:27:13,600 p=1699 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:27:13,603 p=1699 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:27:15,583 p=1699 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:27:15,583 p=1699 u=buenrosm n=ansible | changed: [localhost]
+2022-05-19 14:27:15,589 p=1699 u=buenrosm n=ansible | TASK [debug] ********************************************************************************************
+2022-05-19 14:27:15,654 p=1699 u=buenrosm n=ansible | ok: [localhost] => 
+  output:
+    changed: true
+    deprecations:
+    - msg: Classic provider params are deprecated; use "provider" instead
+      version: '2.12'
+    failed: false
+    msg: Done
+    stdout: '{"response": {"@status": "success", "result": {"tmo-5gcdelete": "15", "tmo-sctpshutdown": "60", "tmo-tcp": "3600", "tcp-nonsyn-rej": "True", "tmo-tcpinit": "5", "sw-cutthrough": "False", "pps": "88", "tmo-tcp-delayed-ack": "250", "num-max": "65000", "age-scan-thresh": "80", "tmo-tcphalfclosed": "120", "num-active": "7", "tmo-sctp": "3600", "dis-def": "60", "num-mcast": "0", "tcp-no-refresh-fin-rst": "False", "icmp-unreachable-rate": "200", "tmo-tcptimewait": "15", "age-scan-ssf": "8", "tmo-udp": "30", "vardata-rate": "10485760", "age-scan-tmo": "10", "dis-sctp": "30", "dp": "*.dp0", "dis-tcp": "90", "tcp-reject-siw-thresh": "4", "num-udp": "0", "tmo-sctpcookie": "60", "num-http2-5gc": "0", "tmo-icmp": "6", "max-pending-mcast": "0", "age-accel-thresh": "80", "tcp-diff-syn-rej": "True", "tunnel-accel": "True", "num-gtpc": "0", "oor-action": "drop", "tmo-def": "30", "num-predict": "0", "age-accel-en": "True", "age-accel-tsf": "2", "hw-offload": "True", "num-icmp": "0", "num-gtpu-active":
+      "0", "tmo-cp": "30", "num-pfcpc": "0", "tmo-sctpinit": "5", "strict-checksum": "True", "tmo-tcp-unverif-rst": "30", "num-bcast": "0", "ipv6-fw": "True", "tcp-strict-rst": "True", "cps": "2", "num-installed": "1815", "num-tcp": "7", "dis-udp": "60", "run-tc": "True", "num-sctp-assoc": "0", "num-sctp-sess": "0", "tcp-reject-siw-enable": "False", "tmo-tcphandshake": "10", "hw-udp-offload": "True", "kbps": "293", "num-gtpu-pending": "0"}}}'
+    stdout_lines:
+    - '{"response": {"@status": "success", "result": {"tmo-5gcdelete": "15", "tmo-sctpshutdown": "60", "tmo-tcp": "3600", "tcp-nonsyn-rej": "True", "tmo-tcpinit": "5", "sw-cutthrough": "False", "pps": "88", "tmo-tcp-delayed-ack": "250", "num-max": "65000", "age-scan-thresh": "80", "tmo-tcphalfclosed": "120", "num-active": "7", "tmo-sctp": "3600", "dis-def": "60", "num-mcast": "0", "tcp-no-refresh-fin-rst": "False", "icmp-unreachable-rate": "200", "tmo-tcptimewait": "15", "age-scan-ssf": "8", "tmo-udp": "30", "vardata-rate": "10485760", "age-scan-tmo": "10", "dis-sctp": "30", "dp": "*.dp0", "dis-tcp": "90", "tcp-reject-siw-thresh": "4", "num-udp": "0", "tmo-sctpcookie": "60", "num-http2-5gc": "0", "tmo-icmp": "6", "max-pending-mcast": "0", "age-accel-thresh": "80", "tcp-diff-syn-rej": "True", "tunnel-accel": "True", "num-gtpc": "0", "oor-action": "drop", "tmo-def": "30", "num-predict": "0", "age-accel-en": "True", "age-accel-tsf": "2", "hw-offload": "True", "num-icmp": "0", "num-gtpu-active":
+      "0", "tmo-cp": "30", "num-pfcpc": "0", "tmo-sctpinit": "5", "strict-checksum": "True", "tmo-tcp-unverif-rst": "30", "num-bcast": "0", "ipv6-fw": "True", "tcp-strict-rst": "True", "cps": "2", "num-installed": "1815", "num-tcp": "7", "dis-udp": "60", "run-tc": "True", "num-sctp-assoc": "0", "num-sctp-sess": "0", "tcp-reject-siw-enable": "False", "tmo-tcphandshake": "10", "hw-udp-offload": "True", "kbps": "293", "num-gtpu-pending": "0"}}}'
+    stdout_xml: |-
+      <response status="success"><result>
+        <tmo-5gcdelete>15</tmo-5gcdelete>
+        <tmo-sctpshutdown>60</tmo-sctpshutdown>
+        <tmo-tcp>3600</tmo-tcp>
+        <tcp-nonsyn-rej>True</tcp-nonsyn-rej>
+        <tmo-tcpinit>5</tmo-tcpinit>
+        <sw-cutthrough>False</sw-cutthrough>
+        <pps>88</pps>
+        <tmo-tcp-delayed-ack>250</tmo-tcp-delayed-ack>
+        <num-max>65000</num-max>
+        <age-scan-thresh>80</age-scan-thresh>
+        <tmo-tcphalfclosed>120</tmo-tcphalfclosed>
+        <num-active>7</num-active>
+        <tmo-sctp>3600</tmo-sctp>
+        <dis-def>60</dis-def>
+        <num-mcast>0</num-mcast>
+        <tcp-no-refresh-fin-rst>False</tcp-no-refresh-fin-rst>
+        <icmp-unreachable-rate>200</icmp-unreachable-rate>
+        <tmo-tcptimewait>15</tmo-tcptimewait>
+        <age-scan-ssf>8</age-scan-ssf>
+        <tmo-udp>30</tmo-udp>
+        <vardata-rate>10485760</vardata-rate>
+        <age-scan-tmo>10</age-scan-tmo>
+        <dis-sctp>30</dis-sctp>
+        <dp>*.dp0</dp>
+        <dis-tcp>90</dis-tcp>
+        <tcp-reject-siw-thresh>4</tcp-reject-siw-thresh>
+        <num-udp>0</num-udp>
+        <tmo-sctpcookie>60</tmo-sctpcookie>
+        <num-http2-5gc>0</num-http2-5gc>
+        <tmo-icmp>6</tmo-icmp>
+        <max-pending-mcast>0</max-pending-mcast>
+        <age-accel-thresh>80</age-accel-thresh>
+        <tcp-diff-syn-rej>True</tcp-diff-syn-rej>
+        <tunnel-accel>True</tunnel-accel>
+        <num-gtpc>0</num-gtpc>
+        <oor-action>drop</oor-action>
+        <tmo-def>30</tmo-def>
+        <num-predict>0</num-predict>
+        <age-accel-en>True</age-accel-en>
+        <age-accel-tsf>2</age-accel-tsf>
+        <hw-offload>True</hw-offload>
+        <num-icmp>0</num-icmp>
+        <num-gtpu-active>0</num-gtpu-active>
+        <tmo-cp>30</tmo-cp>
+        <num-pfcpc>0</num-pfcpc>
+        <tmo-sctpinit>5</tmo-sctpinit>
+        <strict-checksum>True</strict-checksum>
+        <tmo-tcp-unverif-rst>30</tmo-tcp-unverif-rst>
+        <num-bcast>0</num-bcast>
+        <ipv6-fw>True</ipv6-fw>
+        <tcp-strict-rst>True</tcp-strict-rst>
+        <cps>2</cps>
+        <num-installed>1815</num-installed>
+        <num-tcp>7</num-tcp>
+        <dis-udp>60</dis-udp>
+        <run-tc>True</run-tc>
+        <num-sctp-assoc>0</num-sctp-assoc>
+        <num-sctp-sess>0</num-sctp-sess>
+        <tcp-reject-siw-enable>False</tcp-reject-siw-enable>
+        <tmo-tcphandshake>10</tmo-tcphandshake>
+        <hw-udp-offload>True</hw-udp-offload>
+        <kbps>293</kbps>
+        <num-gtpu-pending>0</num-gtpu-pending>
+      </result></response>
+2022-05-19 14:27:15,657 p=1699 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:27:15,657 p=1699 u=buenrosm n=ansible | localhost                  : ok=6    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:28:02,166 p=1824 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:28:02,182 p=1824 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:28:03,817 p=1824 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:28:03,821 p=1824 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:28:05,287 p=1824 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:28:05,291 p=1824 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:28:06,749 p=1824 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:28:06,753 p=1824 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:28:06,790 p=1824 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:28:06,794 p=1824 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:28:08,896 p=1824 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:28:08,898 p=1824 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'Failed to run command : show session info | match "Throughput" : URLError: code: 400 reason: Request is not a valid XML'
+2022-05-19 14:28:08,900 p=1824 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:28:08,901 p=1824 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:28:34,916 p=1946 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:28:34,936 p=1946 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:28:36,561 p=1946 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:28:36,564 p=1946 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:28:38,185 p=1946 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:28:38,189 p=1946 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:28:39,744 p=1946 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:28:39,749 p=1946 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:28:39,786 p=1946 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:28:39,789 p=1946 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:28:41,979 p=1946 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:28:41,981 p=1946 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'Failed to run command : show session info | match "Throughput" : URLError: code: 400 reason: Request is not a valid XML'
+2022-05-19 14:28:41,983 p=1946 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:28:41,983 p=1946 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:29:04,757 p=2068 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:29:04,783 p=2068 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:29:06,751 p=2068 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:29:06,754 p=2068 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:29:08,372 p=2068 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:29:08,375 p=2068 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:29:10,078 p=2068 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:29:10,082 p=2068 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:29:10,121 p=2068 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:29:10,126 p=2068 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:29:12,418 p=2068 u=buenrosm n=ansible | [WARNING]: The value ['show session info | match Throughput'] (type list) in a string field was
+converted to "['show session info | match Throughput']" (type string). If this does not look like what
+you expect, quote the entire value to ensure it does not change.
+
+2022-05-19 14:29:12,418 p=2068 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:29:12,420 p=2068 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'Failed to run command : [''show session info | match "Throughput'']" : URLError: code: 400 reason: Request is not a valid XML'
+2022-05-19 14:29:12,422 p=2068 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:29:12,422 p=2068 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:29:54,424 p=2190 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:29:54,441 p=2190 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:29:56,000 p=2190 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:29:56,002 p=2190 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:29:57,469 p=2190 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:29:57,473 p=2190 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:29:58,916 p=2190 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:29:58,920 p=2190 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:29:58,960 p=2190 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:29:58,963 p=2190 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:30:01,081 p=2190 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:30:01,082 p=2190 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'Failed to run command : (show session info | match "Throughput)" : URLError: code: 400 reason: Request is not a valid XML'
+2022-05-19 14:30:01,083 p=2190 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:30:01,084 p=2190 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:30:25,419 p=2312 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:30:25,437 p=2312 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:30:27,013 p=2312 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:30:27,015 p=2312 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:30:28,452 p=2312 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:30:28,456 p=2312 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:30:30,079 p=2312 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:30:30,082 p=2312 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:30:30,113 p=2312 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:30:30,116 p=2312 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:30:32,270 p=2312 u=buenrosm n=ansible | [WARNING]: The value {'show session info | match Throughput': None} (type dict) in a string field was
+converted to "{'show session info | match Throughput': None}" (type string). If this does not look like
+what you expect, quote the entire value to ensure it does not change.
+
+2022-05-19 14:30:32,271 p=2312 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:30:32,272 p=2312 u=buenrosm n=ansible | fatal: [localhost]: FAILED! => changed=false 
+  msg: 'Failed to run command : {''show session info | match Throughput'': "None}" : URLError: code: 400 reason: Request is not a valid XML'
+2022-05-19 14:30:32,273 p=2312 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:30:32,273 p=2312 u=buenrosm n=ansible | localhost                  : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:31:02,644 p=2434 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:31:02,660 p=2434 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:31:04,205 p=2434 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:31:04,207 p=2434 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:31:05,623 p=2434 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:31:05,629 p=2434 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:31:07,062 p=2434 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:31:07,067 p=2434 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:31:07,098 p=2434 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:31:07,101 p=2434 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:31:09,102 p=2434 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:31:09,103 p=2434 u=buenrosm n=ansible | changed: [localhost]
+2022-05-19 14:31:09,105 p=2434 u=buenrosm n=ansible | TASK [debug] ********************************************************************************************
+2022-05-19 14:31:09,170 p=2434 u=buenrosm n=ansible | ok: [localhost] => 
+  output:
+    changed: true
+    deprecations:
+    - msg: Classic provider params are deprecated; use "provider" instead
+      version: '2.12'
+    failed: false
+    msg: Done
+    stdout: '{"response": {"@status": "success", "result": {"tmo-5gcdelete": "15", "tmo-sctpshutdown": "60", "tmo-tcp": "3600", "tcp-nonsyn-rej": "True", "tmo-tcpinit": "5", "sw-cutthrough": "False", "pps": "88", "tmo-tcp-delayed-ack": "250", "num-max": "65000", "age-scan-thresh": "80", "tmo-tcphalfclosed": "120", "num-active": "8", "tmo-sctp": "3600", "dis-def": "60", "num-mcast": "0", "tcp-no-refresh-fin-rst": "False", "icmp-unreachable-rate": "200", "tmo-tcptimewait": "15", "age-scan-ssf": "8", "tmo-udp": "30", "vardata-rate": "10485760", "age-scan-tmo": "10", "dis-sctp": "30", "dp": "*.dp0", "dis-tcp": "90", "tcp-reject-siw-thresh": "4", "num-udp": "0", "tmo-sctpcookie": "60", "num-http2-5gc": "0", "tmo-icmp": "6", "max-pending-mcast": "0", "age-accel-thresh": "80", "tcp-diff-syn-rej": "True", "tunnel-accel": "True", "num-gtpc": "0", "oor-action": "drop", "tmo-def": "30", "num-predict": "0", "age-accel-en": "True", "age-accel-tsf": "2", "hw-offload": "True", "num-icmp": "0", "num-gtpu-active":
+      "0", "tmo-cp": "30", "num-pfcpc": "0", "tmo-sctpinit": "5", "strict-checksum": "True", "tmo-tcp-unverif-rst": "30", "num-bcast": "0", "ipv6-fw": "True", "tcp-strict-rst": "True", "cps": "2", "num-installed": "1931", "num-tcp": "8", "dis-udp": "60", "run-tc": "True", "num-sctp-assoc": "0", "num-sctp-sess": "0", "tcp-reject-siw-enable": "False", "tmo-tcphandshake": "10", "hw-udp-offload": "True", "kbps": "293", "num-gtpu-pending": "0"}}}'
+    stdout_lines:
+    - '{"response": {"@status": "success", "result": {"tmo-5gcdelete": "15", "tmo-sctpshutdown": "60", "tmo-tcp": "3600", "tcp-nonsyn-rej": "True", "tmo-tcpinit": "5", "sw-cutthrough": "False", "pps": "88", "tmo-tcp-delayed-ack": "250", "num-max": "65000", "age-scan-thresh": "80", "tmo-tcphalfclosed": "120", "num-active": "8", "tmo-sctp": "3600", "dis-def": "60", "num-mcast": "0", "tcp-no-refresh-fin-rst": "False", "icmp-unreachable-rate": "200", "tmo-tcptimewait": "15", "age-scan-ssf": "8", "tmo-udp": "30", "vardata-rate": "10485760", "age-scan-tmo": "10", "dis-sctp": "30", "dp": "*.dp0", "dis-tcp": "90", "tcp-reject-siw-thresh": "4", "num-udp": "0", "tmo-sctpcookie": "60", "num-http2-5gc": "0", "tmo-icmp": "6", "max-pending-mcast": "0", "age-accel-thresh": "80", "tcp-diff-syn-rej": "True", "tunnel-accel": "True", "num-gtpc": "0", "oor-action": "drop", "tmo-def": "30", "num-predict": "0", "age-accel-en": "True", "age-accel-tsf": "2", "hw-offload": "True", "num-icmp": "0", "num-gtpu-active":
+      "0", "tmo-cp": "30", "num-pfcpc": "0", "tmo-sctpinit": "5", "strict-checksum": "True", "tmo-tcp-unverif-rst": "30", "num-bcast": "0", "ipv6-fw": "True", "tcp-strict-rst": "True", "cps": "2", "num-installed": "1931", "num-tcp": "8", "dis-udp": "60", "run-tc": "True", "num-sctp-assoc": "0", "num-sctp-sess": "0", "tcp-reject-siw-enable": "False", "tmo-tcphandshake": "10", "hw-udp-offload": "True", "kbps": "293", "num-gtpu-pending": "0"}}}'
+    stdout_xml: |-
+      <response status="success"><result>
+        <tmo-5gcdelete>15</tmo-5gcdelete>
+        <tmo-sctpshutdown>60</tmo-sctpshutdown>
+        <tmo-tcp>3600</tmo-tcp>
+        <tcp-nonsyn-rej>True</tcp-nonsyn-rej>
+        <tmo-tcpinit>5</tmo-tcpinit>
+        <sw-cutthrough>False</sw-cutthrough>
+        <pps>88</pps>
+        <tmo-tcp-delayed-ack>250</tmo-tcp-delayed-ack>
+        <num-max>65000</num-max>
+        <age-scan-thresh>80</age-scan-thresh>
+        <tmo-tcphalfclosed>120</tmo-tcphalfclosed>
+        <num-active>8</num-active>
+        <tmo-sctp>3600</tmo-sctp>
+        <dis-def>60</dis-def>
+        <num-mcast>0</num-mcast>
+        <tcp-no-refresh-fin-rst>False</tcp-no-refresh-fin-rst>
+        <icmp-unreachable-rate>200</icmp-unreachable-rate>
+        <tmo-tcptimewait>15</tmo-tcptimewait>
+        <age-scan-ssf>8</age-scan-ssf>
+        <tmo-udp>30</tmo-udp>
+        <vardata-rate>10485760</vardata-rate>
+        <age-scan-tmo>10</age-scan-tmo>
+        <dis-sctp>30</dis-sctp>
+        <dp>*.dp0</dp>
+        <dis-tcp>90</dis-tcp>
+        <tcp-reject-siw-thresh>4</tcp-reject-siw-thresh>
+        <num-udp>0</num-udp>
+        <tmo-sctpcookie>60</tmo-sctpcookie>
+        <num-http2-5gc>0</num-http2-5gc>
+        <tmo-icmp>6</tmo-icmp>
+        <max-pending-mcast>0</max-pending-mcast>
+        <age-accel-thresh>80</age-accel-thresh>
+        <tcp-diff-syn-rej>True</tcp-diff-syn-rej>
+        <tunnel-accel>True</tunnel-accel>
+        <num-gtpc>0</num-gtpc>
+        <oor-action>drop</oor-action>
+        <tmo-def>30</tmo-def>
+        <num-predict>0</num-predict>
+        <age-accel-en>True</age-accel-en>
+        <age-accel-tsf>2</age-accel-tsf>
+        <hw-offload>True</hw-offload>
+        <num-icmp>0</num-icmp>
+        <num-gtpu-active>0</num-gtpu-active>
+        <tmo-cp>30</tmo-cp>
+        <num-pfcpc>0</num-pfcpc>
+        <tmo-sctpinit>5</tmo-sctpinit>
+        <strict-checksum>True</strict-checksum>
+        <tmo-tcp-unverif-rst>30</tmo-tcp-unverif-rst>
+        <num-bcast>0</num-bcast>
+        <ipv6-fw>True</ipv6-fw>
+        <tcp-strict-rst>True</tcp-strict-rst>
+        <cps>2</cps>
+        <num-installed>1931</num-installed>
+        <num-tcp>8</num-tcp>
+        <dis-udp>60</dis-udp>
+        <run-tc>True</run-tc>
+        <num-sctp-assoc>0</num-sctp-assoc>
+        <num-sctp-sess>0</num-sctp-sess>
+        <tcp-reject-siw-enable>False</tcp-reject-siw-enable>
+        <tmo-tcphandshake>10</tmo-tcphandshake>
+        <hw-udp-offload>True</hw-udp-offload>
+        <kbps>293</kbps>
+        <num-gtpu-pending>0</num-gtpu-pending>
+      </result></response>
+2022-05-19 14:31:09,172 p=2434 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:31:09,173 p=2434 u=buenrosm n=ansible | localhost                  : ok=6    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-19 14:31:25,232 p=2558 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-19 14:31:25,246 p=2558 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-19 14:31:26,821 p=2558 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:31:26,824 p=2558 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-19 14:31:28,284 p=2558 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:31:28,286 p=2558 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-19 14:31:29,953 p=2558 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:31:29,956 p=2558 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-19 14:31:29,986 p=2558 u=buenrosm n=ansible | ok: [localhost]
+2022-05-19 14:31:29,989 p=2558 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-19 14:31:32,135 p=2558 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-19 14:31:32,135 p=2558 u=buenrosm n=ansible | changed: [localhost]
+2022-05-19 14:31:32,137 p=2558 u=buenrosm n=ansible | TASK [debug] ********************************************************************************************
+2022-05-19 14:31:32,205 p=2558 u=buenrosm n=ansible | ok: [localhost] => 
+  output:
+    changed: true
+    deprecations:
+    - msg: Classic provider params are deprecated; use "provider" instead
+      version: '2.12'
+    failed: false
+    msg: Done
+    stdout: '{"response": {"@status": "success", "result": {"tmo-5gcdelete": "15", "tmo-sctpshutdown": "60", "tmo-tcp": "3600", "tcp-nonsyn-rej": "True", "tmo-tcpinit": "5", "sw-cutthrough": "False", "pps": "88", "tmo-tcp-delayed-ack": "250", "num-max": "65000", "age-scan-thresh": "80", "tmo-tcphalfclosed": "120", "num-active": "8", "tmo-sctp": "3600", "dis-def": "60", "num-mcast": "0", "tcp-no-refresh-fin-rst": "False", "icmp-unreachable-rate": "200", "tmo-tcptimewait": "15", "age-scan-ssf": "8", "tmo-udp": "30", "vardata-rate": "10485760", "age-scan-tmo": "10", "dis-sctp": "30", "dp": "*.dp0", "dis-tcp": "90", "tcp-reject-siw-thresh": "4", "num-udp": "0", "tmo-sctpcookie": "60", "num-http2-5gc": "0", "tmo-icmp": "6", "max-pending-mcast": "0", "age-accel-thresh": "80", "tcp-diff-syn-rej": "True", "tunnel-accel": "True", "num-gtpc": "0", "oor-action": "drop", "tmo-def": "30", "num-predict": "0", "age-accel-en": "True", "age-accel-tsf": "2", "hw-offload": "True", "num-icmp": "0", "num-gtpu-active":
+      "0", "tmo-cp": "30", "num-pfcpc": "0", "tmo-sctpinit": "5", "strict-checksum": "True", "tmo-tcp-unverif-rst": "30", "num-bcast": "0", "ipv6-fw": "True", "tcp-strict-rst": "True", "cps": "2", "num-installed": "1942", "num-tcp": "8", "dis-udp": "60", "run-tc": "True", "num-sctp-assoc": "0", "num-sctp-sess": "0", "tcp-reject-siw-enable": "False", "tmo-tcphandshake": "10", "hw-udp-offload": "True", "kbps": "293", "num-gtpu-pending": "0"}}}'
+    stdout_lines:
+    - '{"response": {"@status": "success", "result": {"tmo-5gcdelete": "15", "tmo-sctpshutdown": "60", "tmo-tcp": "3600", "tcp-nonsyn-rej": "True", "tmo-tcpinit": "5", "sw-cutthrough": "False", "pps": "88", "tmo-tcp-delayed-ack": "250", "num-max": "65000", "age-scan-thresh": "80", "tmo-tcphalfclosed": "120", "num-active": "8", "tmo-sctp": "3600", "dis-def": "60", "num-mcast": "0", "tcp-no-refresh-fin-rst": "False", "icmp-unreachable-rate": "200", "tmo-tcptimewait": "15", "age-scan-ssf": "8", "tmo-udp": "30", "vardata-rate": "10485760", "age-scan-tmo": "10", "dis-sctp": "30", "dp": "*.dp0", "dis-tcp": "90", "tcp-reject-siw-thresh": "4", "num-udp": "0", "tmo-sctpcookie": "60", "num-http2-5gc": "0", "tmo-icmp": "6", "max-pending-mcast": "0", "age-accel-thresh": "80", "tcp-diff-syn-rej": "True", "tunnel-accel": "True", "num-gtpc": "0", "oor-action": "drop", "tmo-def": "30", "num-predict": "0", "age-accel-en": "True", "age-accel-tsf": "2", "hw-offload": "True", "num-icmp": "0", "num-gtpu-active":
+      "0", "tmo-cp": "30", "num-pfcpc": "0", "tmo-sctpinit": "5", "strict-checksum": "True", "tmo-tcp-unverif-rst": "30", "num-bcast": "0", "ipv6-fw": "True", "tcp-strict-rst": "True", "cps": "2", "num-installed": "1942", "num-tcp": "8", "dis-udp": "60", "run-tc": "True", "num-sctp-assoc": "0", "num-sctp-sess": "0", "tcp-reject-siw-enable": "False", "tmo-tcphandshake": "10", "hw-udp-offload": "True", "kbps": "293", "num-gtpu-pending": "0"}}}'
+    stdout_xml: |-
+      <response status="success"><result>
+        <tmo-5gcdelete>15</tmo-5gcdelete>
+        <tmo-sctpshutdown>60</tmo-sctpshutdown>
+        <tmo-tcp>3600</tmo-tcp>
+        <tcp-nonsyn-rej>True</tcp-nonsyn-rej>
+        <tmo-tcpinit>5</tmo-tcpinit>
+        <sw-cutthrough>False</sw-cutthrough>
+        <pps>88</pps>
+        <tmo-tcp-delayed-ack>250</tmo-tcp-delayed-ack>
+        <num-max>65000</num-max>
+        <age-scan-thresh>80</age-scan-thresh>
+        <tmo-tcphalfclosed>120</tmo-tcphalfclosed>
+        <num-active>8</num-active>
+        <tmo-sctp>3600</tmo-sctp>
+        <dis-def>60</dis-def>
+        <num-mcast>0</num-mcast>
+        <tcp-no-refresh-fin-rst>False</tcp-no-refresh-fin-rst>
+        <icmp-unreachable-rate>200</icmp-unreachable-rate>
+        <tmo-tcptimewait>15</tmo-tcptimewait>
+        <age-scan-ssf>8</age-scan-ssf>
+        <tmo-udp>30</tmo-udp>
+        <vardata-rate>10485760</vardata-rate>
+        <age-scan-tmo>10</age-scan-tmo>
+        <dis-sctp>30</dis-sctp>
+        <dp>*.dp0</dp>
+        <dis-tcp>90</dis-tcp>
+        <tcp-reject-siw-thresh>4</tcp-reject-siw-thresh>
+        <num-udp>0</num-udp>
+        <tmo-sctpcookie>60</tmo-sctpcookie>
+        <num-http2-5gc>0</num-http2-5gc>
+        <tmo-icmp>6</tmo-icmp>
+        <max-pending-mcast>0</max-pending-mcast>
+        <age-accel-thresh>80</age-accel-thresh>
+        <tcp-diff-syn-rej>True</tcp-diff-syn-rej>
+        <tunnel-accel>True</tunnel-accel>
+        <num-gtpc>0</num-gtpc>
+        <oor-action>drop</oor-action>
+        <tmo-def>30</tmo-def>
+        <num-predict>0</num-predict>
+        <age-accel-en>True</age-accel-en>
+        <age-accel-tsf>2</age-accel-tsf>
+        <hw-offload>True</hw-offload>
+        <num-icmp>0</num-icmp>
+        <num-gtpu-active>0</num-gtpu-active>
+        <tmo-cp>30</tmo-cp>
+        <num-pfcpc>0</num-pfcpc>
+        <tmo-sctpinit>5</tmo-sctpinit>
+        <strict-checksum>True</strict-checksum>
+        <tmo-tcp-unverif-rst>30</tmo-tcp-unverif-rst>
+        <num-bcast>0</num-bcast>
+        <ipv6-fw>True</ipv6-fw>
+        <tcp-strict-rst>True</tcp-strict-rst>
+        <cps>2</cps>
+        <num-installed>1942</num-installed>
+        <num-tcp>8</num-tcp>
+        <dis-udp>60</dis-udp>
+        <run-tc>True</run-tc>
+        <num-sctp-assoc>0</num-sctp-assoc>
+        <num-sctp-sess>0</num-sctp-sess>
+        <tcp-reject-siw-enable>False</tcp-reject-siw-enable>
+        <tmo-tcphandshake>10</tmo-tcphandshake>
+        <hw-udp-offload>True</hw-udp-offload>
+        <kbps>293</kbps>
+        <num-gtpu-pending>0</num-gtpu-pending>
+      </result></response>
+2022-05-19 14:31:32,207 p=2558 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-19 14:31:32,207 p=2558 u=buenrosm n=ansible | localhost                  : ok=6    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-26 11:26:44,581 p=2729 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-26 11:26:44,597 p=2729 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-26 11:26:45,830 p=2729 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:26:45,832 p=2729 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-26 11:26:46,638 p=2729 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:26:46,639 p=2729 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-26 11:26:47,430 p=2729 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:26:47,432 p=2729 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-26 11:26:47,448 p=2729 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:26:47,449 p=2729 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-26 11:27:09,823 p=2729 u=buenrosm n=ansible |  [ERROR]: User interrupted execution
+
+2022-05-26 11:33:45,713 p=3200 u=buenrosm n=ansible | PLAY [CMD_line] *****************************************************************************************
+2022-05-26 11:33:45,722 p=3200 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-26 11:33:46,645 p=3200 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:33:46,647 p=3200 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-26 11:33:47,473 p=3200 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:33:47,474 p=3200 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-26 11:33:48,305 p=3200 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:33:48,307 p=3200 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-26 11:33:48,324 p=3200 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:33:48,326 p=3200 u=buenrosm n=ansible | TASK [push_cmd] *****************************************************************************************
+2022-05-26 11:33:50,328 p=3200 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-26 11:33:50,328 p=3200 u=buenrosm n=ansible | changed: [localhost]
+2022-05-26 11:33:50,330 p=3200 u=buenrosm n=ansible | TASK [debug] ********************************************************************************************
+2022-05-26 11:33:50,363 p=3200 u=buenrosm n=ansible | ok: [localhost] => 
+  output:
+    changed: true
+    deprecations:
+    - msg: Classic provider params are deprecated; use "provider" instead
+      version: '2.12'
+    failed: false
+    msg: Done
+    stdout: '{"response": {"@status": "success", "result": {"tmo-5gcdelete": "15", "tmo-sctpshutdown": "60", "tmo-tcp": "3600", "tcp-nonsyn-rej": "True", "tmo-tcpinit": "5", "sw-cutthrough": "False", "pps": "40", "tmo-tcp-delayed-ack": "250", "num-max": "65000", "age-scan-thresh": "80", "tmo-tcphalfclosed": "120", "num-active": "2", "tmo-sctp": "3600", "dis-def": "60", "num-mcast": "0", "tcp-no-refresh-fin-rst": "False", "icmp-unreachable-rate": "200", "tmo-tcptimewait": "15", "age-scan-ssf": "8", "tmo-udp": "30", "vardata-rate": "10485760", "age-scan-tmo": "10", "dis-sctp": "30", "dp": "*.dp0", "dis-tcp": "90", "tcp-reject-siw-thresh": "4", "num-udp": "0", "tmo-sctpcookie": "60", "num-http2-5gc": "0", "tmo-icmp": "6", "max-pending-mcast": "0", "age-accel-thresh": "80", "tcp-diff-syn-rej": "True", "tunnel-accel": "True", "num-gtpc": "0", "oor-action": "drop", "tmo-def": "30", "num-predict": "0", "age-accel-en": "True", "age-accel-tsf": "2", "hw-offload": "True", "num-icmp": "0", "num-gtpu-active":
+      "0", "tmo-cp": "30", "num-pfcpc": "0", "tmo-sctpinit": "5", "strict-checksum": "True", "tmo-tcp-unverif-rst": "30", "num-bcast": "0", "ipv6-fw": "True", "tcp-strict-rst": "True", "cps": "0", "num-installed": "93", "num-tcp": "2", "dis-udp": "60", "run-tc": "True", "num-sctp-assoc": "0", "num-sctp-sess": "0", "tcp-reject-siw-enable": "False", "tmo-tcphandshake": "10", "hw-udp-offload": "True", "kbps": "113", "num-gtpu-pending": "0"}}}'
+    stdout_lines:
+    - '{"response": {"@status": "success", "result": {"tmo-5gcdelete": "15", "tmo-sctpshutdown": "60", "tmo-tcp": "3600", "tcp-nonsyn-rej": "True", "tmo-tcpinit": "5", "sw-cutthrough": "False", "pps": "40", "tmo-tcp-delayed-ack": "250", "num-max": "65000", "age-scan-thresh": "80", "tmo-tcphalfclosed": "120", "num-active": "2", "tmo-sctp": "3600", "dis-def": "60", "num-mcast": "0", "tcp-no-refresh-fin-rst": "False", "icmp-unreachable-rate": "200", "tmo-tcptimewait": "15", "age-scan-ssf": "8", "tmo-udp": "30", "vardata-rate": "10485760", "age-scan-tmo": "10", "dis-sctp": "30", "dp": "*.dp0", "dis-tcp": "90", "tcp-reject-siw-thresh": "4", "num-udp": "0", "tmo-sctpcookie": "60", "num-http2-5gc": "0", "tmo-icmp": "6", "max-pending-mcast": "0", "age-accel-thresh": "80", "tcp-diff-syn-rej": "True", "tunnel-accel": "True", "num-gtpc": "0", "oor-action": "drop", "tmo-def": "30", "num-predict": "0", "age-accel-en": "True", "age-accel-tsf": "2", "hw-offload": "True", "num-icmp": "0", "num-gtpu-active":
+      "0", "tmo-cp": "30", "num-pfcpc": "0", "tmo-sctpinit": "5", "strict-checksum": "True", "tmo-tcp-unverif-rst": "30", "num-bcast": "0", "ipv6-fw": "True", "tcp-strict-rst": "True", "cps": "0", "num-installed": "93", "num-tcp": "2", "dis-udp": "60", "run-tc": "True", "num-sctp-assoc": "0", "num-sctp-sess": "0", "tcp-reject-siw-enable": "False", "tmo-tcphandshake": "10", "hw-udp-offload": "True", "kbps": "113", "num-gtpu-pending": "0"}}}'
+    stdout_xml: |-
+      <response status="success"><result>
+        <tmo-5gcdelete>15</tmo-5gcdelete>
+        <tmo-sctpshutdown>60</tmo-sctpshutdown>
+        <tmo-tcp>3600</tmo-tcp>
+        <tcp-nonsyn-rej>True</tcp-nonsyn-rej>
+        <tmo-tcpinit>5</tmo-tcpinit>
+        <sw-cutthrough>False</sw-cutthrough>
+        <pps>40</pps>
+        <tmo-tcp-delayed-ack>250</tmo-tcp-delayed-ack>
+        <num-max>65000</num-max>
+        <age-scan-thresh>80</age-scan-thresh>
+        <tmo-tcphalfclosed>120</tmo-tcphalfclosed>
+        <num-active>2</num-active>
+        <tmo-sctp>3600</tmo-sctp>
+        <dis-def>60</dis-def>
+        <num-mcast>0</num-mcast>
+        <tcp-no-refresh-fin-rst>False</tcp-no-refresh-fin-rst>
+        <icmp-unreachable-rate>200</icmp-unreachable-rate>
+        <tmo-tcptimewait>15</tmo-tcptimewait>
+        <age-scan-ssf>8</age-scan-ssf>
+        <tmo-udp>30</tmo-udp>
+        <vardata-rate>10485760</vardata-rate>
+        <age-scan-tmo>10</age-scan-tmo>
+        <dis-sctp>30</dis-sctp>
+        <dp>*.dp0</dp>
+        <dis-tcp>90</dis-tcp>
+        <tcp-reject-siw-thresh>4</tcp-reject-siw-thresh>
+        <num-udp>0</num-udp>
+        <tmo-sctpcookie>60</tmo-sctpcookie>
+        <num-http2-5gc>0</num-http2-5gc>
+        <tmo-icmp>6</tmo-icmp>
+        <max-pending-mcast>0</max-pending-mcast>
+        <age-accel-thresh>80</age-accel-thresh>
+        <tcp-diff-syn-rej>True</tcp-diff-syn-rej>
+        <tunnel-accel>True</tunnel-accel>
+        <num-gtpc>0</num-gtpc>
+        <oor-action>drop</oor-action>
+        <tmo-def>30</tmo-def>
+        <num-predict>0</num-predict>
+        <age-accel-en>True</age-accel-en>
+        <age-accel-tsf>2</age-accel-tsf>
+        <hw-offload>True</hw-offload>
+        <num-icmp>0</num-icmp>
+        <num-gtpu-active>0</num-gtpu-active>
+        <tmo-cp>30</tmo-cp>
+        <num-pfcpc>0</num-pfcpc>
+        <tmo-sctpinit>5</tmo-sctpinit>
+        <strict-checksum>True</strict-checksum>
+        <tmo-tcp-unverif-rst>30</tmo-tcp-unverif-rst>
+        <num-bcast>0</num-bcast>
+        <ipv6-fw>True</ipv6-fw>
+        <tcp-strict-rst>True</tcp-strict-rst>
+        <cps>0</cps>
+        <num-installed>93</num-installed>
+        <num-tcp>2</num-tcp>
+        <dis-udp>60</dis-udp>
+        <run-tc>True</run-tc>
+        <num-sctp-assoc>0</num-sctp-assoc>
+        <num-sctp-sess>0</num-sctp-sess>
+        <tcp-reject-siw-enable>False</tcp-reject-siw-enable>
+        <tmo-tcphandshake>10</tmo-tcphandshake>
+        <hw-udp-offload>True</hw-udp-offload>
+        <kbps>113</kbps>
+        <num-gtpu-pending>0</num-gtpu-pending>
+      </result></response>
+2022-05-26 11:33:50,365 p=3200 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-26 11:33:50,365 p=3200 u=buenrosm n=ansible | localhost                  : ok=6    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-26 11:37:40,632 p=3362 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-26 11:37:40,642 p=3362 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-26 11:37:41,585 p=3362 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:37:41,587 p=3362 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-26 11:37:42,467 p=3362 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:37:42,469 p=3362 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-26 11:37:43,341 p=3362 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:37:43,344 p=3362 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-26 11:37:43,361 p=3362 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:37:43,363 p=3362 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-26 11:37:44,319 p=3362 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:37:45,234 p=3362 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_2_kerberos_permit', 'application': 'kerberos', 'description': 'kerberos rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:37:46,131 p=3362 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_3_SSL_permit', 'application': 'ssl', 'description': 'ssl rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:37:47,025 p=3362 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_4_FTP_permit', 'application': 'ftp', 'description': 'ftp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:37:47,903 p=3362 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_5_LDAP_permit', 'application': 'ldap', 'description': 'ldap rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:37:48,823 p=3362 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_6_SSH_permit', 'application': 'ntp', 'description': 'NTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:37:49,710 p=3362 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_7_SMTP_permit', 'application': 'smtp', 'description': 'smtp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:37:50,615 p=3362 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_8_DNS_permit', 'application': 'dns', 'description': 'dns rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:37:51,526 p=3362 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_9_SNMP_permit', 'application': 'snmp', 'description': 'SNMP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:38:36,239 p=3362 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_10_NFS_permit', 'application': 'nfs', 'description': 'nfs rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'true'})
+2022-05-26 11:38:36,241 p=3362 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-26 11:38:36,242 p=3362 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-26 11:38:36,242 p=3362 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-26 11:42:44,062 p=3728 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-26 11:42:44,072 p=3728 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-26 11:42:44,969 p=3728 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:42:44,971 p=3728 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-26 11:42:45,828 p=3728 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:42:45,830 p=3728 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-26 11:42:46,703 p=3728 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:42:46,705 p=3728 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-26 11:42:46,721 p=3728 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:42:46,723 p=3728 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-26 11:42:47,713 p=3728 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:42:48,561 p=3728 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_2_kerberos_permit', 'application': 'kerberos', 'description': 'kerberos rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:42:49,429 p=3728 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_3_SSL_permit', 'application': 'ssl', 'description': 'ssl rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:42:50,326 p=3728 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_4_FTP_permit', 'application': 'ftp', 'description': 'ftp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:42:51,194 p=3728 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_5_LDAP_permit', 'application': 'ldap', 'description': 'ldap rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:42:52,060 p=3728 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_6_SSH_permit', 'application': 'ntp', 'description': 'NTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:42:52,890 p=3728 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_7_SMTP_permit', 'application': 'smtp', 'description': 'smtp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:42:53,741 p=3728 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_8_DNS_permit', 'application': 'dns', 'description': 'dns rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:42:58,256 p=3728 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_9_SNMP_permit', 'application': 'snmp', 'description': 'SNMP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:43:37,325 p=3728 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_10_NFS_permit', 'application': 'nfs', 'description': 'nfs rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'true'})
+2022-05-26 11:43:37,326 p=3728 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-26 11:43:37,327 p=3728 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-26 11:43:37,328 p=3728 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-26 11:51:44,105 p=4098 u=buenrosm n=ansible | PLAY [Sec_rule] *****************************************************************************************
+2022-05-26 11:51:44,113 p=4098 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] **************************
+2022-05-26 11:51:45,006 p=4098 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:51:45,008 p=4098 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] ***************************
+2022-05-26 11:51:45,869 p=4098 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:51:45,871 p=4098 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] ***************************
+2022-05-26 11:51:46,741 p=4098 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:51:46,743 p=4098 u=buenrosm n=ansible | TASK [include variables] ********************************************************************************
+2022-05-26 11:51:46,759 p=4098 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:51:46,761 p=4098 u=buenrosm n=ansible | TASK [add a rule] ***************************************************************************************
+2022-05-26 11:51:47,767 p=4098 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:51:48,625 p=4098 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_2_kerberos_permit', 'application': 'kerberos', 'description': 'kerberos rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:51:49,480 p=4098 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_3_SSL_permit', 'application': 'ssl', 'description': 'ssl rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:51:50,337 p=4098 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_4_FTP_permit', 'application': 'ftp', 'description': 'ftp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:51:51,201 p=4098 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_5_LDAP_permit', 'application': 'ldap', 'description': 'ldap rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:51:52,082 p=4098 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_6_SSH_permit', 'application': 'ntp', 'description': 'NTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:51:52,928 p=4098 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_7_SMTP_permit', 'application': 'smtp', 'description': 'smtp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:51:53,784 p=4098 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_8_DNS_permit', 'application': 'dns', 'description': 'dns rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:51:54,613 p=4098 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_9_SNMP_permit', 'application': 'snmp', 'description': 'SNMP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:52:36,193 p=4098 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_10_NFS_permit', 'application': 'nfs', 'description': 'nfs rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'true'})
+2022-05-26 11:52:36,194 p=4098 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature will
+ be removed in version 2.12. Deprecation warnings can be disabled by setting deprecation_warnings=False 
+in ansible.cfg.
+2022-05-26 11:52:36,196 p=4098 u=buenrosm n=ansible | PLAY RECAP **********************************************************************************************
+2022-05-26 11:52:36,196 p=4098 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-05-26 11:58:13,508 p=4551 u=buenrosm n=ansible | PLAY [Sec_rule] ****************************************************************************************
+2022-05-26 11:58:13,515 p=4551 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] *************************
+2022-05-26 11:58:14,406 p=4551 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:58:14,407 p=4551 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] **************************
+2022-05-26 11:58:15,254 p=4551 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:58:15,255 p=4551 u=buenrosm n=ansible | TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] **************************
+2022-05-26 11:58:16,086 p=4551 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:58:16,088 p=4551 u=buenrosm n=ansible | TASK [include variables] *******************************************************************************
+2022-05-26 11:58:16,104 p=4551 u=buenrosm n=ansible | ok: [localhost]
+2022-05-26 11:58:16,105 p=4551 u=buenrosm n=ansible | TASK [add a rule] **************************************************************************************
+2022-05-26 11:58:17,121 p=4551 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:58:17,996 p=4551 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_2_kerberos_permit', 'application': 'kerberos', 'description': 'kerberos rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:58:18,867 p=4551 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_3_SSL_permit', 'application': 'ssl', 'description': 'ssl rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:58:19,696 p=4551 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_4_FTP_permit', 'application': 'ftp', 'description': 'ftp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:58:20,561 p=4551 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_5_LDAP_permit', 'application': 'ldap', 'description': 'ldap rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:58:21,419 p=4551 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_6_SSH_permit', 'application': 'ntp', 'description': 'NTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:58:22,252 p=4551 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_7_SMTP_permit', 'application': 'smtp', 'description': 'smtp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:58:23,085 p=4551 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_8_DNS_permit', 'application': 'dns', 'description': 'dns rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:58:23,947 p=4551 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_9_SNMP_permit', 'application': 'snmp', 'description': 'SNMP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})
+2022-05-26 11:59:04,074 p=4551 u=buenrosm n=ansible | changed: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_10_NFS_permit', 'application': 'nfs', 'description': 'nfs rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'true'})
+2022-05-26 11:59:04,076 p=4551 u=buenrosm n=ansible | [DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature 
+will be removed in version 2.12. Deprecation warnings can be disabled by setting 
+deprecation_warnings=False in ansible.cfg.
+2022-05-26 11:59:04,078 p=4551 u=buenrosm n=ansible | PLAY RECAP *********************************************************************************************
+2022-05-26 11:59:04,078 p=4551 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

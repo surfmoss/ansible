@@ -1,0 +1,71 @@
+]0;buenrosm@W-CND14657KW: ~/ansible[01;32mbuenrosm@W-CND14657KW[00m:[01;34m~/ansible[00m$ ansible-playbook roles/panos2/tasks/main.yml --ask-vault-pass
+Vault password: 
+
+PLAY [Sec_rule] ****************************************************************************************
+
+TASK [PaloAltoNetworks.paloaltonetworks : Install pan-python required library] *************************
+[0;32mok: [localhost][0m
+[0;32m[0m
+TASK [PaloAltoNetworks.paloaltonetworks : Install pandevice required library] **************************
+[0;32mok: [localhost][0m
+[0;32m[0m
+TASK [PaloAltoNetworks.paloaltonetworks : Install xmltodict required library] **************************
+[0;32mok: [localhost][0m
+[0;32m[0m
+TASK [include variables] *******************************************************************************
+[0;32mok: [localhost][0m
+[0;32m[0m
+TASK [add a rule] **************************************************************************************
+[0;33mchanged: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_1_SSH_permit', 'application': 'ssh', 'description': 'SSH rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})[0m
+[0;33m[0m[0;33mchanged: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_2_kerberos_permit', 'application': 'kerberos', 'description': 'kerberos rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})[0m
+[0;33m[0m[0;33mchanged: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_3_SSL_permit', 'application': 'ssl', 'description': 'ssl rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})[0m
+[0;33m[0m[0;33mchanged: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_4_FTP_permit', 'application': 'ftp', 'description': 'ftp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})[0m
+[0;33m[0m[0;33mchanged: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_5_LDAP_permit', 'application': 'ldap', 'description': 'ldap rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})[0m
+[0;33m[0m[0;33mchanged: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_6_SSH_permit', 'application': 'ntp', 'description': 'NTP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})[0m
+[0;33m[0m[0;33mchanged: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_7_SMTP_permit', 'application': 'smtp', 'description': 'smtp rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})[0m
+[0;33m[0m[0;33mchanged: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_8_DNS_permit', 'application': 'dns', 'description': 'dns rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})[0m
+[0;33m[0m[0;33mchanged: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_9_SNMP_permit', 'application': 'snmp', 'description': 'SNMP rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'false'})[0m
+[0;33m[0m[0;33mchanged: [localhost] => (item={'state': 'present', 'rule_name': 'Ansible_10_NFS_permit', 'application': 'nfs', 'description': 'nfs rule test', 'source_zone': 'Public', 'destination_zone': 'Users', 'action': 'allow', 'commit': 'true'})[0m
+[0;33m[0m[0;35m[DEPRECATION WARNING]: Classic provider params are deprecated; use "provider" instead. This feature [0m
+[0;35mwill be removed in version 2.12. Deprecation warnings can be disabled by setting [0m
+[0;35mdeprecation_warnings=False in ansible.cfg.[0m
+[0;35m[0m
+PLAY RECAP *********************************************************************************************
+[0;33mlocalhost[0m                  : [0;32mok=5   [0m [0;33mchanged=1   [0m unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+]0;buenrosm@W-CND14657KW: ~/ansible[01;32mbuenrosm@W-CND14657KW[00m:[01;34m~/ansible[00m$ cat roles/panos2/tasks/main.yml
+---
+# tasks file for panos_use_case
+  - import_playbook: sec_rule.yml
+
+]0;buenrosm@W-CND14657KW: ~/ansible[01;32mbuenrosm@W-CND14657KW[00m:[01;34m~/ansible[00m$ cat roles/panos2/tasks/sec_rule.yml | more
+---
+- name: Sec_rule
+  hosts: localhost
+  connection: local
+  gather_facts: False
+  vars:  
+    version_file: "{{lookup('file','/home/buenrosm/ansible/roles/panos2/files/sec_rule.json') | from_jso
+n }}"
+
+
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+
+
+  tasks:
+
+    - name: include variables
+      include_vars: ~/ansible/group_vars/panos/vars.yml
+      no_log: 'yes'
+
+
+    - name: add a rule 
+      panos_security_rule:
+        ip_address: 192.168.55.10
+        state: "{{ item.state }}"
+        rule_name: "{{ item.rule_name }}"
+        application: "{{ item.application }}"
+        description: "{{ item.description }}"
+        source_zone: "{{ item.source_zone }}"
+[7m--More--[27m

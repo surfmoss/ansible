@@ -1,0 +1,40 @@
+# FILENAME
+# create_security_policies.yml
+#
+# DESCRIPTION
+# Sample playbook used for AWS Automation webinar
+#
+# REQUIREMENTS
+# pip install ansible
+# ansible-galaxy install PaloAltoNetworks.paloaltonetworks
+# create vars.yml and configure with your credentials (vars-sample.yml file provided)
+#
+# EXECUTE
+# ansible-playbook create_security_policies.yml
+---
+- name: CMD_line
+  hosts: localhost
+  connection: local
+  gather_facts: False
+
+  roles:
+    - role: PaloAltoNetworks.paloaltonetworks
+
+  tasks:
+
+    - name: include variables
+      include_vars: ~/ansible/group_vars/panos/vars.yml
+      no_log: 'yes'
+
+
+    - name: push_cmd
+      panos_op:
+        ip_address: 192.168.55.10
+        username: "{{ palo_username }}"
+        password: "{{ palo_password }}"
+        cmd: show session info
+        #        api_key: "{{ palo_api }}"
+      register: output
+
+    - debug: 
+        var: output
