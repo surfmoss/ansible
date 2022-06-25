@@ -1,0 +1,4 @@
+---
+# tasks file for panos_use_case
+  - import_playbook: sec_rule.yml
+

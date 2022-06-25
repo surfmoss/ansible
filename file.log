@@ -2869,3 +2869,182 @@ will be removed in version 2.12. Deprecation warnings can be disabled by setting
 deprecation_warnings=False in ansible.cfg.
 2022-05-26 11:59:04,078 p=4551 u=buenrosm n=ansible | PLAY RECAP *********************************************************************************************
 2022-05-26 11:59:04,078 p=4551 u=buenrosm n=ansible | localhost                  : ok=5    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2022-06-22 12:01:08,612 p=293 u=buenrosm n=ansible | ERROR! Syntax Error while loading YAML.
+  did not find expected '-' indicator
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 33, column 5, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+        </entry>
+    cmd: set
+    ^ here
+
+2022-06-22 12:02:30,138 p=305 u=buenrosm n=ansible | ERROR! conflicting action statements: xpath, element
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 17, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Panorama Template
+      ^ here
+
+2022-06-22 12:05:30,882 p=310 u=buenrosm n=ansible | ERROR! conflicting action statements: xpath, element
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 17, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Panorama Template
+      ^ here
+
+2022-06-22 12:06:49,564 p=314 u=buenrosm n=ansible | ERROR! conflicting action statements: xpath, element
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 13, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Panorama Template
+      ^ here
+
+2022-06-22 12:08:59,848 p=318 u=buenrosm n=ansible | ERROR! conflicting action statements: xpath, element
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 13, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Panorama Template
+      ^ here
+
+2022-06-22 12:10:13,032 p=322 u=buenrosm n=ansible | ERROR! conflicting action statements: xpath, element
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 13, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Panorama Template
+      ^ here
+
+2022-06-22 12:12:05,303 p=332 u=buenrosm n=ansible | ERROR! conflicting action statements: ip_address, api_key
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 13, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Panorama Template
+      ^ here
+
+2022-06-22 12:13:19,861 p=338 u=buenrosm n=ansible | ERROR! conflicting action statements: ip_address, api_key
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 16, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Panorama Template
+      ^ here
+
+2022-06-22 12:14:09,071 p=351 u=buenrosm n=ansible | ERROR! conflicting action statements: ip_address, api_key
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 16, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Panorama Template
+      ^ here
+
+2022-06-22 12:14:16,676 p=355 u=buenrosm n=ansible |  [ERROR]: User interrupted execution
+
+2022-06-22 12:14:54,443 p=358 u=buenrosm n=ansible | ERROR! conflicting action statements: api_key, xpath
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 16, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Panorama Template
+      ^ here
+
+2022-06-22 12:16:02,031 p=362 u=buenrosm n=ansible | ERROR! conflicting action statements: xpath, element
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 16, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: Panorama Template
+      ^ here
+
+2022-06-22 12:16:36,953 p=366 u=buenrosm n=ansible | ERROR! conflicting action statements: include_vars, xpath
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 12, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: include variables
+      ^ here
+
+2022-06-22 12:24:18,173 p=398 u=buenrosm n=ansible | ERROR! conflicting action statements: xpath, element
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 30, column 7, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+    - name: panorama_template_10_1.ironskillet_template
+      ^ here
+
+2022-06-22 12:30:40,221 p=402 u=buenrosm n=ansible | ERROR! 'label' is not a valid attribute for a Play
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 2, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+---
+- name: Panorama_template_10_1
+  ^ here
+
+2022-06-22 12:31:38,381 p=406 u=buenrosm n=ansible | ERROR! A playbook must be a list of plays, got a <class 'ansible.parsing.yaml.objects.AnsibleMapping'> instead
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 2, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+---
+name: Panorama_template_10_1
+^ here
+
+2022-06-22 12:39:57,685 p=410 u=buenrosm n=ansible | ERROR! A playbook must be a list of plays, got a <class 'ansible.parsing.yaml.objects.AnsibleMapping'> instead
+
+The error appears to be in '/home/buenrosm/ansible/pano_template.yml': line 3, column 1, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+name: panorama_template_10_1
+^ here
+
